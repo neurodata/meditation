@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #-*- coding: utf-8 -*-
 
 __author__ = 'Ronan Perry'
@@ -26,23 +25,23 @@ def gcca(data, rank_tolerance=None, n_components=None):
     ranks = []
     
     for x in tqdm(data):
-    # Preprocess
-    x = _preprocess(x)
-    x[np.isnan(x)] = 0
+        # Preprocess
+        x = _preprocess(x)
+        x[np.isnan(x)] = 0
 
-    # compute the SVD of the data
-    v,s,ut = linalg.svd(x.T, full_matrices=False)
+        # compute the SVD of the data
+        v,s,ut = linalg.svd(x.T, full_matrices=False)
 
-    Sall.append(s)
-    Vall.append(v.T)
-    # Dimensions to reduce to
-    if rank_tolerance:
-        rank = sum(S > rank_tolerance)
-    else:
-        rank = n_components
-    ranks.append(rank)
-    ut = ut.T[:,:rank]
-    Uall.append(ut)
+        Sall.append(s)
+        Vall.append(v.T)
+        # Dimensions to reduce to
+        if rank_tolerance:
+            rank = sum(S > rank_tolerance)
+        else:
+            rank = n_components
+        ranks.append(rank)
+        ut = ut.T[:,:rank]
+        Uall.append(ut)
 
     d = min(ranks)
 
