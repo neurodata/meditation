@@ -99,7 +99,6 @@ def discr_stat(
         raise ValueError(msg)
     if remove_isolates:
         idx = np.where(np.isin(Y, uniques[counts != 1]))
-        print(idx)
         labels = Y[idx]
 
         if dissimilarity == "euclidean":

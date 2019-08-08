@@ -1,4 +1,4 @@
-function Data=GCCAfMRI(numViews,rankTol)
+function [Data,Uall,VV]=GCCAfMRI(numViews,rankTol)
 %function Data=GCCAfMRI(numViews,rankTol)
 % Perform SUMCOR variant of generalized canonical correlation analysis for 
 % fMRI meditation data from Daniel Margulies,
@@ -23,7 +23,7 @@ for s=1:length(states)
     Data.(states{s})=loadfMRI(dataDir,remove,states{s},numViews,rankTol);
     numViews=min(numViews,length(Data.(states{s})));
     %Now perform SUMCOR GCCA
-    Data.(states{s})=svdgcca(Data.(states{s}),1:numViews);
+    [Data.(states{s}),Uall,VV]=svdgcca(Data.(states{s}),1:numViews);
     break
 end
 
@@ -68,11 +68,11 @@ for i=1:min(numFiles,length(files))
     Data(i).U=Data(i).U(:,1:Data(i).rank);
 end
 
-function Data=svdgcca(Data,views)
+function [Data,Uall,VV]=svdgcca(Data,views)
 % Compute SUMCOR canonical coefficients and canonical correlations for the
 % given multiview data set. With Data(i).U,Data(i).S,Data(i).V giving
 % the SVD of Data(i).X the standardized and column-centered data for the
-% i-th view.
+% i-th vie
 % The projected data is stored in Data(i).ProjX.
 
 % 
@@ -95,7 +95,7 @@ fprintf(1,'Computing truncated (rank %d) SVD of size %d by %d via svds\n',...
 % \sigma_i is the ith sing value of Xall.
 n=size(Data(1).X,1);
 %ncols=[Data(views).ncols];
-
+disp(VV)
 VV=VV(:,1:min(d,size(VV,2)));
 je=0;
 for i=views
@@ -103,9 +103,12 @@ for i=views
     je=js+ranks(i)-1;
     %Data(i).A=zeros(ncols,d);
     VVi = normc(VV(js:je,:));
+    Data(i).VVi=VVi;
     %VVi=normalize(VV(js:je,:),'norm');
     % Compute the canonical projections
-    Data(i).A=sqrt(n-1)*Data(i).V(:,1:ranks(i))*(Data(i).S(1:ranks(i),1:ranks(i))\VVi);
+    Data(i).A=sqrt(n-1)*Data(i).V(:,1:ranks(i));
+    Data(i).inv=Data(i).S(1:ranks(i),1:ranks(i))\VVi;
+    Data(i).A= Data(i).A * Data(i).inv;
     Data(i).projX=Data(i).X*Data(i).A;
 end
 %

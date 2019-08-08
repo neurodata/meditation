@@ -19,9 +19,9 @@ def _preprocess(x):
     x2 -= mu
     return(x2)
 
-def gcca(data, rank_tolerance=None, n_components=None):
+def gcca(data, rank_tolerance=None, n_components=None, tall=False):
     n = data[0].shape[0]
-    
+
     data = [_preprocess(x) for x in data]
     
     Uall = []
@@ -32,24 +32,25 @@ def gcca(data, rank_tolerance=None, n_components=None):
     for x in tqdm(data):
         # Preprocess
         x[np.isnan(x)] = 0
-        
-        temp['X'] = x
 
         # compute the SVD of the data
-        u,s,vt = linalg.svd(x, full_matrices=False)
-
+        if tall:
+            v,s,ut = linalg.svd(x.T, full_matrices=False)
+        else:
+            u,s,vt = linalg.svd(x, full_matrices=False)
+            ut = u.T; v = vt.T
+        
         Sall.append(s)
-        Vall.append(vt.T)
+        Vall.append(v)
         # Dimensions to reduce to
         if rank_tolerance:
             rank = sum(s > rank_tolerance)
         else:
             rank = n_components
-            
         ranks.append(rank)
-        u = u[:,:rank]
+        u = ut.T[:,:rank]
         Uall.append(u)
-                
+
     d = min(ranks)
 
     # Create a concatenated view of Us
@@ -68,7 +69,7 @@ def gcca(data, rank_tolerance=None, n_components=None):
         VVi = normalize(VV[idx_start:idx_end,:],'l2',axis=0)
         # Compute the canonical projections
         A = np.sqrt(n-1) * Vall[i][:,:ranks[i]]
-        A = A @ linalg.solve(np.diag(Sall[i][:ranks[i]]), VVi)
+        A = A @ (linalg.solve(np.diag(Sall[i][:ranks[i]]), VVi))
         projX.append(data[i] @ A)
-                
-    return(projX)
+        
+    return(projX,ranks)
