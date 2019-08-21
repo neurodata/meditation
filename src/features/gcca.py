@@ -90,7 +90,6 @@ def gcca(data, percent_var=0.9, rank_tolerance=None, n_components=None, tall=Fal
             rank = n_components
         else:
             s2 = np.square(s)
-            variances.append(s2/sum(s2))
             rank = sum(np.cumsum(s2/sum(s2)) < rank_ratio) + 1
         ranks.append(rank)
         
