@@ -1,0 +1,24 @@
+,GCCA Rank=3
+Experts All vs. Novices All,0.018
+All Open Monitoring vs. All Compassion,0.29
+All Resting vs. All Compassion,0.072
+All Resting vs. All Open Monitoring,0.6
+All Resting vs. All Open Monitoring vs. All Compassion,0.2
+Experts Compassion vs. Novice Compassion,0.25
+Experts Open Monitoring vs. Novices Open Monitoring,0.088
+Experts Resting vs. Novices Resting,0.19
+Experts Meditating vs. Experts Resting,0.95
+Experts Meditating vs. Novices Resting,0.91
+Novices Meditating vs. Novices Resting,0.98
+Experts Open Monitoring vs. Experts Compassion,0.92
+Experts Resting vs. Experts Compassion,0.65
+Experts Resting vs. Experts Open Monitoring,0.93
+Novices Open Monitoring vs. Novices Compassion,0.42
+Novices Resting vs. Novices Compassion,0.48
+Novices Resting vs. Novices Open Monitoring,0.66
+Experts Compassion vs. Novices Open Monitoring,0.015
+Experts Compassion vs. Novices Resting,0.002
+Experts Open Monitoring vs. Novices Compassion,0.37
+Experts Open Monitoring vs. Novices Resting,0.008
+Experts Resting vs. Novices Compassion,0.83
+Experts Resting vs. Novices Open Monitoring,0.44

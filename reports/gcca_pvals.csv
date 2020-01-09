@@ -1,0 +1,25 @@
+Post GCCA Discriminability Estimated pvals (1000 permutations),,,
+Traits and States,Rank=1 ,Rank=3,"Decimated, Rank=3"
+All Open Monitoring vs. All Compassion,0.79,0.26,0.29
+All Resting vs. All Compassion,0.53,0.093,0.072
+All Resting vs. All Open Monitoring,0.84,0.68,0.6
+All Resting vs. All Open Monitoring vs. All Compassion,0.81,0.23,0.2
+Experts All vs. Novices All,0.11,0.091,0.018
+Experts Compassion vs. Novice Compassion,0.51,0.25,0.25
+Experts Compassion vs. Novices Open Monitoring,0.036,0.014,0.015
+Experts Compassion vs. Novices Resting,0.039,0.002,0.002
+Experts Meditating vs. Novices Resting,0.7,0.93,0.91
+Experts Open Monitoring vs. Novices Compassion,0.73,0.35,0.37
+Experts Open Monitoring vs. Novices Open Monitoring,0.14,0.085,0.088
+Experts Open Monitoring vs. Novices Resting,0.11,0.018,0.008
+Experts Resting vs. Novices Compassion,0.89,0.83,0.83
+Experts Resting vs. Novices Open Monitoring,0.32,0.38,0.44
+Experts Resting vs. Novices Resting,0.42,0.16,0.19
+Experts Meditating vs. Experts Resting,0.88,0.93,0.95
+Experts Open Monitoring vs. Experts Compassion,0.97,0.91,0.92
+Experts Resting vs. Experts Compassion,0.87,0.62,0.65
+Experts Resting vs. Experts Open Monitoring,0.99,0.91,0.93
+Novices Meditating vs. Novices Resting,0.88,0.98,0.98
+Novices Open Monitoring vs. Novices Compassion,0.71,0.36,0.42
+Novices Resting vs. Novices Compassion,0.78,0.43,0.48
+Novices Resting vs. Novices Open Monitoring,0.88,0.72,0.66
