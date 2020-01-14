@@ -1,0 +1,24 @@
+Samples Compared,components=[2],"components=[2, 0]",components=[1],"components=[1, 2]",components=[0],"components=[0, 1]","components=[0, 1, 2]"
+Experts Resting vs. Experts Open Monitoring,1,1,1,1,1,1,1
+Experts Resting vs. Experts Compassion,0.98,0.99,0.98,0.99,0.99,0.99,1
+Experts Open Monitoring vs. Experts Compassion,0.99,1,1,1,1,1,1
+Experts Meditating vs. Experts Resting,1,1,1,1,1,1,1
+Novices Resting vs. Novices Open Monitoring,0.98,1,0.99,0.99,1,1,1
+Novices Resting vs. Novices Compassion,0.89,0.91,0.59,0.82,0.84,0.74,0.85
+Novices Open Monitoring vs. Novices Compassion,1,1,0.97,1,1,1,1
+Novices Meditating vs. Novices Resting,0.85,0.96,0.88,0.9,0.98,0.97,0.94
+All Resting vs. All Open Monitoring,1,1,1,1,1,1,1
+All Resting vs. All Compassion,0.71,0.71,0.051,0.18,0.73,0.18,0.31
+All Open Monitoring vs. All Compassion,1,1,0.88,1,0.99,0.97,1
+All Meditating vs. All Resting,0.89,0.96,0.55,0.8,0.98,0.88,0.91
+Experts Resting vs. Novices Open Monitoring,0.76,0.47,0.92,0.9,0.21,0.59,0.69
+Experts Open Monitoring vs. Novices Resting,0.23,0.15,0.11,0.12,0.23,0.16,0.15
+Experts Resting vs. Novices Compassion,0.42,0.63,0.36,0.33,0.81,0.63,0.55
+Experts Compassion vs. Novices Resting,0.014,0.058,0.02,0.013,0.13,0.093,0.032
+Experts Open Monitoring vs. Novices Compassion,0.34,0.55,0.63,0.49,0.76,0.72,0.6
+Experts Compassion vs. Novices Open Monitoring,0.17,0.059,0.099,0.072,0.024,0.063,0.065
+Experts Resting vs. Novices Resting,0.48,0.52,0.82,0.67,0.59,0.76,0.66
+Experts Open Monitoring vs. Novices Open Monitoring,0.48,0.18,0.3,0.39,0.14,0.18,0.2
+Experts Compassion vs. Novices Compassion,0.009,0.03,0.76,0.27,0.7,0.82,0.43
+Experts All vs. Novices All,0.0001,0.0001,0.0001,0.0001,0.0001,0.0001,0.0001
+Experts Meditating vs. Novices Resting,0.0001,0.001,0.0001,0.003,0.01,0.0001,0.0001
