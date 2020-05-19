@@ -1,0 +1,501 @@
+2019-08-13 15:00:04,819:INFO:NEW RUN: MGC 2sample
+2019-08-13 15:00:22,816:INFO:NEW RUN: MGC 2sample
+2019-08-13 15:40:56,455:INFO:Component(s) [0] done in -2433.6385209560394
+2019-08-13 16:21:42,567:INFO:Component(s) [2] done in -2446.1116943359375
+2019-08-13 17:34:41,736:INFO:Component(s) [0, 2] done in -4379.1695103645325
+2019-08-13 19:26:19,218:INFO:Component(s) [0, 1, 2] done in -6697.48202252388
+2019-08-14 10:47:43,280:INFO:NEW RUN: MGC 2sample
+2019-08-14 10:47:43,280:INFO:Component(s) [0] done in 4.5299530029296875e-06
+2019-08-14 10:47:43,280:INFO:Component(s) [2] done in 2.86102294921875e-06
+2019-08-14 10:47:43,280:INFO:Component(s) [0, 2] done in 2.6226043701171875e-06
+2019-08-14 10:47:43,280:INFO:Component(s) [0, 1, 2] done in 2.384185791015625e-06
+2019-08-14 10:47:43,283:INFO:Names: [1.0024, 2.5402]
+2019-08-14 10:47:43,283:INFO:pvals: ['test', 'test2']
+2019-08-14 10:47:43,284:INFO:Names: [1.0024, 2.5402]
+2019-08-14 10:47:43,284:INFO:pvals: ['test', 'test2']
+2019-08-14 10:47:43,285:INFO:Names: [1.0024, 2.5402]
+2019-08-14 10:47:43,285:INFO:pvals: ['test', 'test2']
+2019-08-14 10:47:43,286:INFO:Names: [1.0024, 2.5402]
+2019-08-14 10:47:43,286:INFO:pvals: ['test', 'test2']
+2019-08-14 10:47:43,286:INFO:Saving to mgc_gcca_pvals.csv
+2019-08-14 10:49:30,817:INFO:NEW RUN: MGC 2sample
+2019-08-14 10:49:30,817:INFO:Component(s) [0] done in 4.5299530029296875e-06
+2019-08-14 10:49:30,817:INFO:Component(s) [2] done in 2.6226043701171875e-06
+2019-08-14 10:49:30,817:INFO:Component(s) [0, 2] done in 2.6226043701171875e-06
+2019-08-14 10:49:30,817:INFO:Component(s) [0, 1, 2] done in 2.384185791015625e-06
+2019-08-14 10:49:30,820:INFO:Names: ['test', 'test2']
+2019-08-14 10:49:30,820:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:49:30,822:INFO:Names: ['test', 'test2']
+2019-08-14 10:49:30,822:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:49:30,822:INFO:Names: ['test', 'test2']
+2019-08-14 10:49:30,822:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:49:30,823:INFO:Names: ['test', 'test2']
+2019-08-14 10:49:30,823:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:49:30,824:INFO:Saving to mgc_gcca_pvals.csv
+2019-08-14 10:50:08,365:INFO:NEW RUN: MGC 2sample
+2019-08-14 10:50:08,365:INFO:Component(s) [0] done in 4.76837158203125e-06
+2019-08-14 10:50:08,365:INFO:Component(s) [2] done in 2.384185791015625e-06
+2019-08-14 10:50:08,365:INFO:Component(s) [0, 2] done in 2.384185791015625e-06
+2019-08-14 10:50:08,365:INFO:Component(s) [0, 1, 2] done in 2.384185791015625e-06
+2019-08-14 10:50:08,368:INFO:Names: ['test', 'test2']
+2019-08-14 10:50:08,368:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:50:08,370:INFO:Names: ['test', 'test2']
+2019-08-14 10:50:08,370:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:50:08,370:INFO:Names: ['test', 'test2']
+2019-08-14 10:50:08,370:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:50:08,371:INFO:Names: ['test', 'test2']
+2019-08-14 10:50:08,371:INFO:pvals: [1.0024, 2.5402]
+2019-08-14 10:50:08,371:INFO:Saving to mgc_gcca_pvals.csv
+2019-08-14 10:54:47,585:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-14 10:54:47,585:INFO:Component(s) [0] done in 5.0067901611328125e-06
+2019-08-14 10:54:47,585:INFO:Component(s) [2] done in 2.86102294921875e-06
+2019-08-14 10:54:47,585:INFO:Component(s) [0, 2] done in 2.384185791015625e-06
+2019-08-14 10:54:47,585:INFO:Component(s) [0, 1, 2] done in 2.384185791015625e-06
+2019-08-14 10:56:41,730:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-14 10:56:41,730:INFO:Component(s) [0] done in 4.291534423828125e-06
+2019-08-14 10:56:41,731:INFO:Component(s) [2] done in 2.6226043701171875e-06
+2019-08-14 10:56:41,731:INFO:Component(s) [0, 2] done in 2.384185791015625e-06
+2019-08-14 10:56:41,731:INFO:Component(s) [0, 1, 2] done in 2.384185791015625e-06
+2019-08-14 10:57:18,101:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-14 10:57:18,101:INFO:Component(s) [0] done in 4.0531158447265625e-06
+2019-08-14 10:57:18,101:INFO:Component(s) [2] done in 2.6226043701171875e-06
+2019-08-14 10:57:18,101:INFO:Component(s) [0, 2] done in 2.384185791015625e-06
+2019-08-14 10:57:18,101:INFO:Component(s) [0, 1, 2] done in 2.1457672119140625e-06
+2019-08-14 10:57:45,794:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-14 10:57:45,794:INFO:Component(s) [0] done in 1.1205673217773438e-05
+2019-08-14 10:57:45,794:INFO:Component(s) [2] done in 5.9604644775390625e-06
+2019-08-14 10:57:45,794:INFO:Component(s) [0, 2] done in 5.0067901611328125e-06
+2019-08-14 10:57:45,794:INFO:Component(s) [0, 1, 2] done in 5.0067901611328125e-06
+2019-08-14 10:57:45,797:INFO:Names: ['test', 'test2']
+2019-08-14 10:57:45,797:INFO:pvals: [1.0024 2.5402]
+2019-08-14 10:57:45,798:INFO:Names: ['test', 'test2']
+2019-08-14 10:57:45,799:INFO:pvals: [1.0024 2.5402]
+2019-08-14 10:57:45,799:INFO:Names: ['test', 'test2']
+2019-08-14 10:57:45,799:INFO:pvals: [1.0024 2.5402]
+2019-08-14 10:57:45,800:INFO:Names: ['test', 'test2']
+2019-08-14 10:57:45,800:INFO:pvals: [1.0024 2.5402]
+2019-08-14 10:57:45,801:INFO:Saving to mgc_gcca_pvals.csv
+2019-08-14 10:58:07,011:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-14 10:58:07,011:INFO:Component(s) [0] done in 1.239776611328125e-05
+2019-08-14 10:58:07,011:INFO:Component(s) [2] done in 5.9604644775390625e-06
+2019-08-14 10:58:07,011:INFO:Component(s) [0, 2] done in 5.245208740234375e-06
+2019-08-14 10:58:07,011:INFO:Component(s) [0, 1, 2] done in 4.76837158203125e-06
+2019-08-14 10:58:07,014:INFO:Names: ['test', 'test2']
+2019-08-14 10:58:07,014:INFO:pvals: [1.0000e-04 2.5402e+00]
+2019-08-14 10:58:07,016:INFO:Names: ['test', 'test2']
+2019-08-14 10:58:07,016:INFO:pvals: [1.0000e-04 2.5402e+00]
+2019-08-14 10:58:07,017:INFO:Names: ['test', 'test2']
+2019-08-14 10:58:07,017:INFO:pvals: [1.0000e-04 2.5402e+00]
+2019-08-14 10:58:07,018:INFO:Names: ['test', 'test2']
+2019-08-14 10:58:07,018:INFO:pvals: [1.0000e-04 2.5402e+00]
+2019-08-14 10:58:07,018:INFO:Saving to mgc_gcca_pvals.csv
+2019-08-14 10:59:29,258:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-14 11:38:49,795:INFO:Component(s) [0] done in 2360.536823987961
+2019-08-14 12:18:04,520:INFO:Component(s) [2] done in 2354.7246284484863
+2019-08-14 13:29:24,644:INFO:Component(s) [0, 2] done in 4280.1241047382355
+2019-08-14 15:20:22,412:INFO:Component(s) [0, 1, 2] done in 6657.767733573914
+2019-08-14 15:20:22,416:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-14 15:20:22,416:INFO:pvals: [9.92e-01 8.14e-01 9.63e-01 9.22e-01 8.35e-01 2.05e-01 4.34e-01 5.59e-01
+ 8.97e-01 5.30e-02 2.19e-01 4.66e-01 6.95e-01 6.20e-02 2.21e-01 1.00e-03
+ 3.40e-02 5.80e-02 4.58e-01 1.45e-01 3.90e-02 1.00e-04 1.00e-04]
+2019-08-14 15:20:22,418:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-14 15:20:22,418:INFO:pvals: [1.00e+00 9.57e-01 1.00e+00 9.97e-01 1.00e+00 9.82e-01 9.52e-01 9.99e-01
+ 9.99e-01 7.55e-01 9.90e-01 9.52e-01 2.20e-02 1.99e-01 5.64e-01 1.70e-01
+ 7.94e-01 8.80e-02 5.58e-01 1.63e-01 8.26e-01 1.00e-04 8.00e-03]
+2019-08-14 15:20:22,419:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-14 15:20:22,419:INFO:pvals: [1.00e+00 9.46e-01 9.98e-01 9.86e-01 9.91e-01 5.98e-01 7.54e-01 9.21e-01
+ 9.91e-01 2.10e-01 6.84e-01 7.64e-01 3.03e-01 5.40e-02 3.71e-01 1.00e-04
+ 5.20e-02 5.70e-02 4.65e-01 9.60e-02 1.24e-01 1.00e-04 1.00e-04]
+2019-08-14 15:20:22,420:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-14 15:20:22,420:INFO:pvals: [9.99e-01 9.37e-01 1.00e+00 9.69e-01 9.97e-01 8.29e-01 9.14e-01 9.83e-01
+ 9.98e-01 1.53e-01 8.83e-01 6.85e-01 3.62e-01 4.90e-02 1.44e-01 1.00e-03
+ 1.46e-01 5.50e-02 5.88e-01 1.32e-01 2.79e-01 1.00e-04 1.00e-04]
+2019-08-14 15:20:22,421:INFO:Saving to mgc_gcca_pvals_10000.csv
+2019-08-16 14:24:41,307:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-16 15:04:35,968:INFO:Component(s) [0] done in 2394.6607146263123
+2019-08-16 15:43:41,632:INFO:Component(s) [2] done in 2345.664087295532
+2019-08-16 16:54:27,410:INFO:Component(s) [0, 2] done in 4245.777062416077
+2019-08-16 18:43:31,631:INFO:Component(s) [0, 1, 2] done in 6544.22145485878
+2019-08-16 18:43:31,635:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-16 18:43:31,635:INFO:pvals: [9.98e-01 9.76e-01 9.74e-01 9.97e-01 9.41e-01 8.41e-01 1.00e+00 7.72e-01
+ 9.96e-01 6.44e-01 9.95e-01 8.61e-01 7.58e-01 1.74e-01 3.42e-01 4.00e-02
+ 3.03e-01 6.50e-02 3.37e-01 4.56e-01 3.00e-03 1.00e-04 1.00e-04]
+2019-08-16 18:43:31,637:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-16 18:43:31,637:INFO:pvals: [1.00e+00 9.92e-01 9.98e-01 1.00e+00 1.00e+00 7.92e-01 9.80e-01 9.85e-01
+ 1.00e+00 5.98e-01 9.78e-01 9.87e-01 3.36e-01 2.32e-01 9.14e-01 1.05e-01
+ 7.87e-01 7.40e-02 6.27e-01 1.30e-01 8.23e-01 1.00e-04 2.40e-02]
+2019-08-16 18:43:31,638:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-16 18:43:31,638:INFO:pvals: [1.00e+00 9.94e-01 9.99e-01 1.00e+00 9.98e-01 8.29e-01 9.99e-01 9.41e-01
+ 1.00e+00 6.55e-01 9.99e-01 9.67e-01 5.54e-01 1.33e-01 6.74e-01 6.30e-02
+ 5.27e-01 5.60e-02 4.60e-01 1.69e-01 3.10e-01 1.00e-04 2.00e-03]
+2019-08-16 18:43:31,639:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-16 18:43:31,639:INFO:pvals: [1.00e+00 9.91e-01 9.99e-01 1.00e+00 9.98e-01 7.37e-01 9.97e-01 9.28e-01
+ 1.00e+00 2.11e-01 9.93e-01 8.89e-01 7.41e-01 1.02e-01 5.44e-01 2.10e-02
+ 5.33e-01 5.10e-02 5.50e-01 1.41e-01 4.73e-01 1.00e-04 1.00e-03]
+2019-08-16 18:43:31,639:INFO:Saving to mgc_gcca_pvals_ratio-0.9_10000.csv
+2019-08-21 18:14:20,879:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2019-08-21 18:56:48,651:INFO:Component(s) [3] done in 2547.7712717056274
+2019-08-21 19:35:41,711:INFO:Component(s) [4] done in 2333.05953168869
+2019-08-21 20:14:28,776:INFO:Component(s) [5] done in 2327.0646686553955
+2019-08-21 21:24:34,402:INFO:Component(s) [3, 4] done in 4205.625998020172
+2019-08-21 22:35:12,301:INFO:Component(s) [4, 5] done in 4237.898655414581
+2019-08-21 23:45:43,474:INFO:Component(s) [3, 5] done in 4231.173072814941
+2019-08-22 01:33:55,868:INFO:Component(s) [3, 4, 5] done in 6492.3937175273895
+2019-08-22 01:33:55,875:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,875:INFO:pvals: [9.95e-01 9.78e-01 9.97e-01 9.71e-01 9.35e-01 8.21e-01 1.00e+00 5.99e-01
+ 7.55e-01 2.03e-01 1.00e+00 1.66e-01 3.47e-01 1.20e-01 5.10e-02 5.70e-02
+ 1.21e-01 4.13e-01 7.93e-01 3.46e-01 1.69e-01 1.00e-04 1.00e-04]
+2019-08-22 01:33:55,879:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,879:INFO:pvals: [1.00e+00 1.00e+00 9.99e-01 9.98e-01 9.99e-01 1.00e+00 1.00e+00 1.00e+00
+ 9.99e-01 9.96e-01 1.00e+00 9.93e-01 5.64e-01 9.40e-02 7.94e-01 2.29e-01
+ 5.61e-01 4.33e-01 6.18e-01 4.21e-01 9.77e-01 1.00e-04 8.00e-03]
+2019-08-22 01:33:55,881:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,882:INFO:pvals: [1.00e+00 1.00e+00 1.00e+00 1.00e+00 9.98e-01 9.92e-01 1.00e+00 9.88e-01
+ 9.85e-01 8.59e-01 1.00e+00 7.83e-01 4.39e-01 1.04e-01 3.47e-01 7.40e-02
+ 2.52e-01 3.92e-01 8.10e-01 3.85e-01 7.25e-01 1.00e-04 1.00e-04]
+2019-08-22 01:33:55,882:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,883:INFO:pvals: [9.92e-01 9.81e-01 9.97e-01 9.96e-01 9.99e-01 9.35e-01 9.89e-01 9.90e-01
+ 1.00e+00 7.64e-01 1.00e+00 9.94e-01 7.89e-01 1.81e-01 6.15e-01 3.00e-02
+ 4.20e-02 1.03e-01 1.62e-01 1.29e-01 5.02e-01 1.00e-04 3.00e-03]
+2019-08-22 01:33:55,883:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,884:INFO:pvals: [9.99e-01 9.95e-01 1.00e+00 9.95e-01 9.98e-01 9.24e-01 1.00e+00 9.44e-01
+ 1.00e+00 4.29e-01 1.00e+00 7.24e-01 6.00e-03 7.50e-02 2.95e-01 7.00e-02
+ 2.70e-01 1.74e-01 4.60e-01 6.00e-02 2.74e-01 1.00e-04 1.00e-04]
+2019-08-22 01:33:55,884:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,885:INFO:pvals: [1.00e+00 9.99e-01 1.00e+00 9.99e-01 1.00e+00 9.99e-01 1.00e+00 1.00e+00
+ 1.00e+00 9.89e-01 1.00e+00 1.00e+00 7.51e-01 1.34e-01 8.15e-01 9.70e-02
+ 6.53e-01 1.60e-01 3.23e-01 1.80e-01 8.99e-01 1.00e-04 1.00e-04]
+2019-08-22 01:33:55,885:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2019-08-22 01:33:55,886:INFO:pvals: [1.00e+00 1.00e+00 9.99e-01 1.00e+00 1.00e+00 9.99e-01 1.00e+00 9.96e-01
+ 1.00e+00 8.68e-01 1.00e+00 9.50e-01 6.10e-01 1.04e-01 4.57e-01 9.70e-02
+ 3.73e-01 1.77e-01 5.36e-01 1.57e-01 6.93e-01 1.00e-04 1.00e-04]
+2019-08-22 01:33:55,886:INFO:Saving to mgc_gcca_pvals_ratio-0.9_10000.csv
+2020-01-07 11:03:49,115:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2020-01-07 11:43:07,603:INFO:Component(s) [0] done in 2358.4871814250946
+2020-01-07 12:22:06,832:INFO:Component(s) [1] done in 2339.2290608882904
+2020-01-07 13:00:58,183:INFO:Component(s) [2] done in 2331.3444097042084
+2020-01-07 14:10:13,053:INFO:Component(s) [0, 1] done in 4154.870653152466
+2020-01-07 15:19:34,593:INFO:Component(s) [1, 2] done in 4161.53910946846
+2020-01-07 16:28:52,337:INFO:Component(s) [2, 0] done in 4157.7445113658905
+2020-01-07 18:15:23,924:INFO:Component(s) [0, 1, 2] done in 6391.586817026138
+2020-01-07 18:15:23,929:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,929:INFO:pvals: [1.00e+00 9.79e-01 9.91e-01 9.99e-01 9.79e-01 8.90e-01 1.00e+00 8.54e-01
+ 9.98e-01 7.06e-01 1.00e+00 8.91e-01 7.57e-01 2.27e-01 4.16e-01 1.40e-02
+ 3.40e-01 1.67e-01 4.76e-01 4.80e-01 9.00e-03 1.00e-04 1.00e-04]
+2020-01-07 18:15:23,931:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,931:INFO:pvals: [1.00e+00 9.93e-01 9.96e-01 1.00e+00 9.99e-01 9.08e-01 1.00e+00 9.58e-01
+ 1.00e+00 7.09e-01 9.99e-01 9.62e-01 4.67e-01 1.54e-01 6.31e-01 5.80e-02
+ 5.46e-01 5.90e-02 5.15e-01 1.78e-01 3.00e-02 1.00e-04 1.00e-03]
+2020-01-07 18:15:23,932:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,932:INFO:pvals: [1.00e+00 9.79e-01 9.95e-01 1.00e+00 9.92e-01 5.90e-01 9.68e-01 8.77e-01
+ 9.98e-01 5.10e-02 8.75e-01 5.46e-01 9.21e-01 1.13e-01 3.62e-01 2.00e-02
+ 6.29e-01 9.90e-02 8.16e-01 3.00e-01 7.60e-01 1.00e-04 1.00e-04]
+2020-01-07 18:15:23,933:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,933:INFO:pvals: [1.00e+00 9.91e-01 9.97e-01 1.00e+00 9.92e-01 8.20e-01 9.99e-01 9.04e-01
+ 1.00e+00 1.79e-01 9.99e-01 7.99e-01 9.04e-01 1.24e-01 3.34e-01 1.30e-02
+ 4.90e-01 7.20e-02 6.69e-01 3.88e-01 2.66e-01 1.00e-04 3.00e-03]
+2020-01-07 18:15:23,934:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,934:INFO:pvals: [1.00e+00 9.92e-01 9.96e-01 1.00e+00 1.00e+00 8.42e-01 9.96e-01 9.79e-01
+ 1.00e+00 7.32e-01 9.91e-01 9.76e-01 2.14e-01 2.27e-01 8.10e-01 1.27e-01
+ 7.62e-01 2.40e-02 5.87e-01 1.35e-01 6.98e-01 1.00e-04 1.00e-02]
+2020-01-07 18:15:23,935:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,935:INFO:pvals: [1.00e+00 9.94e-01 9.99e-01 1.00e+00 1.00e+00 7.36e-01 9.97e-01 9.67e-01
+ 1.00e+00 1.81e-01 9.74e-01 8.81e-01 5.88e-01 1.63e-01 6.25e-01 9.30e-02
+ 7.20e-01 6.30e-02 7.56e-01 1.84e-01 8.15e-01 1.00e-04 1.00e-04]
+2020-01-07 18:15:23,936:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Meditating vs. Novices Resting']
+2020-01-07 18:15:23,936:INFO:pvals: [1.00e+00 9.96e-01 9.99e-01 1.00e+00 9.99e-01 8.48e-01 1.00e+00 9.44e-01
+ 1.00e+00 3.12e-01 1.00e+00 9.10e-01 6.94e-01 1.52e-01 5.51e-01 3.20e-02
+ 6.01e-01 6.50e-02 6.55e-01 1.98e-01 4.25e-01 1.00e-04 1.00e-04]
+2020-01-07 18:15:23,937:INFO:Saving to mgc_gcca_pvals_ratio-ZG-3_10000.csv
+2020-01-09 20:38:58,682:INFO:NEW RUN: MGC 2sample SHORTENED, 10000 permutations, fast=False
+2020-01-09 20:41:07,933:INFO:NEW RUN: MGC 2sample SHORTENED, 10000 permutations, fast=False
+2020-01-09 20:44:09,134:INFO:Component(s) [0] done in 181.20000100135803
+2020-01-09 20:47:05,344:INFO:Component(s) [1] done in 176.20372033119202
+2020-01-09 20:50:03,664:INFO:Component(s) [2] done in 178.31909322738647
+2020-01-09 20:54:43,116:INFO:Component(s) [0, 1] done in 279.45197582244873
+2020-01-09 20:59:21,296:INFO:Component(s) [1, 2] done in 278.1801357269287
+2020-01-09 21:03:59,247:INFO:Component(s) [2, 0] done in 277.9504373073578
+2020-01-09 21:11:02,437:INFO:Component(s) [0, 1, 2] done in 423.1901650428772
+2020-01-09 21:11:02,447:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,448:INFO:pvals: [0.302]
+2020-01-09 21:11:02,451:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,451:INFO:pvals: [0.226]
+2020-01-09 21:11:02,452:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,452:INFO:pvals: [0.523]
+2020-01-09 21:11:02,453:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,453:INFO:pvals: [0.399]
+2020-01-09 21:11:02,454:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,454:INFO:pvals: [0.247]
+2020-01-09 21:11:02,455:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,455:INFO:pvals: [0.009]
+2020-01-09 21:11:02,456:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-01-09 21:11:02,457:INFO:pvals: [0.298]
+2020-01-09 21:11:02,457:INFO:Saving to mgc_gcca_pvals_ratio-ZG-3_10000.csv
+2020-05-17 21:13:06,549:INFO:NEW RUN: MGC 2sample SHORTENED, 10000 permutations, fast=False
+2020-05-17 21:15:12,756:INFO:Component(s) [0] done in 126.20632529258728
+2020-05-17 21:17:20,273:INFO:Component(s) [1] done in 127.51651453971863
+2020-05-17 21:19:30,025:INFO:Component(s) [2] done in 129.75133395195007
+2020-05-17 21:24:47,568:INFO:Component(s) [0, 1] done in 317.5433580875397
+2020-05-17 21:38:27,252:INFO:Component(s) [1, 2] done in 819.6832337379456
+2020-05-17 21:42:22,242:INFO:Component(s) [2, 0] done in 234.9898419380188
+2020-05-17 21:49:05,166:INFO:Component(s) [0, 1, 2] done in 402.92391753196716
+2020-05-17 21:49:05,171:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,171:INFO:pvals: [0.405]
+2020-05-17 21:49:05,173:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,173:INFO:pvals: [0.236]
+2020-05-17 21:49:05,174:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,174:INFO:pvals: [0.176]
+2020-05-17 21:49:05,175:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,175:INFO:pvals: [0.252]
+2020-05-17 21:49:05,176:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,176:INFO:pvals: [0.02]
+2020-05-17 21:49:05,177:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,177:INFO:pvals: [0.123]
+2020-05-17 21:49:05,178:INFO:Names: ['Experts Resting vs. Novices Meditating']
+2020-05-17 21:49:05,178:INFO:pvals: [0.187]
+2020-05-17 21:49:05,179:INFO:Saving to mgc_gcca_pvals_ratio-ZG-3_10000.csv
+2020-05-17 22:05:03,398:INFO:NEW RUN: MGC 2sample, 100000 permutations, fast=True
+2020-05-17 22:05:08,935:INFO:Component(s) [0] done in 5.536356449127197
+2020-05-17 22:05:14,399:INFO:Component(s) [1] done in 5.463673830032349
+2020-05-17 22:05:19,787:INFO:Component(s) [2] done in 5.38861346244812
+2020-05-17 22:05:28,215:INFO:Component(s) [0, 1] done in 8.427451133728027
+2020-05-17 22:05:36,676:INFO:Component(s) [1, 2] done in 8.460717916488647
+2020-05-17 22:05:45,126:INFO:Component(s) [2, 0] done in 8.44956374168396
+2020-05-17 22:05:56,734:INFO:Component(s) [0, 1, 2] done in 11.608294486999512
+2020-05-17 22:05:56,742:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,743:INFO:pvals: [7.72152311e-01 9.21008089e-01 9.98340987e-01 4.20508572e-01
+ 8.46241051e-01 6.93284629e-01 7.63703683e-01 9.10047074e-01
+ 8.30149228e-01 9.97868419e-01 9.85128881e-01 1.00000000e+00
+ 7.01503096e-01 1.38049554e-04 9.84778428e-01 0.00000000e+00
+ 3.26101959e-04 8.25397693e-01 9.99410024e-01 5.54209850e-02
+ 1.88069036e-02 2.39406273e-11 4.43806080e-01]
+2020-05-17 22:05:56,745:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,746:INFO:pvals: [9.02144418e-01 6.97320158e-01 1.00000000e+00 9.99999636e-01
+ 9.96344095e-01 9.72151244e-01 7.03277071e-01 9.99985405e-01
+ 9.98404313e-01 4.09635418e-01 9.57699234e-01 5.42129732e-01
+ 9.49311238e-01 1.91465219e-02 9.32084992e-01 3.32698035e-06
+ 5.99014686e-02 9.04656050e-01 9.93222282e-01 1.27931618e-01
+ 3.91097408e-01 1.08894844e-08 9.99999851e-01]
+2020-05-17 22:05:56,746:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,747:INFO:pvals: [9.65440945e-01 8.91623040e-01 9.99672240e-01 9.09594262e-01
+ 9.99999980e-01 1.00000000e+00 9.99990939e-01 9.93706078e-01
+ 9.66753712e-01 9.91605344e-01 9.16158423e-01 9.96207455e-01
+ 9.98166793e-01 2.93487821e-01 4.61724344e-03 9.74120947e-01
+ 2.04171786e-03 9.87147799e-01 9.99946546e-01 8.66189440e-02
+ 5.51443039e-01 3.93018951e-13 1.74166748e-01]
+2020-05-17 22:05:56,748:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,748:INFO:pvals: [9.60309271e-01 7.48988374e-01 9.98247916e-01 6.52695117e-01
+ 9.97443823e-01 9.82192658e-01 9.87590611e-01 9.88177585e-01
+ 9.91583458e-01 9.99999638e-01 9.10429154e-01 1.00000000e+00
+ 7.66504475e-01 9.99999999e-01 9.97696026e-01 2.23241986e-04
+ 5.58820994e-01 4.60951971e-01 7.06199522e-01 6.89195416e-04
+ 2.16887532e-03 0.00000000e+00 2.76389812e-01]
+2020-05-17 22:05:56,749:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,749:INFO:pvals: [9.99999743e-01 9.21730863e-01 9.67615764e-01 9.99039036e-01
+ 9.92882363e-01 1.00000000e+00 8.74945802e-01 9.78625486e-01
+ 8.79441935e-01 9.97143972e-01 9.95454392e-01 9.60897538e-01
+ 1.11022302e-16 9.30021986e-01 6.54242341e-01 5.09226266e-01
+ 9.47952133e-01 1.16490828e-01 7.13339579e-01 5.66293996e-01
+ 8.06478887e-01 0.00000000e+00 9.98499156e-01]
+2020-05-17 22:05:56,750:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,750:INFO:pvals: [0.99999999 0.99996933 1.         0.9712309  0.98940519 0.99998906
+ 0.9994078  0.99897456 1.         0.91866794 0.94599478 1.
+ 0.65301612 0.30800028 0.97285808 0.60904619 0.99972376 0.96076297
+ 0.6685904  0.12545573 0.99999995 0.         0.4937802 ]
+2020-05-17 22:05:56,751:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating']
+2020-05-17 22:05:56,751:INFO:pvals: [9.88727338e-01 7.58388289e-01 9.99946687e-01 9.99285827e-01
+ 9.85127667e-01 9.99999999e-01 9.34472909e-01 9.92061115e-01
+ 8.75426813e-01 9.99999725e-01 9.44928874e-01 9.99999999e-01
+ 9.89589922e-01 8.42457689e-02 9.99543362e-01 8.05068469e-01
+ 2.36159536e-05 9.77483746e-01 5.86774726e-01 3.81187928e-03
+ 1.28941193e-01 0.00000000e+00 9.67131318e-01]
+2020-05-17 22:05:56,752:INFO:Saving to ../data/mgc_gcca_pvals_100000_max_rank-ZG2.csv
+2020-05-17 22:14:15,976:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=True
+2020-05-17 22:14:21,702:INFO:Component(s) [0] done in 5.726330995559692
+2020-05-17 22:14:27,312:INFO:Component(s) [1] done in 5.608891725540161
+2020-05-17 22:14:32,896:INFO:Component(s) [2] done in 5.584072113037109
+2020-05-17 22:14:41,636:INFO:Component(s) [0, 1] done in 8.739710092544556
+2020-05-17 22:14:50,420:INFO:Component(s) [1, 2] done in 8.784555912017822
+2020-05-17 22:14:59,060:INFO:Component(s) [2, 0] done in 8.63943338394165
+2020-05-17 22:15:10,935:INFO:Component(s) [0, 1, 2] done in 11.874776363372803
+2020-05-17 22:15:10,939:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,940:INFO:pvals: [8.32752630e-01 7.70036713e-01 8.23544301e-01 4.38839100e-01
+ 8.98436103e-01 7.50502951e-01 9.99997839e-01 8.64971769e-01
+ 9.99999122e-01 1.00000000e+00 9.79605204e-01 2.11016816e-01
+ 9.81875501e-01 1.20758666e-01 2.66560515e-01 9.71468964e-01
+ 1.97456608e-02 6.43060530e-01 7.34111694e-01 5.52354652e-02
+ 4.95946224e-06 6.99855943e-02 4.57772264e-01 3.81284083e-01]
+2020-05-17 22:15:10,942:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,942:INFO:pvals: [9.33823470e-01 9.99829940e-01 9.72029219e-01 9.99815467e-01
+ 9.07862144e-01 9.91661426e-01 7.00756591e-01 9.39915800e-01
+ 8.08852179e-01 4.36289313e-01 1.00000000e+00 5.37110258e-01
+ 4.19637703e-01 3.45174259e-02 9.98584953e-01 2.66432657e-07
+ 8.68025915e-03 1.72047710e-01 5.72563228e-01 1.41520092e-01
+ 5.14467541e-03 3.33066907e-15 3.51070557e-01 4.99397158e-08]
+2020-05-17 22:15:10,943:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,943:INFO:pvals: [9.99999601e-01 9.99998849e-01 9.89198202e-01 9.34265412e-01
+ 9.97414154e-01 9.99999868e-01 9.36384434e-01 9.44436532e-01
+ 9.46461658e-01 9.96239985e-01 8.64225453e-01 9.97034725e-01
+ 6.46678844e-01 9.99615951e-01 2.24232715e-01 6.33967520e-01
+ 3.34242482e-02 9.97611980e-01 4.79711959e-01 2.46757061e-01
+ 8.59491830e-01 0.00000000e+00 2.02234480e-01 3.69929119e-05]
+2020-05-17 22:15:10,944:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,944:INFO:pvals: [8.47339551e-01 7.97509970e-01 9.99995771e-01 9.99993121e-01
+ 9.71189563e-01 9.94274986e-01 9.99994391e-01 9.99093944e-01
+ 8.12439455e-01 5.31453562e-01 9.59229596e-01 7.61352391e-01
+ 9.99995442e-01 2.62534501e-03 6.03174547e-01 2.23010566e-08
+ 1.70120759e-02 6.68345703e-01 9.99827528e-01 9.69728191e-01
+ 7.34590793e-01 0.00000000e+00 2.78068542e-01 1.05542251e-06]
+2020-05-17 22:15:10,945:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,945:INFO:pvals: [9.99992572e-01 7.31416230e-01 9.99994493e-01 1.00000000e+00
+ 9.61062826e-01 9.97198246e-01 9.99558697e-01 1.00000000e+00
+ 9.99695771e-01 9.57036671e-01 9.99826889e-01 9.99993566e-01
+ 0.00000000e+00 3.84319000e-01 9.99886344e-01 5.07830869e-01
+ 5.23454855e-01 6.86888681e-02 2.06016064e-01 8.81899656e-01
+ 9.99999929e-01 2.25927996e-04 8.36421928e-03 6.25024140e-01]
+2020-05-17 22:15:10,946:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,946:INFO:pvals: [9.91731951e-01 9.99876793e-01 9.99301853e-01 9.52941748e-01
+ 9.99648119e-01 9.93867682e-01 8.14338365e-01 9.96970992e-01
+ 9.94265474e-01 9.99946876e-01 9.99991251e-01 1.00000000e+00
+ 1.27496083e-01 3.12306839e-01 5.95350610e-02 8.20027216e-01
+ 5.20618949e-01 3.44313915e-01 3.97570029e-01 9.95742501e-01
+ 8.49280158e-01 0.00000000e+00 1.00000000e+00 5.30282746e-07]
+2020-05-17 22:15:10,947:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:15:10,948:INFO:pvals: [9.89779100e-01 8.88699094e-01 9.94342172e-01 8.49923936e-01
+ 9.99999919e-01 9.81468374e-01 7.33675674e-01 9.99995209e-01
+ 1.00000000e+00 9.99496032e-01 9.99934737e-01 9.99999778e-01
+ 9.98140181e-01 4.64661277e-02 8.37493056e-01 1.71267667e-10
+ 9.88144464e-01 9.99995662e-01 9.89848967e-01 6.19826573e-01
+ 7.42209945e-01 0.00000000e+00 9.97690462e-01 1.92535856e-04]
+2020-05-17 22:15:10,948:INFO:Saving to ../data/mgc_gcca_pvals_10000_max_rank-ZG2.csv
+2020-05-17 22:19:46,360:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=True
+2020-05-17 22:21:25,848:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=True
+2020-05-17 22:21:32,267:INFO:Component(s) [0] done in 6.4195921421051025
+2020-05-17 22:21:37,889:INFO:Component(s) [1] done in 5.621016502380371
+2020-05-17 22:21:43,504:INFO:Component(s) [2] done in 5.614982604980469
+2020-05-17 22:21:52,062:INFO:Component(s) [0, 1] done in 8.558573961257935
+2020-05-17 22:22:00,351:INFO:Component(s) [1, 2] done in 8.288076162338257
+2020-05-17 22:22:08,713:INFO:Component(s) [2, 0] done in 8.362465381622314
+2020-05-17 22:22:20,281:INFO:Component(s) [0, 1, 2] done in 11.567870616912842
+2020-05-17 22:22:20,285:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,286:INFO:pvals: [9.99999617e-01 5.72788530e-01 6.52345750e-01 9.95211354e-01
+ 9.99999948e-01 2.06443163e-01 9.99676319e-01 9.97458269e-01
+ 8.37135857e-01 3.29860709e-02 8.46355446e-01 3.31025124e-01
+ 7.54346680e-01 4.12905107e-07 1.01323923e-01 8.62853441e-01
+ 9.71774017e-06 2.47760839e-07 9.89312130e-01 9.91049773e-01
+ 2.00445616e-06 1.94664172e-06 3.60653186e-01 1.40564958e-01]
+2020-05-17 22:22:20,287:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,288:INFO:pvals: [9.95693797e-01 7.84997076e-01 9.64214250e-01 8.94697762e-01
+ 9.99774923e-01 9.98002636e-01 8.45365317e-01 9.63885050e-01
+ 9.93486847e-01 2.37529249e-01 7.01855041e-01 1.00000000e+00
+ 3.28617988e-01 9.86095660e-01 1.98186665e-01 7.04707857e-07
+ 1.30264788e-02 3.32867067e-12 6.59749575e-01 1.93126472e-01
+ 2.77047929e-01 0.00000000e+00 1.51609492e-01 4.81037432e-12]
+2020-05-17 22:22:20,288:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,289:INFO:pvals: [9.85824543e-01 9.76649840e-01 9.99109909e-01 9.47080051e-01
+ 9.99997751e-01 9.99570565e-01 8.79270942e-01 9.87873080e-01
+ 9.53173289e-01 9.87643959e-01 6.39554619e-01 1.00000000e+00
+ 4.28379161e-01 2.46812880e-01 9.79107120e-01 5.77187594e-01
+ 8.21781768e-01 6.61704277e-02 9.94920507e-01 2.81944485e-01
+ 8.69314171e-01 2.27393781e-01 9.99998540e-01 1.19759827e-06]
+2020-05-17 22:22:20,289:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,290:INFO:pvals: [8.80782451e-01 8.45856874e-01 9.86261477e-01 9.75642291e-01
+ 9.22265934e-01 9.97042764e-01 8.68625883e-01 9.24668677e-01
+ 9.99999997e-01 3.76283944e-01 9.96373485e-01 9.74333588e-01
+ 9.98623807e-01 9.17672200e-01 5.85446294e-02 3.40564807e-05
+ 6.06173084e-02 4.82778448e-01 5.28127223e-01 8.73068310e-01
+ 4.38297176e-11 1.99215920e-06 9.99998416e-01 3.23174820e-12]
+2020-05-17 22:22:20,291:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,291:INFO:pvals: [9.99999753e-01 9.43970802e-01 9.87394502e-01 9.99822991e-01
+ 9.99994271e-01 9.99996777e-01 8.72586615e-01 9.99998007e-01
+ 9.99787783e-01 9.99999976e-01 9.91821231e-01 9.99119908e-01
+ 4.69446704e-12 4.17714275e-01 4.23874167e-01 7.18261880e-01
+ 9.32625968e-01 2.99144389e-01 9.92679985e-01 3.40287076e-01
+ 6.66150461e-01 1.09313381e-02 9.99825394e-01 7.09129145e-01]
+2020-05-17 22:22:20,292:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,292:INFO:pvals: [0.99998351 0.99844187 1.         0.99748484 1.         0.99994859
+ 0.95824798 1.         0.99998767 0.93680601 0.98846513 1.
+ 0.15600593 0.99999991 0.09050273 0.99733281 0.27455844 0.00742742
+ 0.44146445 0.14759263 0.99759575 0.         0.99999997 0.02006006]
+2020-05-17 22:22:20,293:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-17 22:22:20,293:INFO:pvals: [9.98690395e-01 9.28307896e-01 1.00000000e+00 9.56793272e-01
+ 9.99959693e-01 9.99999999e-01 8.10069784e-01 9.99790404e-01
+ 9.99660609e-01 5.09170386e-01 6.73880091e-01 9.99999999e-01
+ 7.33592013e-01 2.72307504e-01 3.91154508e-02 7.34517614e-01
+ 6.04000350e-09 1.24569438e-05 8.24538564e-01 3.17358898e-01
+ 1.95505779e-01 0.00000000e+00 1.24742475e-01 1.10430614e-01]
+2020-05-17 22:22:20,294:INFO:Saving to ../data/mgc_gcca_pvals_10000_FAST_min_rank-ZG3.csv
+2020-05-17 22:26:43,303:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2020-05-17 23:14:05,057:INFO:Component(s) [0] done in 2841.7535848617554
+2020-05-17 23:58:33,768:INFO:Component(s) [1] done in 2668.7108442783356
+2020-05-18 00:40:45,247:INFO:Component(s) [2] done in 2531.477652311325
+2020-05-18 01:58:14,741:INFO:Component(s) [0, 1] done in 4649.4944460392
+2020-05-18 03:13:19,910:INFO:Component(s) [1, 2] done in 4505.168630599976
+2020-05-18 04:29:00,672:INFO:Component(s) [2, 0] done in 4540.761669158936
+2020-05-18 06:27:39,303:INFO:Component(s) [0, 1, 2] done in 7118.6306138038635
+2020-05-18 06:27:39,308:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,309:INFO:pvals: [8.32e-01 6.32e-01 6.86e-01 7.53e-01 9.63e-01 1.65e-01 6.83e-01 5.44e-01
+ 8.67e-01 5.20e-02 2.59e-01 3.65e-01 7.01e-01 5.00e-02 1.65e-01 8.00e-03
+ 1.70e-02 2.20e-02 6.54e-01 1.78e-01 2.20e-02 1.00e-04 3.28e-01 1.00e-04]
+2020-05-18 06:27:39,311:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,311:INFO:pvals: [9.96e-01 8.72e-01 9.70e-01 9.59e-01 9.97e-01 6.57e-01 8.66e-01 9.38e-01
+ 9.95e-01 1.74e-01 6.36e-01 7.60e-01 3.57e-01 1.09e-01 2.62e-01 2.00e-03
+ 1.12e-01 5.00e-02 6.59e-01 1.14e-01 6.60e-02 1.00e-04 1.60e-01 1.00e-04]
+2020-05-18 06:27:39,312:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,312:INFO:pvals: [9.69e-01 9.75e-01 1.00e+00 9.06e-01 9.42e-01 1.00e+00 7.14e-01 1.00e+00
+ 9.90e-01 9.71e-01 6.52e-01 9.98e-01 3.33e-01 3.37e-01 7.90e-02 5.52e-01
+ 1.17e-01 2.14e-01 2.60e-01 1.95e-01 8.54e-01 1.00e-04 9.60e-02 1.00e-02]
+2020-05-18 06:27:39,313:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,313:INFO:pvals: [9.50e-01 8.66e-01 9.76e-01 8.83e-01 9.75e-01 7.87e-01 7.34e-01 9.57e-01
+ 9.73e-01 2.64e-01 3.52e-01 8.14e-01 5.59e-01 1.25e-01 9.20e-02 4.00e-02
+ 4.90e-02 7.30e-02 4.71e-01 1.42e-01 3.30e-02 1.00e-04 1.78e-01 1.00e-04]
+2020-05-18 06:27:39,314:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,314:INFO:pvals: [1.00e+00 9.66e-01 1.00e+00 9.97e-01 1.00e+00 1.00e+00 9.32e-01 1.00e+00
+ 1.00e+00 8.69e-01 9.83e-01 9.95e-01 5.40e-02 3.92e-01 4.05e-01 1.80e-01
+ 7.82e-01 6.60e-02 5.86e-01 1.15e-01 6.72e-01 1.00e-04 1.30e-02 1.80e-02]
+2020-05-18 06:27:39,315:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,315:INFO:pvals: [1.00e+00 9.80e-01 1.00e+00 9.80e-01 9.96e-01 1.00e+00 8.49e-01 1.00e+00
+ 1.00e+00 9.67e-01 9.11e-01 1.00e+00 1.51e-01 3.17e-01 1.27e-01 2.62e-01
+ 2.84e-01 7.70e-02 3.77e-01 1.17e-01 8.16e-01 1.00e-04 8.00e-02 3.50e-02]
+2020-05-18 06:27:39,316:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 06:27:39,316:INFO:pvals: [9.96e-01 9.42e-01 9.98e-01 9.58e-01 9.95e-01 9.48e-01 8.31e-01 9.97e-01
+ 9.99e-01 4.57e-01 6.55e-01 9.41e-01 2.92e-01 1.39e-01 1.30e-01 1.00e-02
+ 7.70e-02 6.50e-02 5.11e-01 1.28e-01 2.75e-01 1.00e-04 1.29e-01 1.00e-04]
+2020-05-18 06:27:39,317:INFO:Saving to ../data/mgc_gcca_pvals_10000_min_rank-ZG3.csv
+2020-05-18 10:08:03,737:INFO:NEW RUN: MGC 2sample, 10000 permutations, fast=False
+2020-05-18 10:50:53,364:INFO:Component(s) [0] done in 2569.626638650894
+2020-05-18 11:35:08,569:INFO:Component(s) [1] done in 2655.2044014930725
+2020-05-18 12:18:42,846:INFO:Component(s) [2] done in 2614.2774584293365
+2020-05-18 13:39:27,354:INFO:Component(s) [0, 1] done in 4844.507702589035
+2020-05-18 14:56:22,164:INFO:Component(s) [1, 2] done in 4614.809377670288
+2020-05-18 16:50:28,388:INFO:Component(s) [2, 0] done in 6846.223837375641
+2020-05-18 19:47:58,809:INFO:Component(s) [0, 1, 2] done in 10650.419134616852
+2020-05-18 19:47:58,825:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,825:INFO:pvals: [6.90e-01 4.92e-01 9.83e-01 4.12e-01 9.12e-01 6.59e-01 5.64e-01 8.86e-01
+ 6.98e-01 1.25e-01 8.38e-01 2.51e-01 6.98e-01 3.10e-02 2.35e-01 1.20e-02
+ 3.20e-02 1.78e-01 6.39e-01 8.50e-02 5.90e-02 1.00e-04 4.15e-01 1.00e-04]
+2020-05-18 19:47:58,829:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,830:INFO:pvals: [9.43e-01 6.57e-01 1.00e+00 6.51e-01 9.64e-01 9.15e-01 8.49e-01 9.53e-01
+ 8.78e-01 3.52e-01 9.55e-01 4.70e-01 3.50e-01 2.80e-02 3.08e-01 9.00e-03
+ 5.20e-02 1.08e-01 5.40e-01 5.70e-02 1.42e-01 1.00e-04 2.41e-01 1.00e-04]
+2020-05-18 19:47:58,832:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,832:INFO:pvals: [9.80e-01 9.93e-01 1.00e+00 9.56e-01 9.75e-01 1.00e+00 9.15e-01 1.00e+00
+ 9.99e-01 9.97e-01 9.16e-01 9.99e-01 6.12e-01 2.24e-01 1.02e-01 6.09e-01
+ 2.60e-02 4.90e-01 4.02e-01 1.36e-01 4.85e-01 1.00e-04 1.47e-01 1.00e-04]
+2020-05-18 19:47:58,833:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,833:INFO:pvals: [9.17e-01 8.08e-01 1.00e+00 6.34e-01 9.81e-01 9.85e-01 8.13e-01 9.96e-01
+ 9.49e-01 4.84e-01 9.50e-01 7.21e-01 7.41e-01 3.90e-02 1.31e-01 1.70e-02
+ 2.10e-02 2.19e-01 6.67e-01 7.70e-02 9.40e-02 1.00e-04 2.96e-01 1.00e-04]
+2020-05-18 19:47:58,834:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,834:INFO:pvals: [9.99e-01 9.23e-01 1.00e+00 9.49e-01 9.73e-01 9.94e-01 9.71e-01 9.90e-01
+ 9.68e-01 9.92e-01 9.74e-01 9.74e-01 1.20e-02 3.23e-01 6.09e-01 4.52e-01
+ 4.54e-01 1.62e-01 3.08e-01 2.74e-01 6.98e-01 1.00e-04 2.80e-02 9.60e-02]
+2020-05-18 19:47:58,835:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,835:INFO:pvals: [9.94e-01 9.87e-01 1.00e+00 9.71e-01 9.90e-01 1.00e+00 9.77e-01 1.00e+00
+ 9.98e-01 1.00e+00 9.74e-01 1.00e+00 2.34e-01 2.41e-01 2.20e-01 5.44e-01
+ 8.80e-02 2.99e-01 3.61e-01 1.38e-01 6.39e-01 1.00e-04 1.04e-01 2.00e-03]
+2020-05-18 19:47:58,836:INFO:Names: ['Experts Resting vs. Experts Open Monitoring', 'Experts Resting vs. Experts Compassion', 'Experts Open Monitoring vs. Experts Compassion', 'Experts Meditating vs. Experts Resting', 'Novices Resting vs. Novices Open Monitoring', 'Novices Resting vs. Novices Compassion', 'Novices Open Monitoring vs. Novices Compassion', 'Novices Meditating vs. Novices Resting', 'All Resting vs. All Open Monitoring', 'All Resting vs. All Compassion', 'All Open Monitoring vs. All Compassion', 'All Meditating vs. All Resting', 'Experts Resting vs. Novices Open Monitoring', 'Experts Open Monitoring vs. Novices Resting', 'Experts Resting vs. Novices Compassion', 'Experts Compassion vs. Novices Resting', 'Experts Open Monitoring vs. Novices Compassion', 'Experts Compassion vs. Novices Open Monitoring', 'Experts Resting vs. Novices Resting', 'Experts Open Monitoring vs. Novices Open Monitoring', 'Experts Compassion vs. Novices Compassion', 'Experts All vs. Novices All', 'Experts Resting vs. Novices Meditating', 'Experts Meditating vs. Novices Resting']
+2020-05-18 19:47:58,836:INFO:pvals: [9.85e-01 8.78e-01 1.00e+00 7.85e-01 9.89e-01 9.92e-01 9.07e-01 9.98e-01
+ 9.76e-01 7.35e-01 9.60e-01 8.25e-01 4.17e-01 3.70e-02 1.86e-01 1.60e-02
+ 4.40e-02 1.75e-01 5.39e-01 6.20e-02 1.74e-01 1.00e-04 1.94e-01 1.00e-04]
+2020-05-18 19:47:58,837:INFO:Saving to ../data/mgc_gcca_pvals_10000_max_rank-ZG2.csv

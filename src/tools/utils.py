@@ -1,8 +1,9 @@
 #-*- coding: utf-8 -*-
 
-__author__ = 'Ronan Perry'
-
 import numpy as np
+import os
+import re
+import h5py
 
 def decimate_ptr(X, nbins=1000):
     '''
@@ -26,3 +27,45 @@ def decimate_ptr(X, nbins=1000):
     X = np.digitize(X, bins)
     
     return(X.reshape(size))
+
+def get_files(path,
+              level='(e|n)',
+              subject='([0-9]{3})',
+              task='(.+?)',
+              filetype='csv',
+              flag=''):
+    files = []
+    query = f'^{level}_sub-'
+    query += f'{subject}_ses-1_'
+    query += f'task-{task}{flag}\.{filetype}'
+    for f in os.listdir(path):
+        match = re.search(query, f)
+        if match:
+            files.append((f, match.groups()))
+    
+    return(files)
+
+def get_latents(data_dir, n_components=-1, flag='_gcca'):
+    tasks = ['restingstate', 'openmonitoring', 'compassion']
+    levels = ['e', 'n']
+    h5_key = 'latent'
+
+    latents = []
+    labels = []
+
+    for level in levels:
+        for task in tasks:
+            subgroup = []
+            labels.append([level, task])
+            paths = get_files(path=data_dir, level=level, task=task, flag=flag, filetype='h5')
+            n_load = len(paths)
+
+            for path,subj in paths[:n_load]:
+                h5f = h5py.File(data_dir / path,'r')
+                latent = h5f[h5_key][:][:,:n_components]
+                h5f.close()
+            
+                subgroup.append(latent)
+            latents.append(subgroup)
+    
+    return(latents, labels)
