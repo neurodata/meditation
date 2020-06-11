@@ -8,14 +8,16 @@ import logging
 
 from tqdm import tqdm
 import time
-from mgcpy.independence_tests.mgc import MGC
+#from mgcpy.independence_tests.mgc import MGC
+from hyppo.independence import Dcorr
+from scipy.stats import multiscale_graphcorr
 from itertools import combinations
 
 ## Define paths
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
-tag = '_max_rank-ZG2'
-gccadir = datadir / f'gcca_05-17-18:27{tag}'
+tag = '_min_rank-ZG3'
+gccadir = datadir / f'gcca_05-26-10:39{tag}'
 decimate_dir = datadir / 'decimate'
 logpath = Path('../logs')
 
@@ -27,6 +29,10 @@ levels = ['e', 'n']
 ## Params
 n_permutations = 10000
 fast = False
+
+## Test
+TEST = 'DCORR'
+
 
 ## Get files
 def get_files(path,
@@ -94,8 +100,21 @@ def discrim_test(trait1,state1,trait2,state2,components):
     
     u,v = transform_matrices(latents1,latents2)
     
-    mgc = MGC()
-    pval, _ = mgc.p_value(u,v, is_fast=fast, replication_factor=n_permutations)
+    if TEST == 'MGC':
+        # mgc = MGC()
+        # pval, _ = mgc.p_value(u,v, is_fast=fast, replication_factor=n_permutations)
+        _, pval, _ = multiscale_graphcorr(
+             u,v,
+             workers=-1,
+             reps=n_permutations,
+             random_state=0
+        )
+    elif TEST == 'DCORR':
+        _, pval = Dcorr().test(
+            u, v,
+            reps=n_permutations,
+            workers=-1,
+            auto=fast)
     
     name = f'{lookup[trait1]} {lookup[state1]} vs. {lookup[trait2]} {lookup[state2]}'
     
@@ -159,7 +178,7 @@ def main():
                         format='%(asctime)s:%(levelname)s:%(message)s',
                         level=logging.DEBUG
                         )
-    logging.info(f'NEW RUN: MGC 2sample, {n_permutations} permutations, fast={fast}')
+    logging.info(f'NEW RUN: {TEST} 2sample, {n_permutations} permutations, fast={fast}')
 
     data_dict = {}
     components = [[0], [1], [2],
@@ -182,9 +201,9 @@ def main():
         df[f'components={key}'] = [f'{x:.2g}' for x in pvals]
 
     if fast:
-        save_path =  f'../data/mgc_gcca_pvals_{n_permutations}_FAST{tag}.csv'
+        save_path =  f'../data/{TEST}_gcca_pvals_{n_permutations}_FAST{tag}.csv'
     else:
-        save_path =  f'../data/mgc_gcca_pvals_{n_permutations}{tag}.csv'
+        save_path =  f'../data/{TEST}_gcca_pvals_{n_permutations}{tag}.csv'
     logging.info(f'Saving to {save_path}')
     df.to_csv(save_path, index=False)
 
