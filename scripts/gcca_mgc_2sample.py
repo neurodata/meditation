@@ -16,8 +16,8 @@ from itertools import combinations
 ## Define paths
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
-tag = '_min_rank-ZG3'
-gccadir = datadir / f'gcca_05-26-10:39{tag}'
+tag = '_max_rank-ZG2' #'_min_rank-ZG3'
+gccadir = datadir / f'gcca_05-17-18:27{tag}' # f'gcca_05-26-10:39{tag}'
 decimate_dir = datadir / 'decimate'
 logpath = Path('../logs')
 
