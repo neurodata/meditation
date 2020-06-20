@@ -1,0 +1,25 @@
+Comparison,Gradients 0,Gradients 1,Gradients 2,"Gradients (0, 1)","Gradients (1, 2)","Gradients (2, 0)","Gradients (0, 1, 2)"
+Experts Resting vs. Experts Compassion,0.9718,0.9753,0.6271,0.9835,0.8802,0.8664,0.9378
+Experts Resting vs. Experts Open Monitoring,1.0,0.9714,0.8309,0.9994,0.9488,0.9925,0.9953
+Experts Open Monitoring vs. Experts Compassion,1.0,1.0,0.684,1.0,0.9833,0.9753,0.9985
+Experts Resting vs. Experts Meditating,0.9956,0.9048,0.755,0.9836,0.8621,0.9501,0.9541
+Novices Resting vs. Novices Compassion,0.9974,1.0,0.1835,1.0,0.8338,0.6709,0.9568
+Novices Resting vs. Novices Open Monitoring,1.0,0.9345,0.9515,0.9971,0.977,0.9972,0.9965
+Novices Open Monitoring vs. Novices Compassion,0.9315,0.7095,0.7162,0.8612,0.756,0.8784,0.8554
+Novices Resting vs. Novices Meditating,1.0,0.9998,0.5537,1.0,0.9568,0.9426,0.9947
+Experts Resting vs. Novices Resting,0.5934,0.2822,0.6502,0.381,0.5076,0.6723,0.5314
+Experts Compassion vs. Novices Compassion,0.68,0.8609,0.0234,0.8296,0.0302,0.0603,0.2851
+Experts Open Monitoring vs. Novices Open Monitoring,0.1238,0.2006,0.1808,0.1205,0.1593,0.1012,0.1182
+Experts Meditating vs. Novices Meditating,0.0002,0.0001,0.0001,0.0001,0.0001,0.0001,0.0001
+Experts All vs. Novices All,0.0001,0.0001,0.0001,0.0001,0.0001,0.0001,0.0001
+Experts Resting vs. Novices Compassion,0.4042,0.0992,0.1804,0.145,0.1122,0.2497,0.1469
+Experts Resting vs. Novices Open Monitoring,0.0378,0.34,0.7023,0.1538,0.5583,0.3365,0.3129
+Experts Compassion vs. Novices Resting,0.1748,0.5434,0.0066,0.2694,0.036,0.0012,0.0075
+Experts Compassion vs. Novices Open Monitoring,0.0627,0.2142,0.0201,0.0786,0.0668,0.0556,0.0652
+Experts Open Monitoring vs. Novices Resting,0.3872,0.3299,0.0534,0.3106,0.1132,0.1065,0.1296
+Experts Open Monitoring vs. Novices Compassion,0.7914,0.1176,0.0198,0.2968,0.0622,0.1251,0.0826
+Experts Resting vs. Novices Meditating,0.0102,0.1094,0.3195,0.0805,0.1734,0.1749,0.1138
+Experts Meditating vs. Novices Resting,0.0144,0.005,0.0001,0.0361,0.0001,0.0003,0.0001
+Resting vs. Compassion,0.8664,0.9754,0.0539,0.9735,0.2956,0.1933,0.482
+Resting vs. Open Monitoring,1.0,0.9903,0.8462,0.9997,0.9758,0.9914,0.9982
+Compassion vs. Open Monitoring,0.983,0.6635,0.2509,0.9049,0.3589,0.6356,0.6387

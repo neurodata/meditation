@@ -13,11 +13,15 @@ from hyppo.independence import Dcorr
 from scipy.stats import multiscale_graphcorr
 from itertools import combinations
 
+import sys
+sys.path.append("../")
+from src.tools.utils import get_files, get_latents
+
 ## Define paths
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
-tag = '_max_rank-ZG2' #'_min_rank-ZG3'
-gccadir = datadir / f'gcca_05-17-18:27{tag}' # f'gcca_05-26-10:39{tag}'
+tag = '_min_rank-ZG3'#'_max_rank-ZG2' 
+gccadir = datadir / f'gcca_05-26-10:39{tag}'#f'gcca_05-17-18:27{tag}' # 
 decimate_dir = datadir / 'decimate'
 logpath = Path('../logs')
 
