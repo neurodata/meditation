@@ -23,3 +23,4 @@ Experts Meditating vs. Novices Resting,0.0144,0.005,0.0001,0.0361,0.0001,0.0003,
 Resting vs. Compassion,0.8664,0.9754,0.0539,0.9735,0.2956,0.1933,0.482
 Resting vs. Open Monitoring,1.0,0.9903,0.8462,0.9997,0.9758,0.9914,0.9982
 Compassion vs. Open Monitoring,0.983,0.6635,0.2509,0.9049,0.3589,0.6356,0.6387
+Resting vs. Meditating,0.9878,0.9983,0.3429,0.9989,0.8363,0.736,0.9448

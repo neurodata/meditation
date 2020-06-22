@@ -56,6 +56,7 @@ lookup = {'Experts All':[0,1,2],
           'Resting':[0,3],
           'Compassion':[2,5],
           'Open Monitoring':[1,4],
+          'Meditating':[1,2,4,5]
 }
 
 ## Intra (within) Trait, Inter (between) State
@@ -92,7 +93,8 @@ test_list += [
 test_list += [
     ('Resting', 'Compassion'),
     ('Resting', 'Open Monitoring'),
-    ('Compassion', 'Open Monitoring')
+    ('Compassion', 'Open Monitoring'),
+    ('Resting', 'Meditating')
 ]
 ## Gradients
 gradients = [
@@ -120,7 +122,7 @@ def discrim_test(X, Y):
         }
     elif TEST == 'DCORR':
         stat, pval = Dcorr().test(
-            X_dists, Y_dists,
+            X, Y,
             reps=n_permutations,
             workers=-1,
             auto=fast)
@@ -160,7 +162,7 @@ def main():
     logging.info(f'NEW RUN: {TEST} 2sample, {n_permutations} permutations, fast={fast}')
 
     data_dict = {}
-    for (g1,g2) in test_list:
+    for (g1,g2) in [test_list[-1]]:
         t0 = time.time()
         name, stat_dict = gcca_pvals(g1,g2)
         data_dict[name] = stat_dict
@@ -174,8 +176,8 @@ def main():
     save_dir = Path('../data/2sample_tests/')
     logging.info(f'Saving to {save_dir}')
 
-    df.to_csv(save_dir / f'{TEST}_pvalues_{n_permutations}{tag}.csv', index=False)
-    with open(save_dir / f"{TEST}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
+    df.to_csv(save_dir / f'{TEST}_pvalues_{n_permutations}{tag}_v2.csv', index=False)
+    with open(save_dir / f"{TEST}_results_dict_{n_permutations}{tag}_v2.pkl", "wb") as f:
         pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
