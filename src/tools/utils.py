@@ -45,13 +45,14 @@ def get_files(path,
     
     return(files)
 
-def get_latents(data_dir, n_components=-1, flag='_gcca'):
+def get_latents(data_dir, n_components=-1, flag='_gcca',ids=False):
     tasks = ['restingstate', 'openmonitoring', 'compassion']
     levels = ['e', 'n']
     h5_key = 'latent'
 
     latents = []
     labels = []
+    subj_ids = []
 
     for level in levels:
         for task in tasks:
@@ -59,6 +60,7 @@ def get_latents(data_dir, n_components=-1, flag='_gcca'):
             labels.append([level, task])
             paths = get_files(path=data_dir, level=level, task=task, flag=flag, filetype='h5')
             n_load = len(paths)
+            subjs = []
 
             for path,subj in paths[:n_load]:
                 h5f = h5py.File(data_dir / path,'r')
@@ -66,6 +68,10 @@ def get_latents(data_dir, n_components=-1, flag='_gcca'):
                 h5f.close()
             
                 subgroup.append(latent)
+                subjs.append(subj[0])
             latents.append(subgroup)
-    
-    return(latents, labels)
+            subj_ids.append(subjs)
+    if ids:
+        return latents, labels, subj_ids
+    else:
+        return(latents, labels)

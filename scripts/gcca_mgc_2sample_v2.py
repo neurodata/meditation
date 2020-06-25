@@ -12,7 +12,9 @@ import time
 from hyppo.independence import Dcorr
 from hyppo.ksample._utils import k_sample_transform
 from scipy.stats import multiscale_graphcorr
+from sklearn.metrics import pairwise_distances
 from itertools import combinations
+from collections import defaultdict
 
 import sys
 sys.path.append("../")
@@ -28,7 +30,7 @@ gccadir = datadir / f'gcca_05-26-10:39{tag}'#f'gcca_05-17-18:27{tag}' #
 decimate_dir = datadir / 'decimate'
 logpath = Path('../logs')
 
-groups, labels = get_latents(gccadir, flag="_gcca")
+groups, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
 
 ## Params
 n_permutations = 10000
@@ -105,15 +107,27 @@ gradients = [
 
 ################ FUNCTIONS ###################
 
-def discrim_test(X, Y):
+def discrim_test(X, Y, compute_distance=True, y_groups=None):
     if TEST == 'MGC':
-        stat, pvalue, mgc_dict = multiscale_graphcorr(
-            X,
-            Y,
-            workers=-1,
-            reps=n_permutations,
-            random_state=0,
-        )
+        if compute_distance:
+            stat, pvalue, mgc_dict = multiscale_graphcorr(
+                X,
+                Y,
+                workers=-1,
+                reps=n_permutations,
+                random_state=0,
+                y_groups=y_groups,
+            )
+        else:
+            stat, pvalue, mgc_dict = multiscale_graphcorr(
+                X,
+                Y,
+                workers=-1,
+                reps=n_permutations,
+                random_state=0,
+                compute_distance=None,
+                y_groups=y_groups,
+            )
         stat_dict = {
             "pvalue": pvalue,
             "test_stat": stat,
@@ -140,14 +154,26 @@ def gcca_pvals(g1, g2):
     g1_labels = lookup[g1]
     g2_labels = lookup[g2]
 
-    X, Y = k_sample_transform(
-        [np.vstack([np.asarray(groups[i]) for i in g1_labels])]
-        + [np.vstack([np.asarray(groups[i]) for i in g2_labels])]
+    subj_list = np.concatenate(
+        [np.asarray(subjs[i]) for i in g1_labels]
+        + [np.asarray(subjs[i]) for i in g2_labels],
     )
 
     for grads in gradients:
+
+        X, Y = k_sample_transform(
+            [np.vstack([np.asarray(groups[i]) for i in g1_labels])]
+            + [np.vstack([np.asarray(groups[i]) for i in g2_labels])]
+        )
+        X = X[:, :, grads].reshape(X.shape[0], -1)
+
+        X_dists = pairwise_distances(X, metric="euclidean")
+        Y_dists = pairwise_distances(Y, metric="sqeuclidean")
+
+        Y_group_adj = pairwise_distances(subj_list[:, None], metric=lambda x, y: x != y)
+
         stat_dict = discrim_test(
-            X[:, :, grads].reshape(X.shape[0], -1), Y
+            X_dists, Y_dists, compute_distance=False, y_groups=Y_group_adj
         )
         results_dict[grads] = stat_dict
 
@@ -162,7 +188,7 @@ def main():
     logging.info(f'NEW RUN: {TEST} 2sample, {n_permutations} permutations, fast={fast}')
 
     data_dict = {}
-    for (g1,g2) in [test_list[-1]]:
+    for (g1,g2) in test_list:
         t0 = time.time()
         name, stat_dict = gcca_pvals(g1,g2)
         data_dict[name] = stat_dict
@@ -176,8 +202,8 @@ def main():
     save_dir = Path('../data/2sample_tests/')
     logging.info(f'Saving to {save_dir}')
 
-    df.to_csv(save_dir / f'{TEST}_pvalues_{n_permutations}{tag}_v2.csv', index=False)
-    with open(save_dir / f"{TEST}_results_dict_{n_permutations}{tag}_v2.pkl", "wb") as f:
+    df.to_csv(save_dir / f'{TEST}_pvalues_{n_permutations}{tag}.csv', index=False)
+    with open(save_dir / f"{TEST}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
         pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
