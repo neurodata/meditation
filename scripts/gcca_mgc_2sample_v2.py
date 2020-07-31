@@ -30,14 +30,18 @@ gccadir = datadir / f'gcca_05-26-10:39{tag}'#f'gcca_05-17-18:27{tag}' #
 decimate_dir = datadir / 'decimate'
 logpath = Path('../logs')
 
-groups, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
 
-## Params
-n_permutations = 10000
-fast = False
+# if ONLY_FULL_SUBJECTS:
+#     subj_indices = defaultdict(list)
+#     for i,subj in enumerate(np.hstack(subjs)):
+#         subj_indices[subj].append(i)
+#     max_len = len(max(subj_indices.values(), key=lambda x: len(x)))
+#     valid_subjs = np.unique([
+#         subj for subj,group in subj_indices.items() if len(group) == max_len
+#     ])
 
-## Test
-TEST = 'MGC'
+# else:
+#     valid_subjs = np.unique(np.hstack(subjs))
 
 # [['e', 'restingstate'],
 #  ['e', 'openmonitoring'],
@@ -61,53 +65,63 @@ lookup = {'Experts All':[0,1,2],
           'Meditating':[1,2,4,5]
 }
 
-## Intra (within) Trait, Inter (between) State
+# ## Intra (within) Trait, Inter (between) State
 test_list = [
-    ('Experts Resting', 'Experts Compassion'),
-    ('Experts Resting', 'Experts Open Monitoring'),
-    ('Experts Open Monitoring', 'Experts Compassion'),
-    ('Experts Resting', 'Experts Meditating'),
-    ('Novices Resting', 'Novices Compassion'),
-    ('Novices Resting', 'Novices Open Monitoring'),
-    ('Novices Open Monitoring', 'Novices Compassion'),
-    ('Novices Resting', 'Novices Meditating')
+    # Permutation: restricted, within subject
+    ('Experts Resting', 'Experts Compassion', 'within'),
+    ('Experts Resting', 'Experts Open Monitoring', 'within'),
+    ('Experts Open Monitoring', 'Experts Compassion', 'within'),
+    ('Experts Resting', 'Experts Meditating', 'within'),
+    ('Novices Resting', 'Novices Compassion', 'within'),
+    ('Novices Resting', 'Novices Open Monitoring', 'within'),
+    ('Novices Open Monitoring', 'Novices Compassion', 'within'),
+    ('Novices Resting', 'Novices Meditating', 'within')
 ]
-## Inter (between) Trait, Intra (within) State
+# ## Inter (between) Trait, Intra (within) State
 test_list += [
-    ('Experts Resting', 'Novices Resting'),
-    ('Experts Compassion', 'Novices Compassion'),
-    ('Experts Open Monitoring', 'Novices Open Monitoring'),
-    ('Experts Meditating', 'Novices Meditating'),
-    ('Experts All', 'Novices All'),
+    # Permutation: full
+    ('Experts Resting', 'Novices Resting', 'full'),
+    ('Experts Compassion', 'Novices Compassion', 'full'),
+    ('Experts Open Monitoring', 'Novices Open Monitoring', 'full'),
+    # Permutation: restricted, across subject
+    ('Experts Meditating', 'Novices Meditating', 'across'),
+    ('Experts All', 'Novices All', 'across'),
 ]
 ## Inter (between) Trait, Inter (between) State
 test_list += [
-    ('Experts Resting', 'Novices Compassion'),
-    ('Experts Resting', 'Novices Open Monitoring'),
-    ('Experts Compassion', 'Novices Resting'),
-    ('Experts Compassion', 'Novices Open Monitoring'),
-    ('Experts Open Monitoring', 'Novices Resting'),
-    ('Experts Open Monitoring', 'Novices Compassion'),
-    ('Experts Resting', 'Novices Meditating'),
-    ('Experts Meditating', 'Novices Resting'),
+    # Permutation: free
+    ('Experts Resting', 'Novices Compassion', 'full'),
+    ('Experts Resting', 'Novices Open Monitoring', 'full'),
+    ('Experts Compassion', 'Novices Resting', 'full'),
+    ('Experts Compassion', 'Novices Open Monitoring', 'full'),
+    ('Experts Open Monitoring', 'Novices Resting', 'full'),
+    ('Experts Open Monitoring', 'Novices Compassion', 'full'),
+    # Permutation: restricted, permute state (preserve # labels)
+    # ('Experts Resting', 'Novices Meditating', 'across'),
+    # ('Experts Meditating', 'Novices Resting', 'across'),
 ]
-## Intra State
+# # Intra State (need to figure out these permutations)
 test_list += [
-    ('Resting', 'Compassion'),
-    ('Resting', 'Open Monitoring'),
-    ('Compassion', 'Open Monitoring'),
-    ('Resting', 'Meditating')
+    # Permutation: restricted, permute state
+    ('Resting', 'Compassion', 'within'),
+    ('Resting', 'Open Monitoring', 'within'),
+    ('Compassion', 'Open Monitoring', 'within'),
+    # Permutation: restricted, permute state (preserve # labels)
+    ('Resting', 'Meditating', 'within')
 ]
-## Gradients
-gradients = [
-    (0), (1), (2),
-    (0,1), (1,2), (2,0),
-    (0,1,2)
-]
+
 
 ################ FUNCTIONS ###################
 
-def discrim_test(X, Y, compute_distance=True, y_groups=None):
+def discrim_test(
+    TEST,
+    X, Y,
+    fast,
+    compute_distance=None,
+    n_permutations=10000,
+    permute_groups=None, 
+    permute_structure=None
+):
     if TEST == 'MGC':
         if compute_distance:
             stat, pvalue, mgc_dict = multiscale_graphcorr(
@@ -116,7 +130,9 @@ def discrim_test(X, Y, compute_distance=True, y_groups=None):
                 workers=-1,
                 reps=n_permutations,
                 random_state=0,
-                y_groups=y_groups,
+                permute_groups=permute_groups,
+                permute_structure=permute_structure,
+                global_corr='mgc_restricted',
             )
         else:
             stat, pvalue, mgc_dict = multiscale_graphcorr(
@@ -126,7 +142,9 @@ def discrim_test(X, Y, compute_distance=True, y_groups=None):
                 reps=n_permutations,
                 random_state=0,
                 compute_distance=None,
-                y_groups=y_groups,
+                permute_groups=permute_groups,
+                permute_structure=permute_structure,
+                global_corr='mgc_restricted',
             )
         stat_dict = {
             "pvalue": pvalue,
@@ -135,11 +153,14 @@ def discrim_test(X, Y, compute_distance=True, y_groups=None):
             "opt_scale": mgc_dict["opt_scale"],
         }
     elif TEST == 'DCORR':
-        stat, pval = Dcorr().test(
+        stat, pvalue = Dcorr().test(
             X, Y,
             reps=n_permutations,
             workers=-1,
-            auto=fast)
+            auto=fast,
+            permute_groups=permute_groups,
+            permute_structure=permute_structure,
+        )
         stat_dict = {
             "pvalue": pvalue,
             "test_stat": stat,
@@ -147,7 +168,17 @@ def discrim_test(X, Y, compute_distance=True, y_groups=None):
 
     return stat_dict
 
-def gcca_pvals(g1, g2):
+def gcca_pvals(
+    test,
+    g1, g2,
+    groups,
+    labels,
+    subjs,
+    n_permutations,
+    gradients,
+    fast,
+    permute_structure=None
+):
     name = f'{g1} vs. {g2}'
     results_dict = {}
     
@@ -155,56 +186,123 @@ def gcca_pvals(g1, g2):
     g2_labels = lookup[g2]
 
     subj_list = np.concatenate(
-        [np.asarray(subjs[i]) for i in g1_labels]
-        + [np.asarray(subjs[i]) for i in g2_labels],
+        [np.asarray(subjs[i]) for i in g1_labels] +
+        [np.asarray(subjs[i]) for i in g2_labels]
     )
 
+    print(name)
     for grads in gradients:
-
         X, Y = k_sample_transform(
             [np.vstack([np.asarray(groups[i]) for i in g1_labels])]
             + [np.vstack([np.asarray(groups[i]) for i in g2_labels])]
         )
         X = X[:, :, grads].reshape(X.shape[0], -1)
-
-        X_dists = pairwise_distances(X, metric="euclidean")
-        Y_dists = pairwise_distances(Y, metric="sqeuclidean")
-
-        Y_group_adj = pairwise_distances(subj_list[:, None], metric=lambda x, y: x != y)
+        permute_groups = subj_list
+  
+        #X_dists = pairwise_distances(X, metric="euclidean")
+        #Y_dists = pairwise_distances(Y, metric="sqeuclidean")
 
         stat_dict = discrim_test(
-            X_dists, Y_dists, compute_distance=False, y_groups=Y_group_adj
+            test,
+            X, Y,
+            fast=fast,
+            compute_distance=True,
+            n_permutations=n_permutations,
+            permute_groups=permute_groups,
+            permute_structure=permute_structure,
+
         )
         results_dict[grads] = stat_dict
 
     return(name, results_dict)
 
+def simulate_data(subjs):
+    subj2vec = dict()
+    for subj in np.unique(np.concatenate(subjs)):
+        subj2vec[subj] = np.random.normal(0,1,(18715,1))
+    groups = []
+    for subj_list in subjs:
+        groups.append([np.random.normal(subj2vec[subj],0.1) for subj in subj_list])
+    return groups
+
 def main():
+    # Params
+    n_permutations = 10000
+    fast = False
+
+    ## Test
+    TEST = 'MGC'
+
+    ## Test data
+    SIMULATED_TEST = False
+
     ## Create Log File
     logging.basicConfig(filename=logpath / 'mgc_logging.log',
                         format='%(asctime)s:%(levelname)s:%(message)s',
                         level=logging.DEBUG
                         )
-    logging.info(f'NEW RUN: {TEST} 2sample, {n_permutations} permutations, fast={fast}')
+    logging.info(f'NEW RUN: {TEST} 2sample, {n_permutations} permutations, fast={fast}, simulated={SIMULATED_TEST}')
 
-    data_dict = {}
-    for (g1,g2) in test_list:
-        t0 = time.time()
-        name, stat_dict = gcca_pvals(g1,g2)
-        data_dict[name] = stat_dict
-        logging.info(f'Test {g1} vs. {g2} done in {time.time()-t0}')
+    if SIMULATED_TEST:
+        _, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
+        n_datasets = 100
+        data_dict = defaultdict(list)
+        for _ in range(n_datasets):
+            groups = simulate_data(subjs)
+            for (g1,g2,permute_structure) in test_list:
+                t0 = time.time()
+                name, stat_dict = gcca_pvals(
+                    TEST,
+                    g1,g2,
+                    groups=groups,
+                    labels=labels,
+                    subjs=subjs,
+                    fast=fast,
+                    n_permutations=100,
+                    gradients=[(0)],
+                    permute_structure=permute_structure
+                )
+                data_dict[name].append(stat_dict[(0)]['pvalue'])
 
-    df = pd.DataFrame(columns=['Comparison'] + [f'Gradients {g}' for g in gradients])
-    df['Comparison'] = data_dict.keys()
-    for grads in gradients:
-        df[f'Gradients {grads}'] = [val_dict[grads]['pvalue'] for val_dict in data_dict.values()]
+        save_dir = Path('../data/2sample_tests/simulations/')
+        with open(save_dir / f"{TEST}_multigroup_SIMULATED_datasets={n_datasets}_dict_perm=100{tag}.pkl", "wb") as f:
+            pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
+    else:
+        groups, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
+        ## Gradients
+        gradients = [
+            (0), (1), (2),
+            (0,1), (1,2), (2,0),
+            (0,1,2)
+        ]
+        data_dict = {}
+        for (g1,g2,permute_structure) in test_list:
+            t0 = time.time()
+            name, stat_dict = gcca_pvals(
+                TEST,
+                g1,g2,
+                groups=groups,
+                labels=labels,
+                subjs=subjs,
+                fast=fast,
+                n_permutations=n_permutations,
+                gradients=gradients,
+                permute_structure=permute_structure
+            )
+            data_dict[name] = stat_dict
+            logging.info(f'Test {g1} vs. {g2} done in {time.time()-t0}')
 
-    save_dir = Path('../data/2sample_tests/')
-    logging.info(f'Saving to {save_dir}')
+        df = pd.DataFrame(columns=['Comparison'] + [f'Gradients {g}' for g in gradients])
+        df['Comparison'] = data_dict.keys()
+        for grads in gradients:
+            df[f'Gradients {grads}'] = [val_dict[grads]['pvalue'] for val_dict in data_dict.values()]
 
-    df.to_csv(save_dir / f'{TEST}_pvalues_{n_permutations}{tag}.csv', index=False)
-    with open(save_dir / f"{TEST}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
-        pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
+        save_dir = Path('../data/2sample_tests/')
+        logging.info(f'Saving to {save_dir}')
+
+        df.to_csv(save_dir / f'{TEST}_multigroup_pvalues_{n_permutations}{tag}.csv', index=False)
+        with open(save_dir / f"{TEST}_multigroup_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
+            pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     main()
