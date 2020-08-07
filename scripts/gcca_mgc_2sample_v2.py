@@ -64,47 +64,49 @@ lookup = {'Experts All':[0,1,2],
           'Open Monitoring':[1,4],
           'Meditating':[1,2,4,5]
 }
-
+test_list = []
 # ## Intra (within) Trait, Inter (between) State
-test_list = [
+test_list += [
     # Permutation: restricted, within subject
-    ('Experts Resting', 'Experts Compassion', 'within'),
-    ('Experts Resting', 'Experts Open Monitoring', 'within'),
-    ('Experts Open Monitoring', 'Experts Compassion', 'within'),
-    ('Experts Resting', 'Experts Meditating', 'within'),
-    ('Novices Resting', 'Novices Compassion', 'within'),
-    ('Novices Resting', 'Novices Open Monitoring', 'within'),
+    # ('Experts Resting', 'Experts Compassion', 'within'),
+    # ('Experts Resting', 'Experts Open Monitoring', 'within'),
+    # ('Experts Open Monitoring', 'Experts Compassion', 'within'),
+    # ('Experts Resting', 'Experts Meditating', 'within'),
+    # ('Novices Resting', 'Novices Compassion', 'within'),
+    # ('Novices Resting', 'Novices Open Monitoring', 'within'),
     ('Novices Open Monitoring', 'Novices Compassion', 'within'),
     ('Novices Resting', 'Novices Meditating', 'within')
 ]
 # ## Inter (between) Trait, Intra (within) State
 test_list += [
     # Permutation: full
-    ('Experts Resting', 'Novices Resting', 'full'),
-    ('Experts Compassion', 'Novices Compassion', 'full'),
+    # ('Experts Resting', 'Novices Resting', 'full'),
+    # ('Experts Compassion', 'Novices Compassion', 'full'),
     ('Experts Open Monitoring', 'Novices Open Monitoring', 'full'),
-    # Permutation: restricted, across subject
-    ('Experts Meditating', 'Novices Meditating', 'across'),
+]
+# Permutation: restricted, across subject
+test_list += [
+    # ('Experts Meditating', 'Novices Meditating', 'across'),
     ('Experts All', 'Novices All', 'across'),
 ]
 ## Inter (between) Trait, Inter (between) State
 test_list += [
     # Permutation: free
-    ('Experts Resting', 'Novices Compassion', 'full'),
-    ('Experts Resting', 'Novices Open Monitoring', 'full'),
-    ('Experts Compassion', 'Novices Resting', 'full'),
-    ('Experts Compassion', 'Novices Open Monitoring', 'full'),
-    ('Experts Open Monitoring', 'Novices Resting', 'full'),
+    # ('Experts Resting', 'Novices Compassion', 'full'),
+    # ('Experts Resting', 'Novices Open Monitoring', 'full'),
+    # ('Experts Compassion', 'Novices Resting', 'full'),
+    # ('Experts Compassion', 'Novices Open Monitoring', 'full'),
+    # ('Experts Open Monitoring', 'Novices Resting', 'full'),
     ('Experts Open Monitoring', 'Novices Compassion', 'full'),
     # Permutation: restricted, permute state (preserve # labels)
-    # ('Experts Resting', 'Novices Meditating', 'across'),
-    # ('Experts Meditating', 'Novices Resting', 'across'),
+    # # ('Experts Resting', 'Novices Meditating', 'across'),
+    # # ('Experts Meditating', 'Novices Resting', 'across'),
 ]
 # # Intra State (need to figure out these permutations)
 test_list += [
     # Permutation: restricted, permute state
-    ('Resting', 'Compassion', 'within'),
-    ('Resting', 'Open Monitoring', 'within'),
+    # ('Resting', 'Compassion', 'within'),
+    # ('Resting', 'Open Monitoring', 'within'),
     ('Compassion', 'Open Monitoring', 'within'),
     # Permutation: restricted, permute state (preserve # labels)
     ('Resting', 'Meditating', 'within')
@@ -132,7 +134,7 @@ def discrim_test(
                 random_state=0,
                 permute_groups=permute_groups,
                 permute_structure=permute_structure,
-                global_corr='mgc_restricted',
+                #global_corr='mgc_restricted',
             )
         else:
             stat, pvalue, mgc_dict = multiscale_graphcorr(
@@ -144,7 +146,7 @@ def discrim_test(
                 compute_distance=None,
                 permute_groups=permute_groups,
                 permute_structure=permute_structure,
-                global_corr='mgc_restricted',
+                #global_corr='mgc_restricted',
             )
         stat_dict = {
             "pvalue": pvalue,
@@ -231,10 +233,11 @@ def main():
     fast = False
 
     ## Test
-    TEST = 'MGC'
+    TEST = 'DCORR'#'MGC'#
+    LABEL = 'restricted_perm'
 
     ## Test data
-    SIMULATED_TEST = False
+    SIMULATED_TEST = True
 
     ## Create Log File
     logging.basicConfig(filename=logpath / 'mgc_logging.log',
@@ -245,7 +248,8 @@ def main():
 
     if SIMULATED_TEST:
         _, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
-        n_datasets = 100
+        n_datasets = 500
+        n_permutations = 100
         data_dict = defaultdict(list)
         for _ in range(n_datasets):
             groups = simulate_data(subjs)
@@ -258,14 +262,14 @@ def main():
                     labels=labels,
                     subjs=subjs,
                     fast=fast,
-                    n_permutations=100,
+                    n_permutations=n_permutations,
                     gradients=[(0)],
                     permute_structure=permute_structure
                 )
                 data_dict[name].append(stat_dict[(0)]['pvalue'])
 
         save_dir = Path('../data/2sample_tests/simulations/')
-        with open(save_dir / f"{TEST}_multigroup_SIMULATED_datasets={n_datasets}_dict_perm=100{tag}.pkl", "wb") as f:
+        with open(save_dir / f"{TEST}_{LABEL}_SIMULATED_datasets={n_datasets}_dict_perm={n_permutations}{tag}.pkl", "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
     else:
         groups, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
@@ -300,8 +304,8 @@ def main():
         save_dir = Path('../data/2sample_tests/')
         logging.info(f'Saving to {save_dir}')
 
-        df.to_csv(save_dir / f'{TEST}_multigroup_pvalues_{n_permutations}{tag}.csv', index=False)
-        with open(save_dir / f"{TEST}_multigroup_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
+        df.to_csv(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', index=False)
+        with open(save_dir / f"{TEST}_{LABEL}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
