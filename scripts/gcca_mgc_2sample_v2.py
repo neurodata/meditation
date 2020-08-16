@@ -15,6 +15,7 @@ from scipy.stats import multiscale_graphcorr
 from sklearn.metrics import pairwise_distances
 from itertools import combinations
 from collections import defaultdict
+import argparse
 
 import sys
 sys.path.append("../")
@@ -28,7 +29,7 @@ rawdir = datadir / 'raw'
 tag = '_min_rank-ZG3'#'_max_rank-ZG2' 
 gccadir = datadir / f'gcca_05-26-10:39{tag}'#f'gcca_05-17-18:27{tag}' # 
 decimate_dir = datadir / 'decimate'
-logpath = Path('../logs')
+logpath = Path('../logs/')
 
 
 # if ONLY_FULL_SUBJECTS:
@@ -68,35 +69,35 @@ test_list = []
 # ## Intra (within) Trait, Inter (between) State
 test_list += [
     # Permutation: restricted, within subject
-    # ('Experts Resting', 'Experts Compassion', 'within'),
-    # ('Experts Resting', 'Experts Open Monitoring', 'within'),
-    # ('Experts Open Monitoring', 'Experts Compassion', 'within'),
-    # ('Experts Resting', 'Experts Meditating', 'within'),
-    # ('Novices Resting', 'Novices Compassion', 'within'),
-    # ('Novices Resting', 'Novices Open Monitoring', 'within'),
+    ('Experts Resting', 'Experts Compassion', 'within'),
+    ('Experts Resting', 'Experts Open Monitoring', 'within'),
+    ('Experts Open Monitoring', 'Experts Compassion', 'within'),
+    ('Experts Resting', 'Experts Meditating', 'within'),
+    ('Novices Resting', 'Novices Compassion', 'within'),
+    ('Novices Resting', 'Novices Open Monitoring', 'within'),
     ('Novices Open Monitoring', 'Novices Compassion', 'within'),
     ('Novices Resting', 'Novices Meditating', 'within')
 ]
 # ## Inter (between) Trait, Intra (within) State
 test_list += [
     # Permutation: full
-    # ('Experts Resting', 'Novices Resting', 'full'),
-    # ('Experts Compassion', 'Novices Compassion', 'full'),
+    ('Experts Resting', 'Novices Resting', 'full'),
+    ('Experts Compassion', 'Novices Compassion', 'full'),
     ('Experts Open Monitoring', 'Novices Open Monitoring', 'full'),
 ]
 # Permutation: restricted, across subject
 test_list += [
-    # ('Experts Meditating', 'Novices Meditating', 'across'),
+    ('Experts Meditating', 'Novices Meditating', 'across'),
     ('Experts All', 'Novices All', 'across'),
 ]
 ## Inter (between) Trait, Inter (between) State
 test_list += [
     # Permutation: free
-    # ('Experts Resting', 'Novices Compassion', 'full'),
-    # ('Experts Resting', 'Novices Open Monitoring', 'full'),
-    # ('Experts Compassion', 'Novices Resting', 'full'),
-    # ('Experts Compassion', 'Novices Open Monitoring', 'full'),
-    # ('Experts Open Monitoring', 'Novices Resting', 'full'),
+    ('Experts Resting', 'Novices Compassion', 'full'),
+    ('Experts Resting', 'Novices Open Monitoring', 'full'),
+    ('Experts Compassion', 'Novices Resting', 'full'),
+    ('Experts Compassion', 'Novices Open Monitoring', 'full'),
+    ('Experts Open Monitoring', 'Novices Resting', 'full'),
     ('Experts Open Monitoring', 'Novices Compassion', 'full'),
     # Permutation: restricted, permute state (preserve # labels)
     # # ('Experts Resting', 'Novices Meditating', 'across'),
@@ -105,13 +106,14 @@ test_list += [
 # # Intra State (need to figure out these permutations)
 test_list += [
     # Permutation: restricted, permute state
-    # ('Resting', 'Compassion', 'within'),
-    # ('Resting', 'Open Monitoring', 'within'),
+    ('Resting', 'Compassion', 'within'),
+    ('Resting', 'Open Monitoring', 'within'),
     ('Compassion', 'Open Monitoring', 'within'),
     # Permutation: restricted, permute state (preserve # labels)
     ('Resting', 'Meditating', 'within')
 ]
 
+SIMULATE_IDX = [0, 3, 8, 11, 12, 13, 19, 22]
 
 ################ FUNCTIONS ###################
 
@@ -120,9 +122,10 @@ def discrim_test(
     X, Y,
     fast,
     compute_distance=None,
-    n_permutations=10000,
+    n_permutations=1000,
     permute_groups=None, 
-    permute_structure=None
+    permute_structure=None,
+    global_corr='mgc',
 ):
     if TEST == 'MGC':
         if compute_distance:
@@ -134,7 +137,7 @@ def discrim_test(
                 random_state=0,
                 permute_groups=permute_groups,
                 permute_structure=permute_structure,
-                #global_corr='mgc_restricted',
+                global_corr=global_corr,#'mgc_restricted'
             )
         else:
             stat, pvalue, mgc_dict = multiscale_graphcorr(
@@ -146,7 +149,7 @@ def discrim_test(
                 compute_distance=None,
                 permute_groups=permute_groups,
                 permute_structure=permute_structure,
-                #global_corr='mgc_restricted',
+                global_corr=global_corr,
             )
         stat_dict = {
             "pvalue": pvalue,
@@ -179,7 +182,8 @@ def gcca_pvals(
     n_permutations,
     gradients,
     fast,
-    permute_structure=None
+    permute_structure=None,
+    global_corr="mgc",
 ):
     name = f'{g1} vs. {g2}'
     results_dict = {}
@@ -212,33 +216,22 @@ def gcca_pvals(
             n_permutations=n_permutations,
             permute_groups=permute_groups,
             permute_structure=permute_structure,
-
+            global_corr=global_corr,
         )
         results_dict[grads] = stat_dict
 
     return(name, results_dict)
 
-def simulate_data(subjs):
+def simulate_data(subjs, d=18715):
     subj2vec = dict()
     for subj in np.unique(np.concatenate(subjs)):
-        subj2vec[subj] = np.random.normal(0,1,(18715,1))
+        subj2vec[subj] = np.random.normal(0,1,(d,1))
     groups = []
     for subj_list in subjs:
         groups.append([np.random.normal(subj2vec[subj],0.1) for subj in subj_list])
     return groups
 
-def main():
-    # Params
-    n_permutations = 10000
-    fast = False
-
-    ## Test
-    TEST = 'DCORR'#'MGC'#
-    LABEL = 'restricted_perm'
-
-    ## Test data
-    SIMULATED_TEST = True
-
+def main(TEST, LABEL, n_permutations, n_datasets, fast, SIMULATED_TEST, global_corr, d):
     ## Create Log File
     logging.basicConfig(filename=logpath / 'mgc_logging.log',
                         format='%(asctime)s:%(levelname)s:%(message)s',
@@ -248,12 +241,10 @@ def main():
 
     if SIMULATED_TEST:
         _, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
-        n_datasets = 500
-        n_permutations = 100
         data_dict = defaultdict(list)
         for _ in range(n_datasets):
-            groups = simulate_data(subjs)
-            for (g1,g2,permute_structure) in test_list:
+            groups = simulate_data(subjs, d=d)
+            for (g1,g2,permute_structure) in np.asarray(test_list)[SIMULATE_IDX]:
                 t0 = time.time()
                 name, stat_dict = gcca_pvals(
                     TEST,
@@ -264,12 +255,13 @@ def main():
                     fast=fast,
                     n_permutations=n_permutations,
                     gradients=[(0)],
-                    permute_structure=permute_structure
+                    permute_structure=permute_structure,
+                    global_corr=global_corr,
                 )
                 data_dict[name].append(stat_dict[(0)]['pvalue'])
 
         save_dir = Path('../data/2sample_tests/simulations/')
-        with open(save_dir / f"{TEST}_{LABEL}_SIMULATED_datasets={n_datasets}_dict_perm={n_permutations}{tag}.pkl", "wb") as f:
+        with open(save_dir / f"{TEST}_{LABEL}_SIMULATED_datasets={n_datasets}_dict_perm={n_permutations}_dim={d}{tag}.pkl", "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
     else:
         groups, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
@@ -280,6 +272,9 @@ def main():
             (0,1,2)
         ]
         data_dict = {}
+        save_dir = Path('../data/2sample_tests/')
+        with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "w") as f:
+            f.write(",".join(['Comparison'] + [f'Gradients {grads}' for grads in gradients]) + '\n')
         for (g1,g2,permute_structure) in test_list:
             t0 = time.time()
             name, stat_dict = gcca_pvals(
@@ -291,22 +286,38 @@ def main():
                 fast=fast,
                 n_permutations=n_permutations,
                 gradients=gradients,
-                permute_structure=permute_structure
+                permute_structure=permute_structure,
+                global_corr=global_corr,
             )
             data_dict[name] = stat_dict
             logging.info(f'Test {g1} vs. {g2} done in {time.time()-t0}')
+            with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "a") as f:
+                f.write(",".join([name] + [str(stat_dict[grads]['pvalue']) for grads in gradients]) + '\n')
 
-        df = pd.DataFrame(columns=['Comparison'] + [f'Gradients {g}' for g in gradients])
-        df['Comparison'] = data_dict.keys()
-        for grads in gradients:
-            df[f'Gradients {grads}'] = [val_dict[grads]['pvalue'] for val_dict in data_dict.values()]
-
-        save_dir = Path('../data/2sample_tests/')
         logging.info(f'Saving to {save_dir}')
-
-        df.to_csv(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', index=False)
         with open(save_dir / f"{TEST}_{LABEL}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--test", help="", type=str, required=True)
+    parser.add_argument("--label", help="", type=str, default=None)
+    parser.add_argument("--n-perms", help="", type=int, default=1000)
+    parser.add_argument("--n-datasets", help="", type=int, default=100)
+    parser.add_argument("--simulate", help="", action="store_true")
+    parser.add_argument("--gcorr", help="", type=str, default="mgc")
+    parser.add_argument("--sim-dim", help="", type=int, default=18715)
+    args = parser.parse_args()
+    
+    fast = False
+
+    main(
+        TEST = args.test,
+        LABEL = args.label,
+        n_permutations = args.n_perms,
+        n_datasets = args.n_datasets,
+        fast = fast,
+        SIMULATED_TEST = args.simulate,
+        global_corr = args.gcorr,
+        d = args.sim_dim,
+    )
