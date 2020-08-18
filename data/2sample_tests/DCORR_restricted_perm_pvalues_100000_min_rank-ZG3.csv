@@ -1,4 +1,4 @@
-Comparison,Gradients 0,Gradients 1,Gradients 2,Gradients (0, 1),Gradients (1, 2),Gradients (2, 0),Gradients (0, 1, 2)
+Comparison,Gradients 0,Gradients 1,Gradients 2,"Gradients (0, 1)","Gradients (1, 2)","Gradients (2, 0)","Gradients (0, 1, 2)"
 Experts Resting vs. Experts Compassion,0.10277,0.08363,0.01192,0.05832,0.00572,0.00989,0.00943
 Experts Resting vs. Experts Open Monitoring,0.78285,0.01229,0.05783,0.10958,0.00963,0.13352,0.02959
 Experts Open Monitoring vs. Experts Compassion,0.70117,0.60047,0.0278,0.67772,0.05059,0.07573,0.11656
