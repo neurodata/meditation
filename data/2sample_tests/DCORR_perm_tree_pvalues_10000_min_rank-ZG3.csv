@@ -1,0 +1,24 @@
+Comparison,Gradients 0,Gradients 1,Gradients 2,Gradients (0, 1),Gradients (1, 2),Gradients (2, 0),Gradients (0, 1, 2)
+Experts Resting vs. Experts Compassion,0.1033,0.0872,0.0122,0.0569,0.0067,0.0087,0.0091
+Experts Resting vs. Experts Open Monitoring,0.7789,0.0149,0.0567,0.1093,0.0116,0.1301,0.0336
+Experts Open Monitoring vs. Experts Compassion,0.6926,0.6034,0.0292,0.6764,0.0527,0.0733,0.1156
+Experts Resting vs. Experts Meditating,0.2463,0.0141,0.0304,0.0337,0.0047,0.0331,0.0094
+Novices Resting vs. Novices Compassion,0.2041,0.5385,0.0004,0.3394,0.0055,0.0014,0.0086
+Novices Resting vs. Novices Open Monitoring,0.1856,0.011,0.1565,0.0262,0.0338,0.119,0.0306
+Novices Open Monitoring vs. Novices Compassion,0.0054,0.0035,0.0128,0.0002,0.0009,0.0011,0.0001
+Novices Resting vs. Novices Meditating,0.3594,0.3804,0.0076,0.3542,0.025,0.0146,0.0371
+Experts Resting vs. Novices Resting,0.5903,0.2753,0.6432,0.3852,0.5022,0.6675,0.5256
+Experts Compassion vs. Novices Compassion,0.6744,0.8594,0.0199,0.836,0.1494,0.0922,0.2494
+Experts Open Monitoring vs. Novices Open Monitoring,0.1112,0.1765,0.1606,0.0982,0.1179,0.0798,0.0803
+Experts Meditating vs. Novices Meditating,0.3121,0.3732,0.0298,0.3145,0.0685,0.0516,0.0909
+Experts All vs. Novices All,0.3172,0.5432,0.1848,0.4074,0.3168,0.1953,0.2773
+Experts Resting vs. Novices Compassion,0.3888,0.0634,0.1609,0.1208,0.0668,0.2131,0.1011
+Experts Resting vs. Novices Open Monitoring,0.09,0.3303,0.6956,0.1348,0.5633,0.3195,0.2896
+Experts Compassion vs. Novices Resting,0.1451,0.5571,0.0009,0.2693,0.0114,0.0033,0.0184
+Experts Compassion vs. Novices Open Monitoring,0.0309,0.2091,0.0022,0.0511,0.0061,0.0016,0.0042
+Experts Open Monitoring vs. Novices Resting,0.3865,0.3222,0.0682,0.3143,0.1011,0.1011,0.1227
+Experts Open Monitoring vs. Novices Compassion,0.7902,0.0865,0.017,0.2734,0.0137,0.0801,0.0544
+Resting vs. Compassion,0.0186,0.053,0.0001,0.0183,0.0001,0.0001,0.0001
+Resting vs. Open Monitoring,0.2226,0.0307,0.061,0.0421,0.0217,0.0564,0.0201
+Compassion vs. Open Monitoring,0.0448,0.0009,0.0012,0.0011,0.0001,0.0001,0.0001
+Resting vs. Meditating,0.061,0.1167,0.0032,0.0535,0.0029,0.0014,0.0019
