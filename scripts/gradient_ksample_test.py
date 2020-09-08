@@ -28,8 +28,8 @@ datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
 tag = '_min_rank-ZG3'#'_max_rank-ZG2' 
 gccadir = datadir / f'gcca_05-26-10:39{tag}'#f'gcca_05-17-18:27{tag}' # 
-decimate_dir = datadir / 'decimate'
-logpath = Path('../logs/')
+dmap_dir = datadir / f'dmap_09-04'
+logpath = Path.home() / 'meditation' / 'logs'
 
 
 # if ONLY_FULL_SUBJECTS:
@@ -117,7 +117,7 @@ SIMULATE_IDX = [0, 3, 8, 11, 12, 13, 19, 22]
 
 ################ FUNCTIONS ###################
 
-def perm2blocks(perm_labels, perm_structure):
+def perm2blocks(perm_labels):
     # if perm_structure == 'full':
     #     return None
     # elif perm_structure == 'within':
@@ -174,7 +174,7 @@ def discrim_test(
             "opt_scale": mgc_dict["opt_scale"],
         }
     elif TEST == 'DCORR':
-        perm_blocks = perm2blocks(permute_groups, permute_structure)
+        _, perm_blocks = np.unique(permute_groups, return_inverse=True)
         stat, pvalue = Dcorr().test(
             X, Y,
             reps=n_permutations,
@@ -237,10 +237,13 @@ def gcca_pvals(
 
     return(name, results_dict)
 
-def simulate_data(subjs, d=18715):
+def simulate_data(subjs, d=18715, dist=None):
     subj2vec = dict()
     for subj in np.unique(np.concatenate(subjs)):
-        subj2vec[subj] = np.random.normal(0,1,(d,1))
+        if dist == 'weibull':
+            return
+        else:
+            subj2vec[subj] = np.random.normal(0,1,(d,1))
     groups = []
     for subj_list in subjs:
         groups.append([np.random.normal(subj2vec[subj],0.1) for subj in subj_list])
@@ -290,6 +293,8 @@ def main(
     global_corr,
     d,
     k_sample,
+    exclude_ids,
+    data,
 ):
     ## Create Log File
     logging.basicConfig(filename=logpath / 'logging.log',
@@ -298,8 +303,22 @@ def main(
                         )
     logging.info(f'NEW RUN: {TEST}, {n_permutations} permutations, fast={fast}, simulated={SIMULATED_TEST}, k_sample={k_sample}')
 
+    # Load data
+    if data == 'gcca':
+        flag = "_gcca"
+        ftype = 'h5'
+    elif data == 'dmap':
+        flag = '_emb'
+        ftype = 'npy'
+    else:
+        raise ValueError(f'{data} invalid data key')
+    groups, labels, subjs = get_latents(gccadir, flag=flag, ids=True, ftype=ftype, source=data, subjects_exclude=exclude_ids)
+
+    # check proper exclusion
+    if len(set(exclude_ids).intersection(np.concatenate(subjs))) > 0:
+        raise RuntimeError(f'Subject ID not excluded: {set(exclude_ids).intersection(np.concatenate(subjs))}')
+
     if SIMULATED_TEST:
-        _, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
         data_dict = defaultdict(list)
         if k_sample is None:
             save_dir = Path('../data/2sample_tests/simulations/')
@@ -328,7 +347,6 @@ def main(
         with open(save_dir / f"{TEST}_{LABEL}_SIMULATED_datasets={n_datasets}_dict_perm={n_permutations}_dim={d}{tag}.pkl", "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
     else:
-        groups, labels, subjs = get_latents(gccadir, flag="_gcca", ids=True)
         ## Gradients
         gradients = [
             (0), (1), (2),
@@ -343,7 +361,7 @@ def main(
             save_dir = Path('../data/ksample_tests/')
             test_list = get_k_sample_group(k_sample)
         with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "w") as f:
-            f.write(",".join(['Comparison'] + [f'Gradients {grads}' for grads in gradients]) + '\n')
+            f.write(",".join(['Comparison'] + [f'Gradients \"{grads}\""' for grads in gradients]) + '\n')
         for (group_names,permute_structure) in test_list:
             t0 = time.time()
             name, stat_dict = gcca_pvals(
@@ -361,7 +379,7 @@ def main(
             data_dict[name] = stat_dict
             logging.info(f'Test {name} done in {time.time()-t0}')
             with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "a") as f:
-                f.write(",".join([name] + [str(stat_dict[grads]['pvalue']) for grads in gradients]) + '\n')
+                f.write(",".join([f'\"{name}\"'] + [str(stat_dict[grads]['pvalue']) for grads in gradients]) + '\n')
 
         logging.info(f'Saving to {save_dir}')
         with open(save_dir / f"{TEST}_{LABEL}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
@@ -377,10 +395,12 @@ if __name__ == '__main__':
     parser.add_argument("--gcorr", help="", type=str, default="mgc")
     parser.add_argument("--sim-dim", help="", type=int, default=18715)
     parser.add_argument("--k-sample", help="Options {6: 6-sample}", type=str, default=None)
+    parser.add_argument("--sim-dist", help="distribution", type=str, default=None)
+    parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
+    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap'], default="gcca")
     args = parser.parse_args()
     
     fast = False
-
     main(
         TEST = args.test,
         LABEL = args.label,
@@ -391,4 +411,6 @@ if __name__ == '__main__':
         global_corr = args.gcorr,
         d = args.sim_dim,
         k_sample = args.k_sample,
+        exclude_ids = args.exclude_ids,
+        data = args.data,
     )
