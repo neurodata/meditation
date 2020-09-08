@@ -14,8 +14,8 @@ cd ./scripts
 # DCORR REAL 2-sample, k-sample exlude subject 073
 # python3 ./gradient_ksample_test.py --test DCORR --label 2-sample-073_exclude --n-perms 10000 --exclude-ids 073
 
-# DCORR 
-python3 ./gradient_ksample_test.py --test DCORR --label dmap_2-sample-073_exclude --n-perms 10000 --exclude-ids 073
+# DCORR diffusion embedding
+python3 ./gradient_ksample_test.py --test DCORR --data dmap --label dmap_2-sample-073_exclude --n-perms 10000 --exclude-ids 073
 
 
 # 

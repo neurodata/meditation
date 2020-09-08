@@ -307,12 +307,14 @@ def main(
     if data == 'gcca':
         flag = "_gcca"
         ftype = 'h5'
+        source_dir = gccadir
     elif data == 'dmap':
         flag = '_emb'
         ftype = 'npy'
+        source_dir = dmap_dir
     else:
         raise ValueError(f'{data} invalid data key')
-    groups, labels, subjs = get_latents(gccadir, flag=flag, ids=True, ftype=ftype, source=data, subjects_exclude=exclude_ids)
+    groups, labels, subjs = get_latents(source_dir, flag=flag, ids=True, ftype=ftype, source=data, subjects_exclude=exclude_ids)
 
     # check proper exclusion
     if len(set(exclude_ids).intersection(np.concatenate(subjs))) > 0:
@@ -361,7 +363,7 @@ def main(
             save_dir = Path('../data/ksample_tests/')
             test_list = get_k_sample_group(k_sample)
         with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "w") as f:
-            f.write(",".join(['Comparison'] + [f'\"Gradients {grads}\""' for grads in gradients]) + '\n')
+            f.write(",".join(['Comparison'] + [f'\"Gradients {grads}\"' for grads in gradients]) + '\n')
         for (group_names,permute_structure) in test_list:
             t0 = time.time()
             name, stat_dict = gcca_pvals(
