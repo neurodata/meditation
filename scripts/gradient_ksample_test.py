@@ -26,9 +26,9 @@ from src.tools.utils import get_files, get_latents
 ## Define paths
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
-tag = '_min_rank-ZG3'#'_max_rank-ZG2' 
-gccadir = datadir / f'gcca_05-26-10:39{tag}'#f'gcca_05-17-18:27{tag}' # 
-dmap_dir = datadir / f'dmap_09-04'
+TAG = '_min_rank-ZG3'#'_max_rank-ZG2' 
+gccadir = datadir / f'gcca_05-26-10:39{TAG}'#f'gcca_05-17-18:27{tag}' # 
+dmap_dir = datadir / f'dmap_09-22_aligned'
 logpath = Path.home() / 'meditation' / 'logs'
 
 
@@ -136,7 +136,6 @@ def perm2blocks(perm_labels):
 def discrim_test(
     TEST,
     X, Y,
-    fast,
     compute_distance=None,
     n_permutations=1000,
     permute_groups=None, 
@@ -175,11 +174,23 @@ def discrim_test(
         }
     elif TEST == 'DCORR':
         _, perm_blocks = np.unique(permute_groups, return_inverse=True)
-        stat, pvalue = Dcorr().test(
+
+        X = pairwise_distances(X, metric="euclidean")
+        Y = pairwise_distances(Y, metric="sqeuclidean")
+
+        label_idxs = defaultdict(list)
+        for i,label in enumerate(perm_blocks):
+            label_idxs[label].append(i)
+        # Zero groups
+        for idxs in label_idxs.values():
+            X[np.ix_(idxs, idxs)] = 0
+            Y[np.ix_(idxs, idxs)] = 0
+        
+        stat, pvalue = Dcorr(compute_distance=None).test(
             X, Y,
             reps=n_permutations,
             workers=-1,
-            auto=fast,
+            auto=False,
             perm_blocks=perm_blocks,
         )
         stat_dict = {
@@ -197,7 +208,6 @@ def gcca_pvals(
     subjs,
     n_permutations,
     gradients,
-    fast,
     permute_structure=None,
     global_corr="mgc",
 ):
@@ -217,16 +227,13 @@ def gcca_pvals(
         X, Y = k_sample_transform(
             [np.vstack([np.asarray(groups[i]) for i in lookup[g]]) for g in group_names]
         )
-        X = X[:, :, grads].reshape(X.shape[0], -1)
+        X = X[:, :, grads]
+        X = X.reshape(X.shape[0], -1)
         permute_groups = subj_list
-  
-        #X_dists = pairwise_distances(X, metric="euclidean")
-        #Y_dists = pairwise_distances(Y, metric="sqeuclidean")
 
         stat_dict = discrim_test(
             test,
             X, Y,
-            fast=fast,
             compute_distance=True,
             n_permutations=n_permutations,
             permute_groups=permute_groups,
@@ -288,7 +295,6 @@ def main(
     LABEL,
     n_permutations,
     n_datasets,
-    fast,
     SIMULATED_TEST,
     global_corr,
     d,
@@ -301,7 +307,7 @@ def main(
                         format='%(asctime)s:%(levelname)s:%(message)s',
                         level=logging.INFO
                         )
-    logging.info(f'NEW RUN: {TEST}, {n_permutations} permutations, fast={fast}, simulated={SIMULATED_TEST}, k_sample={k_sample}')
+    logging.info(f'NEW RUN: {TEST}, {n_permutations} permutations, simulated={SIMULATED_TEST}, k_sample={k_sample}')
 
     # Load data
     if data == 'gcca':
@@ -309,15 +315,15 @@ def main(
         ftype = 'h5'
         source_dir = gccadir
     elif data == 'dmap':
-        flag = '_emb'
+        flag = '_dmap'#'_emb'
         ftype = 'npy'
         source_dir = dmap_dir
     else:
         raise ValueError(f'{data} invalid data key')
-    groups, labels, subjs = get_latents(source_dir, flag=flag, ids=True, ftype=ftype, source=data, subjects_exclude=exclude_ids)
+    groups, labels, subjs = get_latents(source_dir, flag=flag, ids=True, ftype=ftype, subjects_exclude=exclude_ids)
 
     # check proper exclusion
-    if len(set(exclude_ids).intersection(np.concatenate(subjs))) > 0:
+    if exclude_ids is not None and len(set(exclude_ids).intersection(np.concatenate(subjs))) > 0:
         raise RuntimeError(f'Subject ID not excluded: {set(exclude_ids).intersection(np.concatenate(subjs))}')
 
     if SIMULATED_TEST:
@@ -328,6 +334,7 @@ def main(
         else:
             save_dir = Path('../data/ksample_tests/simulations/')
             test_list = get_k_sample_group(k_sample)
+        save_path = save_dir / f"{TEST}_SIMULATED_{LABEL}_datasets={n_datasets}_dict_perm={n_permutations}_dim={d}.pkl"
         for _ in range(n_datasets):
             groups = simulate_data(subjs, d=d)
             for (group_names,permute_structure) in test_list:
@@ -338,7 +345,6 @@ def main(
                     groups=groups,
                     labels=labels,
                     subjs=subjs,
-                    fast=fast,
                     n_permutations=n_permutations,
                     gradients=[(0)],
                     permute_structure=permute_structure,
@@ -346,7 +352,7 @@ def main(
                 )
                 data_dict[name].append(stat_dict[(0)]['pvalue'])
             
-        with open(save_dir / f"{TEST}_{LABEL}_SIMULATED_datasets={n_datasets}_dict_perm={n_permutations}_dim={d}{tag}.pkl", "wb") as f:
+        with open(save_path, "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
     else:
         ## Gradients
@@ -362,7 +368,8 @@ def main(
         else:
             save_dir = Path('../data/ksample_tests/')
             test_list = get_k_sample_group(k_sample)
-        with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "w") as f:
+        save_name = f'{TEST}_{data}_{LABEL}'
+        with open(save_dir / f'{save_name}_pvalues_{n_permutations}.csv', "w") as f:
             f.write(",".join(['Comparison'] + [f'\"Gradients {grads}\"' for grads in gradients]) + '\n')
         for (group_names,permute_structure) in test_list:
             t0 = time.time()
@@ -372,7 +379,6 @@ def main(
                 groups=groups,
                 labels=labels,
                 subjs=subjs,
-                fast=fast,
                 n_permutations=n_permutations,
                 gradients=gradients,
                 permute_structure=permute_structure,
@@ -380,11 +386,11 @@ def main(
             )
             data_dict[name] = stat_dict
             logging.info(f'Test {name} done in {time.time()-t0}')
-            with open(save_dir / f'{TEST}_{LABEL}_pvalues_{n_permutations}{tag}.csv', "a") as f:
+            with open(save_dir / f'{save_name}_pvalues_{n_permutations}.csv', "a") as f:
                 f.write(",".join([f'\"{name}\"'] + [str(stat_dict[grads]['pvalue']) for grads in gradients]) + '\n')
 
         logging.info(f'Saving to {save_dir}')
-        with open(save_dir / f"{TEST}_{LABEL}_results_dict_{n_permutations}{tag}.pkl", "wb") as f:
+        with open(save_dir / f"{save_name}_results_dict_{n_permutations}.pkl", "wb") as f:
             pickle.dump(data_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
@@ -402,13 +408,11 @@ if __name__ == '__main__':
     parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap'], default="gcca")
     args = parser.parse_args()
     
-    fast = False
     main(
         TEST = args.test,
         LABEL = args.label,
         n_permutations = args.n_perms,
         n_datasets = args.n_datasets,
-        fast = fast,
         SIMULATED_TEST = args.simulate,
         global_corr = args.gcorr,
         d = args.sim_dim,

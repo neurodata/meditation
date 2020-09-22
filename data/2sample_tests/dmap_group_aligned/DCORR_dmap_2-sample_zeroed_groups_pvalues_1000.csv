@@ -1,0 +1,24 @@
+Comparison,"Gradients 0","Gradients 1","Gradients 2","Gradients (0, 1)","Gradients (1, 2)","Gradients (2, 0)","Gradients (0, 1, 2)"
+"Experts Resting vs. Experts Compassion",0.007,0.001,0.001,0.001,0.001,0.001,0.001
+"Experts Resting vs. Experts Open Monitoring",0.007,0.001,0.006,0.001,0.001,0.003,0.001
+"Experts Open Monitoring vs. Experts Compassion",0.015,0.006,0.128,0.004,0.005,0.016,0.007
+"Experts Resting vs. Experts Meditating",0.009,0.001,0.003,0.001,0.001,0.003,0.001
+"Novices Resting vs. Novices Compassion",0.001,0.001,0.001,0.001,0.001,0.001,0.001
+"Novices Resting vs. Novices Open Monitoring",0.001,0.001,0.001,0.001,0.001,0.001,0.001
+"Novices Open Monitoring vs. Novices Compassion",0.02,0.006,0.004,0.012,0.001,0.005,0.004
+"Novices Resting vs. Novices Meditating",0.002,0.001,0.001,0.001,0.001,0.001,0.001
+"Experts Resting vs. Novices Resting",0.796,0.372,0.559,0.695,0.535,0.798,0.707
+"Experts Compassion vs. Novices Compassion",0.727,0.324,0.624,0.612,0.478,0.752,0.653
+"Experts Open Monitoring vs. Novices Open Monitoring",0.718,0.378,0.566,0.644,0.512,0.78,0.686
+"Experts Meditating vs. Novices Meditating",0.711,0.374,0.634,0.658,0.562,0.789,0.698
+"Experts All vs. Novices All",0.741,0.384,0.646,0.667,0.544,0.799,0.694
+"Experts Resting vs. Novices Compassion",0.699,0.313,0.702,0.632,0.558,0.769,0.68
+"Experts Resting vs. Novices Open Monitoring",0.592,0.288,0.463,0.559,0.369,0.683,0.584
+"Experts Compassion vs. Novices Resting",0.663,0.263,0.352,0.572,0.313,0.649,0.53
+"Experts Compassion vs. Novices Open Monitoring",0.6,0.303,0.332,0.504,0.343,0.6,0.536
+"Experts Open Monitoring vs. Novices Resting",0.78,0.266,0.549,0.604,0.409,0.767,0.619
+"Experts Open Monitoring vs. Novices Compassion",0.755,0.373,0.795,0.661,0.611,0.831,0.743
+"Resting vs. Compassion",0.001,0.001,0.001,0.001,0.001,0.001,0.001
+"Resting vs. Open Monitoring",0.001,0.001,0.001,0.001,0.001,0.001,0.001
+"Compassion vs. Open Monitoring",0.001,0.001,0.001,0.001,0.001,0.001,0.001
+"Resting vs. Meditating",0.001,0.001,0.001,0.001,0.001,0.001,0.001
