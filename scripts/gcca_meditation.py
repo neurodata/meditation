@@ -2,7 +2,6 @@
 import numpy as np
 import argparse
 from mvlearn.embed.gcca import GCCA
-import pandas as pd
 from pathlib import Path
 from datetime import datetime
 import logging
@@ -10,41 +9,25 @@ import os
 import re
 import h5py
 import sys; sys.path.append('../')
+from src.tools.utils import get_files, read_file
 from src.tools.split_sample import split_sample
 
-# Grab filenames
-def get_files(path,
-              level='(e|n)',
-              subject='([0-9]{3})',
-              task='(.+?)',
-              ftype='csv',
-              flag=''):
-    files = []
-    query = f'^{level}_sub-'
-    query += f'{subject}_ses-1_'
-    query += f'task-{task}{flag}\.{ftype}'
-    for f in os.listdir(path):
-        match = re.search(query, f)
-        if match:
-            files.append((f, match.groups()))
 
-    return(files)
-
-# Read a csv or h5 file. Meta corresponds to h5_key
-
-
-def read_file(path, ftype, h5_key=None):
-    if ftype == 'csv':
-        return(pd.read_csv(path, header=None).to_numpy())
-    elif ftype == 'h5':
-        h5f = h5py.File(path, 'r')
-        temp = h5f[h5_key][:]
-        h5f.close()
-        return(temp)
-
-
-def embed_all(data_dir, save_dir, logging, n_components=4, rank_tolerance=0.1,
-         tag='', ftype='csv', h5_key=None, n_elbows=2, paths=None, max_rank=False):
+def embed_all(
+    data_dir,
+    save_dir,
+    logging,
+    n_components=4,
+    rank_tolerance=0.1,
+    tag='',
+    ftype='csv',
+    h5_key=None,
+    n_elbows=2,
+    paths=None,
+    max_rank=False,
+    transpose=False,
+    exclude_ids=None,
+):
     # Make directory to save to
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -56,7 +39,7 @@ def embed_all(data_dir, save_dir, logging, n_components=4, rank_tolerance=0.1,
     logging.info(f'Pulling data from {data_dir}')
 
     if not paths:
-        paths = get_files(path=data_dir, ftype=ftype, flag=tag)
+        paths = get_files(path=data_dir, filetype=ftype, flag=tag, subjects_exclude=exclude_ids)
     raw_data = []
     infos = []
     for path, info in paths:
@@ -69,18 +52,22 @@ def embed_all(data_dir, save_dir, logging, n_components=4, rank_tolerance=0.1,
         gcca = GCCA(n_elbows=n_elbows, max_rank=True)
     else:
         gcca = GCCA(n_elbows=n_elbows)
-    latents = gcca.fit_transform(raw_data)
+    if transpose:
+        latents = gcca.fit_transform([X.T for X in raw_data if len(X.T) == 300])
+    else:
+        latents = gcca.fit_transform(raw_data)
 
     logging.info(f'Ranks are {gcca.ranks_}')
     logging.info(f'Group embedding dimensions: {latents.shape}')
 
     # Save latents
     logging.info(f'Saving reduce correlations to {save_dir}')
-    for info, latent in zip(infos, latents):
+    for info, latent, proj_mat in zip(infos, latents, gcca.projection_mats_):
         level, subj, task = info
         save_path = save_dir / f'{level}_sub-{subj}_ses-1_task-{task}_gcca.h5'
         h5f = h5py.File(save_path, 'w')
         h5f.create_dataset('latent', data=latent)
+        h5f.create_dataset('projection', data=proj_mat)
         h5f.close()
 
 if __name__ == '__main__':
@@ -95,7 +82,7 @@ if __name__ == '__main__':
     # Optional
     parser.add_argument('--data-dir', action='store', default=RAW_DIR)
     parser.add_argument('--elbos', action='store', type=int, default=2)
-    parser.add_argument('--max-rank', action='store_true')
+    parser.add_argument('--max-rank', action='store_true', default=False)
     parser.add_argument(
         '--save-dir',
         action='store',
@@ -103,12 +90,16 @@ if __name__ == '__main__':
         )
     parser.add_argument('--tag', action='store', default=False)
     parser.add_argument('--split-half', action='store_true')
+    parser.add_argument('--transpose', action='store_true', default=False)
+    parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
 
     args = vars(parser.parse_args())
 
     save_dir = args['save_dir']
     if args['tag']:
         save_dir = Path(str(save_dir) + f"_{args['tag']}")
+    if args['transpose']:
+        save_dir = Path(str(save_dir) + f"_transpose")
 
     # Create Log File
     logging.basicConfig(filename=log_path / 'logging.log',
@@ -147,5 +138,7 @@ if __name__ == '__main__':
             save_dir = save_dir,
             logging = logging,
             n_elbows = args['elbos'],
-            max_rank = args['max_rank']
+            max_rank = args['max_rank'],
+            transpose = args['transpose'],
+            exclude_ids = args['exclude_ids']
         )
