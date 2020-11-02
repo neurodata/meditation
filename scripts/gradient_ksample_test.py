@@ -21,14 +21,18 @@ import sys
 sys.path.append("../")
 from src.tools import get_files, get_latents, align, iterate_align
 
+from rpy2.robjects import Formula, numpy2ri
+from rpy2.robjects.packages import importr
+from hyppo._utils import perm_test
+
 ################ DEFINITIONS #########################
 
 ## Define paths
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
-TAG = '_min_rank-ZG3_exclude-073_aligned'#'_max_rank-ZG2' 
+TAG = '_min_rank-ZG3_exclude-073'#'_max_rank-ZG2' 
 gccadir = datadir / f'gcca_09-22-21:18{TAG}'#f'gcca_05-26-10:39{TAG}'#f'gcca_05-17-18:27{tag}' # 
-dmap_dir = datadir / f'dmap_09-22_aligned'
+dmap_dir = datadir / f'dmap_09-04_mean-aligned'# f'dmap_09-22_aligned'
 dmap_dir_unaligned = datadir / f'dmap_09-04_unaligned'
 logpath = Path.home() / 'meditation' / 'logs'
 
@@ -114,9 +118,33 @@ TEST_LIST += [
     ('Resting', 'Meditating', 'within')
 ]
 TEST_LIST = [((a,b),c) for a,b,c in TEST_LIST]
-SIMULATE_IDX = [0]#, 3, 8, 11, 12, 13, 19, 22]
+SIMULATE_IDX = [0, 3, 8, 11, 12, 13, 19, 22]
 
 ################ FUNCTIONS ###################
+
+class Manova:
+    r"""
+    Wrapper of statsmodels MANOVA
+    """
+    def __init__(self):
+        self.stats = importr('stats')
+        self.r_base = importr('base')
+        
+        numpy2ri.activate()
+
+        self.formula = Formula('X ~ Y')
+        self.env = self.formula.environment
+
+    def _statistic(self, x, y):
+        r"""
+        Helper function to calculate the test statistic
+        """
+        self.env['Y'] = y
+        self.env['X'] = x
+
+        stat = self.r_base.summary(self.stats.manova(self.formula), test="Pillai")[3][4]
+
+        return stat
 
 def perm2blocks(perm_labels):
     # if perm_structure == 'full':
@@ -177,8 +205,8 @@ def discrim_test(
         _, perm_blocks = np.unique(permute_groups, return_inverse=True)
 
         # Compute own distances if multiway or if zeroing in-group corrs
-        # X = pairwise_distances(X, metric="euclidean")
-        # Y = pairwise_distances(Y, metric="sqeuclidean")
+        X = pairwise_distances(X, metric="euclidean")
+        Y = pairwise_distances(Y, metric="sqeuclidean")
 
         # To zero in group correlations
         # label_idxs = defaultdict(list)
@@ -189,7 +217,7 @@ def discrim_test(
         #     X[np.ix_(idxs, idxs)] = 0
         #     Y[np.ix_(idxs, idxs)] = 0
         
-        dcorr = Dcorr()#compute_distance=None)
+        dcorr = Dcorr(compute_distance=None)
         stat, pvalue = dcorr.test(
             X, Y,
             reps=n_permutations,
@@ -202,6 +230,14 @@ def discrim_test(
             "test_stat": stat,
             "null_dist": dcorr.null_dist
         }
+    elif TEST == 'Manova':
+        _, perm_blocks = np.unique(permute_groups, return_inverse=True)
+        manova = Manova()
+        stat, pvalue, null_dist = perm_test(
+            manova._statistic, X, Y, is_distsim=False, perm_blocks=perm_blocks,
+            reps=n_permutations)
+    else:
+        raise ValueError(f'Test {TEST} is not a valid test')
 
     return stat_dict
 
@@ -217,6 +253,7 @@ def gcca_pvals(
     global_corr="mgc",
     align=False,
     norm_off=False,
+    multiway=False,
 ):
     if len(group_names) == 2:
         name = f'{group_names[0]} vs. {group_names[1]}'
@@ -230,9 +267,17 @@ def gcca_pvals(
     )
 
     print(name)
-    X, Y = k_sample_transform(
-        [np.vstack([np.asarray(groups[i]) for i in lookup[g]]) for g in group_names]
-    )
+    if multiway:
+        assert len(group_names) == 6, "multiway only available for 6-sample test"
+        X, Y = k_sample_transform(
+            [np.vstack([np.asarray(groups[i]) for i in lookup[g]]) for g in group_names],
+            ways = [[0,0],[0,1],[0,2],[1,0],[1,1],[1,2]]
+        )
+    else:
+        X, Y = k_sample_transform(
+            [np.vstack([np.asarray(groups[i]) for i in lookup[g]]) for g in group_names]
+        )
+
     if align:
         X = iterate_align(X, norm=(not norm_off))
 
@@ -313,6 +358,7 @@ def main(
     data,
     align=False,
     norm_off=False,
+    multiway=False,
 ):
     ## Create Log File
     logging.basicConfig(filename=logpath / 'logging.log',
@@ -366,6 +412,7 @@ def main(
                     gradients=[(0)],
                     permute_structure=permute_structure,
                     global_corr=global_corr,
+                    multiway=multiway,
                 )
                 data_dict[name].append(stat_dict[(0)]['pvalue'])
             
@@ -422,6 +469,7 @@ if __name__ == '__main__':
     parser.add_argument("--gcorr", help="", type=str, default="mgc")
     parser.add_argument("--sim-dim", help="", type=int, default=18715)
     parser.add_argument("--k-sample", help="Options {6: 6-sample}", type=str, default=None)
+    parser.add_argument("--multiway", help="", action="store_true")
     parser.add_argument("--sim-dist", help="distribution", type=str, default=None)
     parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
     parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap'], default="gcca")
@@ -442,4 +490,5 @@ if __name__ == '__main__':
         data = args.data,
         align = args.align,
         norm_off = args.norm_off,
+        multiway = args.multiway,
     )

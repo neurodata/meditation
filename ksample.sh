@@ -26,14 +26,31 @@ cd ./scripts
 
 # DCORR REAL diffusion map separate aligns, 073 excluded from multi-align directory, no norm
 # python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 2-sample_multi-align_norm-False --n-perms 10000 --align
-python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 6-sample_norm-False --n-perms 10000 --k-sample 6 --norm-off
-python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-novices_multi-align_norm-False --n-perms 10000 --k-sample 3N --align --norm-off
-python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-experts_multi-align_norm-False --n-perms 10000 --k-sample 3E --align --norm-off
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 6-sample_norm-False --n-perms 10000 --k-sample 6 --norm-off
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-novices_multi-align_norm-False --n-perms 10000 --k-sample 3N --align --norm-off
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-experts_multi-align_norm-False --n-perms 10000 --k-sample 3E --align --norm-off
 
 # Current Testing
 # python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 2-sample_normed --n-perms 1000
 # python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 2-sample_aligned --n-perms 2000
 # python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 2-sample_multi-align_norm-False --n-perms 1000 --align --norm-off
 
-# 
+# dcorr k-sample real data
+# python3 ./gradient_ksample_test.py --test DCORR --label 6-sample --n-perms 10000 --k-sample 6
+# python3 ./gradient_ksample_test.py --test DCORR --label 6-sample_multiway --n-perms 10000 --k-sample 6 --multiway
+
+# Manova real data, computationally intractable i think due to covariance matrix size
+# python3 ./gradient_ksample_test.py --test Manova --label 2-sample --n-perms 10000
+# python3 ./gradient_ksample_test.py --test Manova --label 6-sample --n-perms 10000 --k-sample 6
+# python3 ./gradient_ksample_test.py --test Manova --label 3-sample-novices --n-perms 10000 --k-sample 3N
+# python3 ./gradient_ksample_test.py --test Manova --label 3-sample-experts --n-perms 10000 --k-sample 3E
+
+
+# DCORR REAL diffusion map with means aligned, 073 excluded, no norm
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 6-sample_mean-align --n-perms 1000 --k-sample 6
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-novices_mean-align --n-perms 10000 --k-sample 3N
+python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-experts_mean-align --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 2-sample_mean-align --n-perms 10000
+
+
 cd ../

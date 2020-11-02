@@ -10,18 +10,25 @@ def align(sources, target, firstpass = False, aux_mats = None):
 
     sources : list of source matrices to align
     target : target matrix to align to
+    aux_mats : list of lists matched to sources
     """
     realign = []
     if aux_mats is not None:
         realign_aux = []
     if firstpass:
         realign.append(target)
+        if aux_mats is not None:
+            assert len(aux_mats) == len(sources) + 1
+            realign_aux.append(aux_mats[0])
+            aux_mats = aux_mats[1:]
+    elif aux_mats is not None:
+        assert len(aux_mats) == len(sources)
     for i, source in enumerate(sources):
         u, s, v = np.linalg.svd(target.T.dot(source), full_matrices=False)
         xfm = v.T.dot(u.T)
         realign.append(source.dot(xfm))
         if aux_mats is not None:
-            realign_aux.append(aux_mats[i].dot(xfm))
+            realign_aux.append([aux_mat.dot(xfm) for aux_mat in aux_mats[i]])
 
     if aux_mats is not None:
         return realign, realign_aux
