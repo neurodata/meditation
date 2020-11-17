@@ -1,0 +1,2 @@
+Comparison,"Gradients 0","Gradients 1","Gradients 2","Gradients (0, 1)","Gradients (1, 2)","Gradients (2, 0)","Gradients (0, 1, 2)"
+"3-sample ([[0], [1], [2]])",0.3576,0.1664,0.0062,0.1646,0.0151,0.005,0.0173
