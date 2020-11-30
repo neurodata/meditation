@@ -31,9 +31,10 @@ from hyppo._utils import perm_test
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
 TAG = '_min_rank-ZG3_exclude-073'#'_max_rank-ZG2' 
-gccadir = datadir / f'gcca_09-22-21:18{TAG}'#f'gcca_05-26-10:39{TAG}'#f'gcca_05-17-18:27{tag}' # 
-dmap_dir = datadir / f'dmap_09-04_mean-aligned'# f'dmap_09-22_aligned'
+gccadir = datadir / 'gcca_dmap_11-17' # f'gcca_09-22-21:18{TAG}'#f'gcca_05-26-10:39{TAG}'#f'gcca_05-17-18:27{tag}' # 
+dmap_dir = datadir / f'dmap_09-22_aligned'#f'dmap_09-04_mean-aligned'#
 dmap_dir_unaligned = datadir / f'dmap_09-04_unaligned'
+mase_dir = datadir / 'mase_11-16'# 'mase_11-15'
 logpath = Path.home() / 'meditation' / 'logs'
 
 
@@ -252,7 +253,7 @@ def gcca_pvals(
     permute_structure=None,
     global_corr="mgc",
     align=False,
-    norm_off=False,
+    norm=False,
     multiway=False,
 ):
     if len(group_names) == 2:
@@ -279,7 +280,9 @@ def gcca_pvals(
         )
 
     if align:
-        X = iterate_align(X, norm=(not norm_off))
+        X = iterate_align(X, norm=norm)
+    if norm:
+        X /= np.linalg.norm(X, axis=1, keepdims=True)
 
     for grads in gradients:
         Xg = X[:, :, grads]
@@ -357,7 +360,7 @@ def main(
     exclude_ids,
     data,
     align=False,
-    norm_off=False,
+    norm=False,
     multiway=False,
 ):
     ## Create Log File
@@ -379,6 +382,10 @@ def main(
             source_dir = dmap_dir_unaligned
         else:
             source_dir = dmap_dir
+    elif data == 'mase':
+        flag = "_mase_dmap"
+        ftype = 'h5'
+        source_dir = mase_dir
     else:
         raise ValueError(f'{data} invalid data key')
     print(f'Loading data from directory: {source_dir}')
@@ -448,7 +455,7 @@ def main(
                 permute_structure=permute_structure,
                 global_corr=global_corr,
                 align=align,
-                norm_off=norm_off,
+                norm=norm,
             )
             data_dict[name] = stat_dict
             logging.info(f'Test {name} done in {time.time()-t0}')
@@ -472,9 +479,9 @@ if __name__ == '__main__':
     parser.add_argument("--multiway", help="", action="store_true")
     parser.add_argument("--sim-dist", help="distribution", type=str, default=None)
     parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
-    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap'], default="gcca")
-    parser.add_argument("--align", help="", action="store_true")
-    parser.add_argument("--norm-off", help="", action="store_true")
+    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase'], default="gcca")
+    parser.add_argument("--align", help="", action="store_true", default=False)
+    parser.add_argument("--norm", help="", action="store_true", default=False)
     args = parser.parse_args()
     
     main(
@@ -489,6 +496,6 @@ if __name__ == '__main__':
         exclude_ids = args.exclude_ids,
         data = args.data,
         align = args.align,
-        norm_off = args.norm_off,
+        norm = args.norm,
         multiway = args.multiway,
     )

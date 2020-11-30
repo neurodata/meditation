@@ -45,6 +45,12 @@ cd ./scripts
 # python3 ./gradient_ksample_test.py --test Manova --label 3-sample-novices --n-perms 10000 --k-sample 3N
 # python3 ./gradient_ksample_test.py --test Manova --label 3-sample-experts --n-perms 10000 --k-sample 3E
 
+# DCORR REAL diffusion map, 073 excluded, normed
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 6-sample_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-novices_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-experts_normed --n-perms 10000 --k-sample 3E --norm
+python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 2-sample_normed --n-perms 10000 --norm
+
 # DCORR REAL diffusion map with means aligned, 073 excluded, no norm
 # python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 6-sample_mean-align --n-perms 1000 --k-sample 6
 # python3 ./gradient_ksample_test.py --test DCORR --data dmap --label 3-sample-novices_mean-align --n-perms 10000 --k-sample 3N
@@ -70,9 +76,9 @@ cd ./scripts
 # python3 ./gradient_ksample_test.py --test DCORR --data mase --label 2-sample_dmap__normed --n-perms 10000 --norm
 
 # DCORR GCCA dmap embeddings, 073 excluded
-python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 6-sample_dmap --n-perms 1000 --k-sample 6
-python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 3-sample-novices_dmap --n-perms 10000 --k-sample 3N
-python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 3-sample-experts_dmap --n-perms 10000 --k-sample 3E
-python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 2-sample_dmap --n-perms 10000
+# python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 6-sample_dmap --n-perms 1000 --k-sample 6
+# python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 3-sample-novices_dmap --n-perms 10000 --k-sample 3N
+# python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 3-sample-experts_dmap --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --test DCORR --data gcca --label 2-sample_dmap --n-perms 10000
 
 cd ../

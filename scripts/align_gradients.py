@@ -10,7 +10,7 @@ from src.tools import get_files, get_latents
 from collections import defaultdict
 
 
-def iterate_align(components, labels, subjs, thresh=0.001, max_iter=100, norm=False, group_align=False):
+def iterate_align(components, labels, subjs, thresh=0.001, max_iter=10, norm=False, mean_align=False):
     if norm:
         embeddings = components /  np.linalg.norm(components, axis=1, keepdims=True)
     else:
@@ -19,7 +19,7 @@ def iterate_align(components, labels, subjs, thresh=0.001, max_iter=100, norm=Fa
     if max_iter <= 0:
         return embeddings
 
-    if group_align:
+    if mean_align:
         assert subjs is not None
         subj_embeddings = defaultdict(list)
         for embedding, subj, l in zip(embeddings, subjs, labels):
@@ -33,10 +33,12 @@ def iterate_align(components, labels, subjs, thresh=0.001, max_iter=100, norm=Fa
             embs, ls = list(zip(*embs_ls))
             subj_ids.append(subj)
             subj_labels.append(ls)
+            embs = _iterate_align(embs, thresh, max_iter)
             subj_mats.append(embs)
-            subj_means.append(np.mean(_iterate_align(embs, thresh, max_iter), axis=0))
+            subj_means.append(np.mean(embs, axis=0))
 
         aligned_means, embeddings = _iterate_align(subj_means, thresh, max_iter, aux_mats=subj_mats)
+
         embeddings = np.vstack(embeddings)
         labels = np.vstack(subj_labels)
         subjs = np.hstack([[id]*3 for id in subj_ids])
@@ -106,15 +108,15 @@ if __name__ == "__main__":
     parser.add_argument("-t", "--save", help="target directory to save files", type=str, required=True)
     parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
     parser.add_argument("--thresh", help="threshold to stop iterative align", type=float, default=0.001)
-    parser.add_argument("--max-iter", help="max number of iterations for the alignment", type=int, default=100)
+    parser.add_argument("--max-iter", help="max number of iterations for the alignment", type=int, default=10)
     parser.add_argument("--debug", action='store_true', default=False)
     parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap'], default="dmap")
     parser.add_argument("--norm", action='store_true', default=False)
-    parser.add_argument("--group-align", action='store_true', default=False)
+    parser.add_argument("--mean-align", action='store_true', default=False)
 
     args = parser.parse_args()
 
     components, labels, subjs = load_data(args.source, args.data, args.exclude_ids)
-    components, labels, subjs = iterate_align(components, labels, subjs, args.thresh, args.max_iter, args.norm, args.group_align)
+    components, labels, subjs = iterate_align(components, labels, subjs, args.thresh, args.max_iter, args.norm, args.mean_align)
     if not args.debug:
         save_data(args.save, args.data, components, labels, subjs)

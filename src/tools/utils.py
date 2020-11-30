@@ -39,6 +39,19 @@ def get_files(path,
               source='gcca',
               subjects_exclude=None,
               ):
+    """
+    Loads files from a directory
+
+    Returns
+    -------
+    list of tuples, each (path, groups)
+        groups is a tuple depending on which the inputs
+
+        gcca : (level, subject, task, flag, filetype)
+
+        dmap :
+
+    """
     files = []
     if isinstance(subjects_exclude, (int, str)):
         subjects_exclude = [subjects_exclude]
@@ -69,10 +82,9 @@ def read_file(path, ftype, h5_key=None):
         h5f.close()
         return(temp)
 
-def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5', source='gcca', subjects_exclude=None, as_groups=True):
+def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5', source='gcca', subjects_exclude=None, as_groups=True, h5_key='latent'):
     tasks = ['restingstate', 'openmonitoring', 'compassion']
     levels = ['e', 'n']
-    h5_key = 'latent'
 
     latents = []
     labels = []

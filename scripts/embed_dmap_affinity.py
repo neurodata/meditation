@@ -14,7 +14,7 @@ from joblib import Parallel, delayed
 
 import sys; sys.path.append('../')
 from src.tools.utils import get_files, read_file
-
+from tqdm import tqdm
 
 def load_subj():
     """
@@ -101,21 +101,31 @@ def _embed_mase(method, paths):
     infos = []
     results_dict = defaultdict(list)
 
-    for i, (path, info) in enumerate(paths):
-        print(f'Fit: {datetime.now().strftime("%H:%M:%S")}, {info}')
+    X_mean = None
+    print(f'Mean: {datetime.now().strftime("%H:%M:%S")}')
+    for path, _ in tqdm(paths):
         X = read_file(data_dir / path, ftype='csv')
         X = compute_affinity(X)
+        if X_mean is None:
+            X_mean = X / len(paths)
+        else:
+            X_mean += X / len(paths)
+
+    print(f'Fit: {datetime.now().strftime("%H:%M:%S")}')
+    for i, (path, info) in enumerate(tqdm(paths)):
+        X = read_file(data_dir / path, ftype='csv')
+        X = compute_affinity(X) - X_mean
         method = method.partial_fit(X)
         results_dict['rank'].append(method.ranks_[-1])
         results_dict['eigenvalues'].append(method.Ds_[-1])
 
     assert len(method.Us_) > 1
     # Compute scores, iteratively
-    for path, info in paths:
-        print(f'Transform: {datetime.now().strftime("%H:%M:%S")}, {info}')
+    print(f'Transform: {datetime.now().strftime("%H:%M:%S")}')
+    for path, info in tqdm(paths):
         infos.append(info)
         X = read_file(data_dir / path, ftype='csv')
-        X = compute_affinity(X)
+        X = compute_affinity(X) - X_mean
         if method.latent_right_ is None:
             scores = X @ method.latent_left_
         else:
@@ -123,7 +133,6 @@ def _embed_mase(method, paths):
         results_dict['latent'].append(scores)
         results_dict['latent_right'].append(method.latent_right_)
         results_dict['latent_left'].append(method.latent_left_)
-    
     return results_dict, infos
 
 
@@ -131,10 +140,21 @@ def _embed_gcca(method, paths):
     infos = []
     results_dict = defaultdict(list)
 
-    for i, (path, info) in enumerate(paths):
-        print(f'Fit: {datetime.now().strftime("%H:%M:%S")}, {info}')
+    X_mean = None
+    print(f'Mean: {datetime.now().strftime("%H:%M:%S")}, {info}')
+    for path, _ in tqdm(paths):
         X = read_file(data_dir / path, ftype='csv')
-        X = compute_affinity(X)
+        X = compute_affinity(X) - X_mean
+        if X_mean is None:
+            X_mean = X / len(paths)
+        else:
+            X_mean += X / len(paths)
+        del X
+
+    print(f'Fit: {datetime.now().strftime("%H:%M:%S")}')
+    for i, (path, info) in enumerate(tqdm(paths)):
+        X = read_file(data_dir / path, ftype='csv')
+        X = compute_affinity(X) - X_mean
         if i < len(paths) - 1:
             method = method.partial_fit([X], multiview_step=False)
         else:
@@ -144,8 +164,8 @@ def _embed_gcca(method, paths):
 
     assert len(method._Uall) > 1
     # Compute scores, iteratively
-    for i, (path, info) in enumerate(paths):
-        print(f'Transform: {datetime.now().strftime("%H:%M:%S")}, {info}')
+    print(f'Transform: {datetime.now().strftime("%H:%M:%S")}')
+    for i, (path, info) in enumerate(tqdm(paths)):
         infos.append(info)
         X = read_file(data_dir / path, ftype='csv')
         X = compute_affinity(X)
@@ -205,7 +225,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Mandatory
-    parser.add_argument('--method', type=str, help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'method'])
+    parser.add_argument('--method', type=str, help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'mase'])
     # Optional
     parser.add_argument('--source', action='store', default=RAW_DIR)
     parser.add_argument('--n-components', type=int, default=None)
