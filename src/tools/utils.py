@@ -57,14 +57,14 @@ def get_files(path,
         subjects_exclude = [subjects_exclude]
     if subjects_exclude is not None:
         subject = f'(?!(?:{"|".join([f"{id:0>3}" for id in subjects_exclude])})){subject}'
-    if source == 'gcca' or source == 'dmap':
-        query = f'^{level}_sub-'
-        query += f'{subject}_ses-1_'
-        query += f'task-{task}{flag}\.{filetype}'
-    elif source == 'dmap_raw':
+    if source == 'dmap':
         query = f'^{level}_embedding_dense{flag}'
         query += f'\.sub-{subject}'
         query += f'\.{task}\.{filetype}'
+    else: #if source == 'gcca' or source == 'dmap':
+        query = f'^{level}_sub-'
+        query += f'{subject}_ses-1_'
+        query += f'task-{task}{flag}\.{filetype}'
     for f in os.listdir(path):
         match = re.search(query, f)
         if match:
@@ -82,7 +82,7 @@ def read_file(path, ftype, h5_key=None):
         h5f.close()
         return(temp)
 
-def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5', source='gcca', subjects_exclude=None, as_groups=True, h5_key='latent'):
+def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5', source='gcca', subjects_exclude=None, as_groups=True, h5_key='latent', start_grad=0):
     tasks = ['restingstate', 'openmonitoring', 'compassion']
     levels = ['e', 'n']
 
@@ -101,10 +101,16 @@ def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5'
             for path,subj in paths[:n_load]:
                 if ftype == 'h5':
                     h5f = h5py.File(data_dir / path,'r')
-                    latent = h5f[h5_key][:][:,:n_components]
+                    if n_components is None:
+                        latent = h5f[h5_key][:][..., :n_components]
+                    else:
+                        latent = h5f[h5_key][:][..., start_grad:n_components+start_grad]
                     h5f.close()
                 elif ftype == 'npy':
-                    latent = np.load(data_dir / path, allow_pickle=True)[:, :n_components]
+                    if n_components is None:
+                        latent = np.load(data_dir / path, allow_pickle=True)[:, :n_components]
+                    else:
+                        latent = np.load(data_dir / path, allow_pickle=True)[:, start_grad:n_components+start_grad]
                 else:
                     raise ValueError(f'Invalid ftype {ftype}')
                 subgroup.append(latent)

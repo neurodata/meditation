@@ -1,24 +1,24 @@
 Comparison,"Gradients 0","Gradients 1","Gradients 2","Gradients (0, 1)","Gradients (1, 2)","Gradients (2, 0)","Gradients (0, 1, 2)"
-"Experts Resting vs. Experts Compassion",0.8443,0.1631,0.2745,0.1641,0.1906,0.2697,0.1871
-"Experts Resting vs. Experts Open Monitoring",0.6364,0.8424,0.8261,0.8423,0.8814,0.8189,0.8792
-"Experts Open Monitoring vs. Experts Compassion",0.3368,0.0724,0.1929,0.0684,0.0743,0.1891,0.0738
-"Experts Resting vs. Experts Meditating",0.9105,0.479,0.5066,0.4791,0.4973,0.5047,0.4883
-"Novices Resting vs. Novices Compassion",0.3833,0.167,0.349,0.1702,0.2002,0.3441,0.2126
-"Novices Resting vs. Novices Open Monitoring",0.8344,0.3917,0.0342,0.3876,0.1337,0.0391,0.1409
-"Novices Open Monitoring vs. Novices Compassion",0.9012,0.911,0.0361,0.906,0.3908,0.0382,0.3858
-"Novices Resting vs. Novices Meditating",0.5264,0.2143,0.1193,0.2196,0.1463,0.1128,0.1457
-"Experts Resting vs. Novices Resting",0.8854,0.8289,0.2277,0.8275,0.5043,0.2265,0.5083
-"Experts Compassion vs. Novices Compassion",0.5092,0.3301,0.8718,0.3462,0.5959,0.8639,0.6049
-"Experts Open Monitoring vs. Novices Open Monitoring",0.8405,0.8647,0.3252,0.8592,0.6747,0.3184,0.6758
-"Experts Meditating vs. Novices Meditating",0.7554,0.5454,0.5799,0.5397,0.5864,0.5799,0.5864
-"Experts All vs. Novices All",0.7387,0.736,0.3384,0.7364,0.5786,0.3274,0.5722
-"Experts Resting vs. Novices Compassion",0.4629,0.688,0.0361,0.6826,0.1692,0.0355,0.172
-"Experts Resting vs. Novices Open Monitoring",0.9409,0.9675,0.2526,0.9678,0.7379,0.2487,0.7287
-"Experts Compassion vs. Novices Resting",0.4333,0.1117,0.7345,0.1102,0.2666,0.7373,0.2682
-"Experts Compassion vs. Novices Open Monitoring",0.6152,0.16,0.3466,0.1539,0.1982,0.3464,0.193
-"Experts Open Monitoring vs. Novices Resting",0.6758,0.4066,0.2164,0.3993,0.3118,0.2206,0.3153
-"Experts Open Monitoring vs. Novices Compassion",0.6267,0.4889,0.0958,0.4915,0.233,0.0964,0.2379
-"Resting vs. Compassion",0.2889,0.0578,0.106,0.0561,0.056,0.1137,0.057
-"Resting vs. Open Monitoring",0.7172,0.3825,0.1272,0.3912,0.2404,0.1242,0.232
-"Compassion vs. Open Monitoring",0.6199,0.1697,0.0076,0.167,0.0438,0.0082,0.0397
-"Resting vs. Meditating",0.4668,0.1577,0.1436,0.1734,0.1332,0.142,0.1386
+"Experts Resting vs. Experts Compassion",0.8513,0.1645,0.2716,0.1548,0.1891,0.27,0.1813
+"Experts Resting vs. Experts Open Monitoring",0.6278,0.8345,0.8256,0.8402,0.8846,0.8165,0.8841
+"Experts Open Monitoring vs. Experts Compassion",0.3439,0.0693,0.1815,0.0669,0.0775,0.1947,0.0744
+"Experts Resting vs. Experts Meditating",0.9142,0.4783,0.4974,0.4931,0.4953,0.506,0.502
+"Novices Resting vs. Novices Compassion",0.3791,0.17,0.3441,0.1739,0.2025,0.3425,0.204
+"Novices Resting vs. Novices Open Monitoring",0.8295,0.3955,0.0406,0.398,0.1327,0.0414,0.1351
+"Novices Open Monitoring vs. Novices Compassion",0.9035,0.9085,0.0384,0.916,0.3862,0.0383,0.3874
+"Novices Resting vs. Novices Meditating",0.5113,0.2196,0.1136,0.215,0.1446,0.1105,0.1466
+"Experts Resting vs. Novices Resting",0.8794,0.824,0.2297,0.8349,0.5246,0.2289,0.5162
+"Experts Compassion vs. Novices Compassion",0.5134,0.338,0.8604,0.3372,0.6039,0.8614,0.6024
+"Experts Open Monitoring vs. Novices Open Monitoring",0.8371,0.8648,0.3062,0.8575,0.6765,0.3132,0.6744
+"Experts Meditating vs. Novices Meditating",0.7578,0.5402,0.5747,0.5423,0.5951,0.5817,0.5962
+"Experts All vs. Novices All",0.7303,0.7391,0.3423,0.7384,0.5748,0.3354,0.5632
+"Experts Resting vs. Novices Compassion",0.4692,0.6721,0.0354,0.6785,0.1797,0.035,0.1783
+"Experts Resting vs. Novices Open Monitoring",0.9396,0.9652,0.2518,0.9699,0.738,0.2644,0.7313
+"Experts Compassion vs. Novices Resting",0.4274,0.1137,0.7277,0.1128,0.2672,0.7326,0.2681
+"Experts Compassion vs. Novices Open Monitoring",0.6144,0.1486,0.3439,0.153,0.194,0.3395,0.1937
+"Experts Open Monitoring vs. Novices Resting",0.6766,0.4082,0.2136,0.401,0.3116,0.2123,0.31
+"Experts Open Monitoring vs. Novices Compassion",0.6259,0.4929,0.0972,0.5012,0.2295,0.0981,0.2425
+"Resting vs. Compassion",0.29,0.0598,0.1057,0.0619,0.0593,0.1075,0.0587
+"Resting vs. Open Monitoring",0.719,0.3876,0.1184,0.3793,0.2434,0.1228,0.2367
+"Compassion vs. Open Monitoring",0.6222,0.1691,0.0073,0.1732,0.0418,0.0079,0.0384
+"Resting vs. Meditating",0.4696,0.1631,0.146,0.1611,0.14,0.1408,0.1299

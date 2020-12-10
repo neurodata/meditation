@@ -61,18 +61,20 @@ label_dict = {
     'all':'all '
 }
 
-def make_heatmap(method, tag, save_path):
+def make_heatmap(source_dir, save_path):
     # The 2nd file has more permutations, but no ksample runs
-    if tag is not None:
-        tag = f'_{tag}'
-    else:
-        tag = ''
-    pattern = f'DCORR_{method}_2-sample{tag}_pvalues_' + r'{}.csv'
-    files = glob.glob('../data/' + '2sample_tests/' + pattern.format('*'))
-    num = sorted(set([int(re.split(r'.*_(\d+)\.csv', f)[1]) for f in files]))[-1]
+    # if tag is not None:
+    #     tag = f'_{tag}'
+    # else:
+    #     tag = ''
+    # pattern = f'DCORR_{method}_2-sample{tag}_pvalues_' + r'{}.csv'
+    # files = glob.glob('../data/' + '2sample_tests/' + pattern.format('*'))
+    # num = sorted(set([int(re.split(r'.*_(\d+)\.csv', f)[1]) for f in files]))[-1]
+    files = glob.glob(str(Path(source_dir) / '2-*.csv'))
     pvalues = pd.read_csv(
-        Path('../data/') / '2sample_tests' / pattern.format(num),
-        #Path('../data/') / '2sample_tests' / '073_unexcluded' / 'DCORR_gcca_restricted_perm_pvalues_100000_min_rank-ZG3.csv',
+        files[0],
+        # Path('../data/') / '2sample_tests' / pattern.format(num),
+        # Path('../data/') / '2sample_tests' / '073_unexcluded' / 'DCORR_gcca_restricted_perm_pvalues_100000_min_rank-ZG3.csv',
         index_col=0
     )
     # pvalues = pvalues.drop([
@@ -84,18 +86,21 @@ def make_heatmap(method, tag, save_path):
     pvalues.index = fmt_index
 
     # Add pvalues from k-sample tests
-    k_sample_paths = [
-        f'DCORR_{method}_6-sample{tag}_pvalues_',
-        f'DCORR_{method}_3-sample-experts{tag}_pvalues_',
-        f'DCORR_{method}_3-sample-novices{tag}_pvalues_',
-    ]
-    k_sample_paths = [s + r'{}.csv' for s in k_sample_paths]
-    files = [glob.glob('../data/' + '/ksample_tests/' + pattern.format('*')) for pattern in k_sample_paths]
-    nums = [sorted(set([int(re.split(r'.*_(\d+)\.csv', f)[1]) for f in fs]))[-1] for fs in files]
-    kpvals = np.vstack([
-        pd.read_csv(Path('../data/') / 'ksample_tests' / path.format(n), index_col=0).values 
-        for n, path in zip(nums, k_sample_paths)
-    ])
+    # k_sample_paths = [
+    #     f'DCORR_{method}_6-sample{tag}_pvalues_',
+    #     f'DCORR_{method}_3-sample-experts{tag}_pvalues_',
+    #     f'DCORR_{method}_3-sample-novices{tag}_pvalues_',
+    # ]
+    # k_sample_paths = [s + r'{}.csv' for s in k_sample_paths]
+    # files = [glob.glob('../data/' + '/ksample_tests/' + pattern.format('*')) for pattern in k_sample_paths]
+    # nums = [sorted(set([int(re.split(r'.*_(\d+)\.csv', f)[1]) for f in fs]))[-1] for fs in files]
+    # kpvals = np.vstack([
+    #     pd.read_csv(Path('../data/') / 'ksample_tests' / path.format(n), index_col=0).values 
+    #     for n, path in zip(nums, k_sample_paths)
+    # ])
+    k_sample_paths = ['6-*.csv', '3E-*.csv', '3N-*.csv']
+    files = [glob.glob(str(Path(source_dir) / path))[0] for path in k_sample_paths]
+    kpvals = np.vstack([pd.read_csv(f, index_col=0).values for f in files])
 
     # Scale
     kpvals = np.asarray(kpvals) * 7
@@ -169,11 +174,13 @@ def make_heatmap(method, tag, save_path):
 if __name__ == "__main__":
     # python3 align_gradients.py --source 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--tag", help="source directory with files", type=str, default=None)
+    # parser.add_argument("--tag", help="source directory with files", type=str, default=None)
+    parser.add_argument("--source", help="source directory with files", type=str, default=None)
     parser.add_argument("-t", "--save", help="target directory to save files", type=str, required=True)
-    parser.add_argument("--method", help="method used", type=str, required=True)
+    # parser.add_argument("--method", help="method used", type=str, required=True)
 
     args = parser.parse_args()
-    make_heatmap(args.method, args.tag, args.save)
+    # make_heatmap(args.method, args.tag, args.save)
+    make_heatmap(args.source, args.save)
 
     

@@ -30,11 +30,11 @@ from hyppo._utils import perm_test
 ## Define paths
 datadir = Path('/mnt/ssd3/ronan/data')
 rawdir = datadir / 'raw'
-TAG = '_min_rank-ZG3_exclude-073'#'_max_rank-ZG2' 
-gccadir = datadir / 'gcca_dmap_11-17' # f'gcca_09-22-21:18{TAG}'#f'gcca_05-26-10:39{TAG}'#f'gcca_05-17-18:27{tag}' # 
-dmap_dir = datadir / f'dmap_09-22_aligned'#f'dmap_09-04_mean-aligned'#
-dmap_dir_unaligned = datadir / f'dmap_09-04_unaligned'
-mase_dir = datadir / 'mase_11-16'# 'mase_11-15'
+# TAG = '_min_rank-ZG3_exclude-073'#'_max_rank-ZG2' 
+# gccadir = datadir / 'gcca_dmap_11-17' # f'gcca_09-22-21:18{TAG}'#f'gcca_05-26-10:39{TAG}'#f'gcca_05-17-18:27{tag}' # 
+# dmap_dir = datadir / f'dmap_09-22_aligned'#f'dmap_09-04_mean-aligned'#
+# dmap_dir_unaligned = datadir / f'dmap_09-04_unaligned'
+# mase_dir = datadir / 'mase_11-16'# 'mase_11-15'
 logpath = Path.home() / 'meditation' / 'logs'
 
 
@@ -349,6 +349,7 @@ def get_k_sample_group(k_sample):
         raise ValueError(f'Undefined k_sample group label {k_sample}')
 
 def main(
+    SOURCE,
     TEST,
     LABEL,
     n_permutations,
@@ -359,38 +360,42 @@ def main(
     k_sample,
     exclude_ids,
     data,
-    align=False,
-    norm=False,
-    multiway=False,
+    align,
+    norm,
+    multiway,
+    start_grad,
 ):
     ## Create Log File
     logging.basicConfig(filename=logpath / 'logging.log',
                         format='%(asctime)s:%(levelname)s:%(message)s',
                         level=logging.INFO
                         )
-    logging.info(f'NEW RUN: {TEST}, {n_permutations} permutations, simulated={SIMULATED_TEST}, k_sample={k_sample}')
+    logging.info(f'NEW RUN: {TEST}, {n_permutations} permutations, simulated={SIMULATED_TEST}, k_sample={k_sample}, start_grad {start_grad}')
 
     # Load data
-    if data == 'gcca':
-        flag = "_gcca"
-        ftype = 'h5'
-        source_dir = gccadir
-    elif data == 'dmap':
-        flag = '_dmap'
-        ftype = 'npy'
-        if align:
-            source_dir = dmap_dir_unaligned
-        else:
-            source_dir = dmap_dir
-    elif data == 'mase':
-        flag = "_mase_dmap"
-        ftype = 'h5'
-        source_dir = mase_dir
-    else:
-        raise ValueError(f'{data} invalid data key')
+    # if data == 'gcca':
+    #     flag = "_gcca"
+    #     ftype = 'h5'
+    #     source_dir = gccadir
+    # elif data == 'dmap':
+    #     flag = '_dmap'
+    #     ftype = 'npy'
+    #     if align:
+    #         source_dir = dmap_dir_unaligned
+    #     else:
+    #         source_dir = dmap_dir
+    # elif data == 'mase':
+    #     flag = "_mase_dmap"
+    #     ftype = 'h5'
+    #     source_dir = mase_dir
+    # else:
+    #     raise ValueError(f'{data} invalid data key')
+    source_dir = Path(SOURCE)
+    flag = '_' + data
+    ftype = 'h5'
     print(f'Loading data from directory: {source_dir}')
     logging.info(f'Loading data from directory: {source_dir}')
-    groups, labels, subjs = get_latents(source_dir, n_components=3, flag=flag, ids=True, ftype=ftype, subjects_exclude=exclude_ids)
+    groups, labels, subjs = get_latents(source_dir, n_components=3, flag=flag, ids=True, ftype=ftype, subjects_exclude=exclude_ids, start_grad=start_grad)
 
     # check proper exclusion
     if exclude_ids is not None and len(set(exclude_ids).intersection(np.concatenate(subjs))) > 0:
@@ -434,12 +439,16 @@ def main(
         ]
         data_dict = {}
         if k_sample is None:
-            save_dir = Path('../data/2sample_tests/')
+            save_dir = Path('../data/')
             test_list = np.asarray(TEST_LIST)
+            save_name = "2-sample"
         else:
-            save_dir = Path('../data/ksample_tests/')
+            save_dir = Path('../data/')
             test_list = get_k_sample_group(k_sample)
-        save_name = f'{TEST}_{data}_{LABEL}'
+            save_name = f"{k_sample}-sample"
+        save_dir = save_dir / f'{TEST}_{data}_{LABEL}'
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
         with open(save_dir / f'{save_name}_pvalues_{n_permutations}.csv', "w") as f:
             f.write(",".join(['Comparison'] + [f'\"Gradients {grads}\"' for grads in gradients]) + '\n')
         for (group_names,permute_structure) in test_list:
@@ -468,6 +477,7 @@ def main(
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument("--source", help="", type=str, required=True)
     parser.add_argument("--test", help="", type=str, required=True)
     parser.add_argument("--label", help="", type=str, default=None)
     parser.add_argument("--n-perms", help="", type=int, default=1000)
@@ -479,12 +489,14 @@ if __name__ == '__main__':
     parser.add_argument("--multiway", help="", action="store_true")
     parser.add_argument("--sim-dist", help="distribution", type=str, default=None)
     parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
-    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase'], default="gcca")
+    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase', 'svd', 'mase_dmap'], default="gcca")
     parser.add_argument("--align", help="", action="store_true", default=False)
     parser.add_argument("--norm", help="", action="store_true", default=False)
+    parser.add_argument("--start-grad", help="Starting index of the first 3 gradients", type=int, default=0)
     args = parser.parse_args()
-    
+
     main(
+        SOURCE = args.source,
         TEST = args.test,
         LABEL = args.label,
         n_permutations = args.n_perms,
@@ -498,4 +510,5 @@ if __name__ == '__main__':
         align = args.align,
         norm = args.norm,
         multiway = args.multiway,
+        start_grad = args.start_grad,
     )
