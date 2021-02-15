@@ -6,6 +6,7 @@ import re
 import h5py
 import pandas as pd
 from collections import defaultdict
+from pathlib import Path
 
 def decimate_ptr(X, nbins=1000):
     '''
@@ -70,10 +71,58 @@ def get_files(path,
         if match:
             files.append((f, match.groups()))
     
-    return(files)
+    return files
+
+
+def load_mgz(data_dir, subjects_exclude=None):
+    """
+    Loads all mgz files. TODO a bit janky, refine.
+    """
+    if type(data_dir) == str:
+        data_dir = Path(data_dir)
+    files = []
+    states = ['restingstate', 'openmonitoring', 'compassion']
+    levels = ['e', 'n']
+    for level in levels:
+        for state in states:
+            paths = get_files(path='/mnt/ssd3/ronan/data/raw/', level=level, task=state, subjects_exclude=subjects_exclude)
+
+            for path, subj in paths:
+                # subj_dir = data_dir / f'sub-{subj}'
+                info = (level, subj, state)
+                files.append((data_dir, info))
+
+    return files
+                
+
+def load_fsaverage5(subject, state):
+    """
+    Modification of the load_fs.py file provided by collaborators.
+    Loads the mgz compressed data and projects it to the fsaverage5
+    surface mesh.
+    """
+    import nibabel as nib
+    path = "/mnt/ssd3/ronan/data/vol2surf_derivatives"
+    fsaverage5_dir = "/home/rflperry/meditation/data/external"
+    subject = f'sub-{subject}'
+
+    h = 'lh'
+    data_lh = nib.load('%s/%s/%s_ses-1_task-%s.fsa5.%s.mgz' % (path,subject,subject,state,h)).get_data().squeeze()
+    lab_lh = nib.freesurfer.read_label('%s/%s.cortex.label' % (fsaverage5_dir,h))
+
+    h = 'rh'
+    data_rh = nib.load('%s/%s/%s_ses-1_task-%s.fsa5.%s.mgz' % (path,subject,subject,state,h)).get_data().squeeze()
+    lab_rh = nib.freesurfer.read_label('%s/%s.cortex.label' % (fsaverage5_dir,h))
+
+    data = np.vstack((data_lh[lab_lh,:],data_rh[lab_rh,:]))
+    # data = (data.T - np.nanmean(data, axis = 1)).T
+    # data = (data.T / np.nanstd(data, axis = 1)).T
+
+    return data
+
 
 # Read a csv or h5 file. Meta corresponds to h5_key
-def read_file(path, ftype, h5_key=None):
+def read_file(path, ftype, h5_key=None, info=None):
     if ftype == 'csv':
         return(pd.read_csv(path, header=None).to_numpy())
     elif ftype == 'h5':
@@ -81,6 +130,10 @@ def read_file(path, ftype, h5_key=None):
         temp = h5f[h5_key][:]
         h5f.close()
         return(temp)
+    elif ftype == 'mgz':
+        level, subj, state = info
+        data = load_fsaverage5(subj, state)
+        return data
 
 def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5', source='gcca', subjects_exclude=None, as_groups=True, h5_key='latent', start_grad=0):
     tasks = ['restingstate', 'openmonitoring', 'compassion']
@@ -93,8 +146,10 @@ def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5'
     for level in levels:
         for task in tasks:
             subgroup = []
-            labels.append([level, task])
             paths = get_files(path=data_dir, level=level, task=task, flag=flag, filetype=ftype, source=source, subjects_exclude=subjects_exclude)
+            if len(paths) == 0:
+                continue
+            labels.append([level, task])
             n_load = len(paths)
             subjs = []
 

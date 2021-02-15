@@ -95,17 +95,13 @@ cd ./scripts
 
 #####################################################################################################################################################################################################
 ########### Main Comparisons ########################################################################################################################################################################
-# DCORR gcca raw (ZG 3, min rank, centered)
-# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ZG3-min_normed/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ZG3-min_normed/DCORR_gcca_raw_ZG3-min_normed.pdf
 
-
-# DCORR gcca raw (ZG 3, max rank)
-python3 ./embed_dmap_affinity.py --method gcca --tag raw_ZG3-max --exclude-ids 073 --raw
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG3-max_12-09 --test DCORR --data gcca --label raw_ZG3-max_normed --n-perms 1000 --k-sample 6 --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG3-max_12-09 --test DCORR --data gcca --label raw_ZG3-max_normed --n-perms 10000 --k-sample 3N --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG3-max_12-09 --test DCORR --data gcca --label raw_ZG3-max_normed --n-perms 10000 --k-sample 3E --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG3-max_12-09 --test DCORR --data gcca --label raw_ZG3-max_normed --n-perms 10000 --norm
-python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ZG3-max_normed/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ZG3-max_normed/DCORR_gcca_raw_ZG3-max_normed.pdf
+# DCORR gcca raw (ZG 3, min rank)
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_09-22-21:18_min_rank-ZG3_exclude-073 --test DCORR --data gcca --label raw_ZG3-min_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_09-22-21:18_min_rank-ZG3_exclude-073 --test DCORR --data gcca --label raw_ZG3-min_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_09-22-21:18_min_rank-ZG3_exclude-073 --test DCORR --data gcca --label raw_ZG3-min_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_09-22-21:18_min_rank-ZG3_exclude-073 --test DCORR --data gcca --label raw_ZG3-min_normed --n-perms 10000 --norm
+python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ZG3-min_normed/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ZG3-min_normed/DCORR_gcca_raw_ZG3-min_normed.pdf
 
 
 # DCORR gcca dmap (ZG 2, min rank)
@@ -123,10 +119,12 @@ python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_g
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_dmap_ZG2_12-04 --test DCORR --data gcca --label dmap_ZG2_grads=1-4_normed --n-perms 10000 --norm --start-grad 1
 # python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_dmap_ZG2_grads=1-4_normed/ --save /home/rflperry/meditation/data/DCORR_gcca_dmap_ZG2_grads=1-4_normed/DCORR_gcca_dmap_ZG2_grads=1-4_normed.pdf
 
-
-# DCORR gcca dmap (ZG 2, max, centered, rank)
-# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_dmap_ZG2-max-centered_normed/ --save /home/rflperry/meditation/data/DCORR_gcca_dmap_ZG2-max-centered_normed/DCORR_gcca_dmap_ZG2-max-centered_normed.pdf
-
+# Mapalign, aligned
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_onepass_09-04 --test DCORR --data dmap --label antoinne_aligned_onepass_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_onepass_09-04 --test DCORR --data dmap --label antoinne_aligned_onepass_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_onepass_09-04 --test DCORR --data dmap --label antoinne_aligned_onepass_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_onepass_09-04 --test DCORR --data dmap --label antoinne_aligned_onepass_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_antoinne_aligned_onepass_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_antoinne_aligned_onepass_normed/DCORR_dmap_antoinne_aligned_onepass_normed.pdf
 
 # SVD raw
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/svd_raw_aligned_12-07 --test DCORR --data svd --label raw_aligned_normed --n-perms 1000 --k-sample 6 --norm
@@ -149,26 +147,12 @@ python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_g
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/svd_dmap_aligned_12-02 --test DCORR --data svd --label dmap_aligned_normed --n-perms 10000 --norm
 # python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_svd_dmap_aligned_normed/ --save /home/rflperry/meditation/data/DCORR_svd_dmap_aligned_normed/DCORR_svd_dmap_aligned_normed.pdf
 
-# Mapalign, aligned
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_09-04 --test DCORR --data dmap --label antoinne_aligned_normed --n-perms 1000 --k-sample 6 --norm
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_09-04 --test DCORR --data dmap --label antoinne_aligned_normed --n-perms 10000 --k-sample 3N --norm
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_09-04 --test DCORR --data dmap --label antoinne_aligned_normed --n-perms 10000 --k-sample 3E --norm
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoinne_aligned_09-04 --test DCORR --data dmap --label antoinne_aligned_normed --n-perms 10000 --norm
-# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_antoinne_aligned_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_antoinne_aligned_normed/DCORR_dmap_antoinne_aligned_normed.pdf
-
 # Mapalign, mean aligned
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_mean-aligned_09-04 --test DCORR --data dmap --label mapalign_mean-aligned_normed --n-perms 1000 --k-sample 6 --norm
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_mean-aligned_09-04 --test DCORR --data dmap --label mapalign_mean-aligned_normed --n-perms 10000 --k-sample 3N --norm
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_mean-aligned_09-04 --test DCORR --data dmap --label mapalign_mean-aligned_normed --n-perms 10000 --k-sample 3E --norm
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_mean-aligned_09-04 --test DCORR --data dmap --label mapalign_mean-aligned_normed --n-perms 10000 --norm
 # python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_mean-aligned_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_mean-aligned_normed/DCORR_dmap_mapalign_mean-aligned_normed.pdf
-
-# Mapalign replicated, aligned
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_normed --n-perms 1000 --k-sample 6 --norm
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_normed --n-perms 10000 --k-sample 3N --norm
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_normed --n-perms 10000 --k-sample 3E --norm
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_normed --n-perms 10000 --norm
-# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_aligned_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_aligned_normed/DCORR_dmap_mapalign_replication_aligned_normed.pdf
 
 # Mapalign replicated, mean aligned
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_mean-aligned_12-04 --test DCORR --data dmap --label mapalign_replication_mean-aligned_normed --n-perms 1000 --k-sample 6 --norm
@@ -177,11 +161,96 @@ python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_g
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_mean-aligned_12-04 --test DCORR --data dmap --label mapalign_replication_mean-aligned_normed --n-perms 10000 --norm
 # python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_mean-aligned_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_mean-aligned_normed/DCORR_dmap_mapalign_replication_mean-aligned_normed.pdf
 
-# MASE o dmap, grads 1:4
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_11-16 --test DCORR --data mase_dmap --label dmap_grads=1-4 --n-perms 1000 --k-sample 6 --norm --start-grad 1
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_11-16 --test DCORR --data mase_dmap --label dmap_grads=1-4 --n-perms 10000 --k-sample 3N --norm --start-grad 1
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_11-16 --test DCORR --data mase_dmap --label dmap_grads=1-4 --n-perms 10000 --k-sample 3E --norm --start-grad 1
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_11-16 --test DCORR --data mase_dmap --label dmap_grads=1-4 --n-perms 10000 --norm --start-grad 1
-# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_mase_dmap_grads=1-4/ --save /home/rflperry/meditation/data/DCORR_mase_dmap_grads=1-4/DCORR_mase_dmap_grads=1-4.pdf
+# Mapalign replicated, aligned, row centered
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_onepass_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_onepass_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_onepass_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_onepass_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_onepass_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_onepass_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_aligned_onepass_12-04 --test DCORR --data dmap --label mapalign_replication_aligned_onepass_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_aligned_onepass_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_aligned_onepass_normed/DCORR_dmap_mapalign_replication_aligned_onepass_normed.pdf
+
+# Dmap, group-svd
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoine_group-svd_09-04 --test DCORR --data dmap --label antoine_group-svd_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoine_group-svd_09-04 --test DCORR --data dmap --label antoine_group-svd_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoine_group-svd_09-04 --test DCORR --data dmap --label antoine_group-svd_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_antoine_group-svd_09-04 --test DCORR --data dmap --label antoine_group-svd_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_antoine_group-svd_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_antoine_group-svd_normed/DCORR_dmap_antoine_group-svd_normed.pdf
+
+# mapalign joint embedding normed
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_joint_mapalign_normed/ --save /home/rflperry/meditation/data/DCORR_joint_mapalign_normed/DCORR_joint_mapalign_normed.pdf
+
+# Mapalign replicated, aligned
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_align-100_01-04 --test DCORR --data dmap --label mapalign_replication_align-100_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_align-100_01-04 --test DCORR --data dmap --label mapalign_replication_align-100_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_align-100_01-04 --test DCORR --data dmap --label mapalign_replication_align-100_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication_align-100_01-04 --test DCORR --data dmap --label mapalign_replication_align-100_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_align-100_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication_align-100_normed/DCORR_dmap_mapalign_replication_align-100_normed.pdf
+
+# MASE (scaled) o aff
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_scaled_01-07 --test DCORR --data mase --label aff_scaled_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_scaled_01-07 --test DCORR --data mase --label aff_scaled_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_scaled_01-07 --test DCORR --data mase --label aff_scaled_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_scaled_01-07 --test DCORR --data mase --label aff_scaled_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_mase_aff_scaled_normed/ --save /home/rflperry/meditation/data/DCORR_mase_aff_scaled_normed/DCORR_mase_aff_scaled_normed.pdf
+
+# Mapalign replicated, aligned
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_aligned_12-04 --test DCORR --data dmap --label mapalign_replication-csv_aligned_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_aligned_12-04 --test DCORR --data dmap --label mapalign_replication-csv-aligned_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_aligned_12-04 --test DCORR --data dmap --label mapalign_replication-csv-aligned_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_aligned_12-04 --test DCORR --data dmap --label mapalign_replication-csv-aligned_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_aligned_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_aligned_normed/DCORR_dmap_mapalign_replication-csv_aligned_normed.pdf
+
+# Mapalign replicated from csv, aligned
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_12-04 --test DCORR --data dmap --label mapalign_replication-csv_align-100_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_12-04 --test DCORR --data dmap --label mapalign_replication-csv_align-100_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_12-04 --test DCORR --data dmap --label mapalign_replication-csv_align-100_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_12-04 --test DCORR --data dmap --label mapalign_replication-csv_align-100_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_align-100_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_align-100_normed/DCORR_dmap_mapalign_replication_align-100_normed.pdf
+
+# MASE o aff
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_01-05 --test DCORR --data mase --label aff_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_01-05 --test DCORR --data mase --label aff_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_01-05 --test DCORR --data mase --label aff_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_aff_01-05 --test DCORR --data mase --label aff_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_mase_aff_normed/ --save /home/rflperry/meditation/data/DCORR_mase_aff_normed/DCORR_mase_aff_normed.pdf
+
+# MASE o dmap
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_01-08 --test DCORR --data mase --label dmap_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_01-08 --test DCORR --data mase --label dmap_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_01-08 --test DCORR --data mase --label dmap_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/mase_dmap_01-08 --test DCORR --data mase --label dmap_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_mase_dmap_normed/ --save /home/rflperry/meditation/data/DCORR_mase_dmap_normed/DCORR_mase_dmap_normed.pdf
+
+# Mapalign replicated from csv, aligned-100 v2
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-100_01-09_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-100_01-09_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-100_01-09_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-100_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-100_01-09_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_align-100_01-09_normed/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_align-100_01-09_normed/DCORR_dmap_mapalign_replication-csv_align-100_01-09_normed.pdf
+
+# Mapalign replicated from csv, aligned-5
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-5_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-5_01-09 --n-perms 1000 --k-sample 6
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-5_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-5_01-09 --n-perms 10000 --k-sample 3N
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-5_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-5_01-09 --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/dmap_replication-csv_align-5_01-09 --test DCORR --data dmap --label mapalign_replication-csv_align-5_01-09 --n-perms 10000
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_align-5_01-09/ --save /home/rflperry/meditation/data/DCORR_dmap_mapalign_replication-csv_align-5_01-09/DCORR_dmap_mapalign_replication_align-5_01-09.pdf
+
+# Eig of dmap (non normed eig), aligned
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/svd_dmap-eigs_aligned_01-13 --test DCORR --data svd --label dmap-eigs_01-13_normed --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/svd_dmap-eigs_aligned_01-13 --test DCORR --data svd --label dmap-eigs_01-13_normed --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/svd_dmap-eigs_aligned_01-13 --test DCORR --data svd --label dmap-eigs_01-13_normed --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/svd_dmap-eigs_aligned_01-13 --test DCORR --data svd --label dmap-eigs_01-13_normed --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_svd_dmap-eigs_01-13_normed/ --save /home/rflperry/meditation/data/DCORR_svd_dmap-eigs_01-13_normed/DCORR_svd_dmap-eigs_01-13_normed.pdf
+
+# mapalign joint embedding
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign --n-perms 1000 --k-sample 6
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign --n-perms 10000 --k-sample 3N
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/joint_mapalign_01-04/ --test DCORR --data joint --label mapalign --n-perms 10000
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_joint_mapalign/ --save /home/rflperry/meditation/data/DCORR_joint_mapalign/DCORR_joint_mapalign.pdf
+
 
 cd ../
