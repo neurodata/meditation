@@ -47,12 +47,15 @@ def save_data(target_dir, data, components, labels, subjs):
         h5f.close()
 
 
-def group_svd(Xs: np.ndarray) -> np.ndarray:
+def group_svd(Xs: np.ndarray, scaled=False) -> np.ndarray:
     from scipy.sparse.linalg import svds
     from sklearn.preprocessing import normalize
     # Create a concatenated view of Us
     Sall = np.linalg.norm(Xs, axis=1)
-    Uall = Xs / np.linalg.norm(Xs, axis=1, keepdims=True)
+    if scaled:
+        Uall = Xs
+    else:
+        Uall = Xs / np.linalg.norm(Xs, axis=1, keepdims=True)
     Uall_c = np.concatenate(Uall, axis=1)
 
     d = Sall.shape[1]
@@ -60,7 +63,6 @@ def group_svd(Xs: np.ndarray) -> np.ndarray:
     sort_idx = np.argsort(SS)[::-1]
     SS = SS[sort_idx]
     UU = UU[:, sort_idx]
-    group_U = UU[:,:d]
     VV = VV.T[:, sort_idx]
     VV = VV[:, :d]
     
@@ -71,10 +73,11 @@ def group_svd(Xs: np.ndarray) -> np.ndarray:
     for i in range(n):
         idx_start = idx_end
         idx_end = idx_start + d
+        # VVi = VV[idx_start:idx_end, :]
         VVi = normalize(VV[idx_start:idx_end, :], "l2", axis=0)
 
-        # Compute the canonical projections
-        A = np.linalg.solve(np.diag(Sall[i]), VVi)
+        # Compute the canonical projections, unnormalized
+        A = VVi # np.linalg.solve(np.diag(Sall[i]), VVi)
         projection_mats.append(A)
         
     return np.asarray([X @ pmat for X, pmat in zip(Xs, projection_mats)])

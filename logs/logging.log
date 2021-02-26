@@ -5524,3 +5524,277 @@ joblib.externals.loky.process_executor.BrokenProcessPool: A task has failed to u
 2021-02-15 11:18:06,150:INFO:Test Compassion vs. Open Monitoring done in 372.9687259197235
 2021-02-15 11:26:14,743:INFO:Test Resting vs. Meditating done in 488.592246055603
 2021-02-15 11:26:14,744:INFO:Saving to ../data/DCORR_gcca_raw_ZG3-min_normed
+2021-02-15 12:00:37,084:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-15 12:00:37,085:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_mean-align-5_01-09
+2021-02-15 12:02:11,722:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 94.40718722343445
+2021-02-15 12:02:11,723:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_mean-align-5_01-09
+2021-02-15 12:02:14,355:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-15 12:02:14,356:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_mean-align-5_01-09
+2021-02-15 12:08:55,581:INFO:Test 3-sample ([[3], [4], [5]]) done in 400.9957995414734
+2021-02-15 12:08:55,582:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_mean-align-5_01-09
+2021-02-15 12:08:58,144:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-15 12:08:58,144:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_mean-align-5_01-09
+2021-02-15 12:13:30,951:INFO:Test 3-sample ([[0], [1], [2]]) done in 272.58648777008057
+2021-02-15 12:13:30,952:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_mean-align-5_01-09
+2021-02-15 12:13:33,509:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-15 12:13:33,509:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_mean-align-5_01-09
+2021-02-15 12:17:19,116:INFO:Test Experts Resting vs. Experts Compassion done in 225.38347053527832
+2021-02-15 12:20:40,735:INFO:Test Experts Resting vs. Experts Open Monitoring done in 201.6183660030365
+2021-02-15 12:23:38,317:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 177.5814290046692
+2021-02-15 12:27:15,487:INFO:Test Experts Resting vs. Experts Meditating done in 217.1695110797882
+2021-02-15 12:31:34,024:INFO:Test Novices Resting vs. Novices Compassion done in 258.53587555885315
+2021-02-15 12:35:53,166:INFO:Test Novices Resting vs. Novices Open Monitoring done in 259.1417193412781
+2021-02-15 12:40:12,655:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 259.48807740211487
+2021-02-15 12:45:37,896:INFO:Test Novices Resting vs. Novices Meditating done in 325.2406084537506
+2021-02-15 12:50:05,788:INFO:Test Experts Resting vs. Novices Resting done in 267.8916118144989
+2021-02-15 12:54:33,866:INFO:Test Experts Compassion vs. Novices Compassion done in 268.07773756980896
+2021-02-15 12:59:00,786:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 266.91932916641235
+2021-02-15 13:05:14,989:INFO:Test Experts Meditating vs. Novices Meditating done in 374.2021474838257
+2021-02-15 13:13:26,174:INFO:Test Experts All vs. Novices All done in 491.1839928627014
+2021-02-15 13:18:31,374:INFO:Test Experts Resting vs. Novices Compassion done in 305.1989631652832
+2021-02-15 13:22:59,306:INFO:Test Experts Resting vs. Novices Open Monitoring done in 267.9319472312927
+2021-02-15 13:28:01,990:INFO:Test Experts Compassion vs. Novices Resting done in 302.68367195129395
+2021-02-15 13:32:30,074:INFO:Test Experts Compassion vs. Novices Open Monitoring done in 268.08213925361633
+2021-02-15 13:36:58,194:INFO:Test Experts Open Monitoring vs. Novices Resting done in 268.12004685401917
+2021-02-15 13:41:26,437:INFO:Test Experts Open Monitoring vs. Novices Compassion done in 268.24188351631165
+2021-02-15 13:47:43,794:INFO:Test Resting vs. Compassion done in 377.35615515708923
+2021-02-15 13:53:58,457:INFO:Test Resting vs. Open Monitoring done in 374.6626675128937
+2021-02-15 14:00:12,925:INFO:Test Compassion vs. Open Monitoring done in 374.467649936676
+2021-02-15 14:08:26,129:INFO:Test Resting vs. Meditating done in 493.20292234420776
+2021-02-15 14:08:26,129:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_mean-align-5_01-09
+2021-02-17 10:04:15,894:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-17 10:04:15,894:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align-5_01-09
+2021-02-17 10:04:17,619:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-17 10:04:17,619:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align-5_01-09
+2021-02-17 10:05:02,420:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-17 10:05:02,420:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 10:06:37,089:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 94.44572496414185
+2021-02-17 10:06:37,091:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_01-09
+2021-02-17 10:06:39,712:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-17 10:06:39,712:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 10:13:14,088:INFO:Test 3-sample ([[3], [4], [5]]) done in 394.14195585250854
+2021-02-17 10:13:14,089:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_01-09
+2021-02-17 10:13:16,813:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-17 10:13:16,814:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 10:17:48,249:INFO:Test 3-sample ([[0], [1], [2]]) done in 271.218186378479
+2021-02-17 10:17:48,250:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_01-09
+2021-02-17 10:17:50,776:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-17 10:17:50,776:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 10:21:37,734:INFO:Test Experts Resting vs. Experts Compassion done in 226.73463463783264
+2021-02-17 10:24:58,986:INFO:Test Experts Resting vs. Experts Open Monitoring done in 201.2505669593811
+2021-02-17 10:27:56,879:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 177.89219427108765
+2021-02-17 10:29:17,620:INFO:NEW GCCA RUN
+2021-02-17 10:29:17,620:INFO:Args:
+2021-02-17 10:29:17,620:INFO:{'data_dir': PosixPath('/mnt/ssd3/ronan/data/raw'), 'elbos': 3, 'max_rank': False, 'save_dir': '/mnt/ssd3/ronan/data/gcca_raw_min-rank-ZG3_exclude-073_02-17/', 'tag': False, 'split_half': False, 'transpose': False, 'exclude_ids': None}
+2021-02-17 10:29:17,620:INFO:Pulling data from /mnt/ssd3/ronan/data/raw
+2021-02-17 10:31:37,409:INFO:Test Experts Resting vs. Experts Meditating done in 220.5290892124176
+2021-02-17 10:31:48,987:INFO:Performing GCCA
+2021-02-17 10:32:07,991:INFO:Ranks are (4, 5, 6, 4, 4, 5, 4, 6, 4, 6, 8, 7, 5, 6, 6, 3, 4, 5, 5, 4, 3, 4, 4, 4, 6, 6, 3, 4, 5, 5, 6, 5, 5, 5, 5, 6, 5, 5, 6, 4, 4, 5, 5, 5, 5, 4, 4, 4, 5, 6, 5, 6, 5, 4, 4, 6, 5, 4, 5, 7, 6, 5, 5, 6, 5, 6, 4, 6, 5, 7, 4, 5, 5, 7, 5, 5, 5, 5, 6, 4, 5, 5, 4, 5, 6, 3, 5, 6, 4, 5, 5, 4, 4, 4, 5, 4, 6, 5, 5, 4, 4, 3, 5, 6, 4, 4, 6, 5, 5, 6, 6, 4, 5, 4, 7, 5, 5, 6, 5, 5, 4, 6, 5, 4, 4, 5, 6, 6, 5, 6, 3, 4, 5, 5, 4, 5, 5, 5, 6, 5, 5, 4, 6, 4, 6, 4, 5, 5, 3, 6, 5, 6, 6, 3, 6, 4, 4, 5, 6, 5, 6, 4, 4, 3, 5, 5, 4, 4, 5, 6, 5, 6, 5, 5, 6, 4, 3, 5, 4, 4, 4, 3, 5, 5, 4, 3, 4, 5, 6, 6, 4, 5, 7, 5, 5, 5, 6, 6, 4, 5, 5, 4, 4, 4, 7, 4, 6, 6, 6, 5, 4, 5, 4, 6, 5, 5, 7, 5, 6, 6, 4, 5, 4, 4, 6, 5, 6, 5)
+2021-02-17 10:32:07,991:INFO:Group embedding dimensions: (228, 18715, 3)
+2021-02-17 10:32:07,991:INFO:Saving reduce correlations to /mnt/ssd3/ronan/data/gcca_raw_min-rank-ZG3_exclude-073_02-17/
+2021-02-17 10:34:13,418:INFO:NEW GCCA RUN
+2021-02-17 10:34:13,418:INFO:Args:
+2021-02-17 10:34:13,418:INFO:{'data_dir': PosixPath('/mnt/ssd3/ronan/data/raw'), 'elbos': 3, 'max_rank': False, 'save_dir': '/mnt/ssd3/ronan/data/gcca_raw_min-rank-ZG3_exclude-073_02-17/', 'tag': False, 'split_half': False, 'transpose': False, 'exclude_ids': None}
+2021-02-17 10:34:13,419:INFO:Pulling data from /mnt/ssd3/ronan/data/raw
+2021-02-17 10:36:06,571:INFO:Test Novices Resting vs. Novices Compassion done in 269.1610767841339
+2021-02-17 10:36:39,880:INFO:Performing GCCA
+2021-02-17 10:36:57,301:INFO:Ranks are (4, 5, 6, 4, 4, 5, 4, 6, 4, 6, 8, 7, 5, 6, 6, 3, 4, 5, 5, 4, 3, 4, 4, 4, 6, 6, 3, 4, 5, 5, 6, 5, 5, 5, 5, 6, 5, 5, 6, 4, 4, 5, 5, 5, 5, 4, 4, 4, 5, 6, 5, 6, 5, 4, 4, 6, 5, 4, 5, 7, 6, 5, 5, 6, 5, 6, 4, 6, 5, 7, 4, 5, 5, 7, 5, 5, 5, 5, 6, 4, 5, 5, 4, 5, 6, 3, 5, 6, 4, 5, 5, 4, 4, 4, 5, 4, 6, 5, 5, 4, 4, 3, 5, 6, 4, 4, 6, 5, 5, 6, 6, 4, 5, 4, 7, 5, 5, 6, 5, 5, 4, 6, 5, 4, 4, 5, 6, 6, 5, 6, 3, 4, 5, 5, 4, 5, 5, 5, 6, 5, 5, 4, 6, 4, 6, 4, 5, 5, 3, 6, 5, 6, 6, 3, 6, 4, 4, 5, 6, 5, 6, 4, 4, 3, 5, 5, 4, 4, 5, 6, 5, 6, 5, 5, 6, 4, 3, 5, 4, 4, 4, 3, 5, 5, 4, 3, 4, 5, 6, 6, 4, 5, 7, 5, 5, 5, 6, 6, 4, 5, 5, 4, 4, 4, 7, 4, 6, 6, 6, 5, 4, 5, 4, 6, 5, 5, 7, 5, 6, 6, 4, 5, 4, 4, 6, 5, 6, 5)
+2021-02-17 10:36:57,301:INFO:Group embedding dimensions: (228, 18715, 3)
+2021-02-17 10:36:57,301:INFO:Saving reduce correlations to /mnt/ssd3/ronan/data/gcca_raw_min-rank-ZG3_exclude-073_02-17
+2021-02-17 10:40:35,080:INFO:Test Novices Resting vs. Novices Open Monitoring done in 268.5083646774292
+2021-02-17 10:44:59,409:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 264.3273148536682
+2021-02-17 10:50:31,172:INFO:Test Novices Resting vs. Novices Meditating done in 331.7632405757904
+2021-02-17 10:55:04,236:INFO:Test Experts Resting vs. Novices Resting done in 273.06294417381287
+2021-02-17 10:59:36,105:INFO:Test Experts Compassion vs. Novices Compassion done in 271.86788034439087
+2021-02-17 11:04:07,966:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 271.861421585083
+2021-02-17 11:10:29,549:INFO:Test Experts Meditating vs. Novices Meditating done in 381.581574678421
+2021-02-17 11:19:02,332:INFO:Test Experts All vs. Novices All done in 512.782399892807
+2021-02-17 11:23:34,085:INFO:Test Experts Resting vs. Novices Compassion done in 271.7520897388458
+2021-02-17 11:28:05,273:INFO:Test Experts Resting vs. Novices Open Monitoring done in 271.18707299232483
+2021-02-17 11:32:37,816:INFO:Test Experts Compassion vs. Novices Resting done in 272.54214358329773
+2021-02-17 11:37:10,316:INFO:Test Experts Compassion vs. Novices Open Monitoring done in 272.49993324279785
+2021-02-17 11:41:41,951:INFO:Test Experts Open Monitoring vs. Novices Resting done in 271.6336147785187
+2021-02-17 11:46:16,074:INFO:Test Experts Open Monitoring vs. Novices Compassion done in 274.1232464313507
+2021-02-17 11:52:42,034:INFO:Test Resting vs. Compassion done in 385.959445476532
+2021-02-17 11:59:07,497:INFO:Test Resting vs. Open Monitoring done in 385.4616358280182
+2021-02-17 12:05:31,752:INFO:Test Compassion vs. Open Monitoring done in 384.25442266464233
+2021-02-17 12:13:48,873:INFO:Test Resting vs. Meditating done in 497.1211450099945
+2021-02-17 12:13:48,874:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_01-09
+2021-02-17 14:03:50,241:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-17 14:03:50,242:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 14:05:25,378:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 94.91067886352539
+2021-02-17 14:05:25,380:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_normed_01-09
+2021-02-17 14:05:27,899:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-17 14:05:27,899:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 14:12:03,666:INFO:Test 3-sample ([[3], [4], [5]]) done in 395.54858136177063
+2021-02-17 14:12:03,667:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_normed_01-09
+2021-02-17 14:12:06,270:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-17 14:12:06,270:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 14:16:36,687:INFO:Test 3-sample ([[0], [1], [2]]) done in 270.1849596500397
+2021-02-17 14:16:36,688:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_normed_01-09
+2021-02-17 14:16:39,271:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-17 14:16:39,272:INFO:Loading data from directory: /mnt/ssd3/ronan/data/dmap_replication-csv_svd-align_01-09
+2021-02-17 14:20:23,169:INFO:Test Experts Resting vs. Experts Compassion done in 223.66537618637085
+2021-02-17 14:23:45,985:INFO:Test Experts Resting vs. Experts Open Monitoring done in 202.8150806427002
+2021-02-17 14:26:44,276:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 178.28999829292297
+2021-02-17 14:30:23,477:INFO:Test Experts Resting vs. Experts Meditating done in 219.20052909851074
+2021-02-17 14:34:44,350:INFO:Test Novices Resting vs. Novices Compassion done in 260.87228083610535
+2021-02-17 14:39:02,600:INFO:Test Novices Resting vs. Novices Open Monitoring done in 258.2488775253296
+2021-02-17 14:43:22,657:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 260.0564503669739
+2021-02-17 14:48:50,245:INFO:Test Novices Resting vs. Novices Meditating done in 327.5873670578003
+2021-02-17 14:53:19,877:INFO:Test Experts Resting vs. Novices Resting done in 269.63028740882874
+2021-02-17 14:57:49,579:INFO:Test Experts Compassion vs. Novices Compassion done in 269.7017378807068
+2021-02-17 15:02:18,739:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 269.15982460975647
+2021-02-17 15:10:16,261:INFO:Test Experts Meditating vs. Novices Meditating done in 477.5213429927826
+2021-02-17 15:20:25,739:INFO:Test Experts All vs. Novices All done in 609.476888179779
+2021-02-17 15:24:55,109:INFO:Test Experts Resting vs. Novices Compassion done in 269.3701341152191
+2021-02-17 15:29:23,788:INFO:Test Experts Resting vs. Novices Open Monitoring done in 268.6778972148895
+2021-02-17 15:33:53,439:INFO:Test Experts Compassion vs. Novices Resting done in 269.65054202079773
+2021-02-17 15:38:22,769:INFO:Test Experts Compassion vs. Novices Open Monitoring done in 269.3296642303467
+2021-02-17 15:42:51,763:INFO:Test Experts Open Monitoring vs. Novices Resting done in 268.993026971817
+2021-02-17 15:47:22,621:INFO:Test Experts Open Monitoring vs. Novices Compassion done in 270.8570890426636
+2021-02-17 15:53:40,461:INFO:Test Resting vs. Compassion done in 377.83962416648865
+2021-02-17 15:59:56,741:INFO:Test Resting vs. Open Monitoring done in 376.28006076812744
+2021-02-17 16:06:13,937:INFO:Test Compassion vs. Open Monitoring done in 377.19535756111145
+2021-02-17 16:14:27,124:INFO:Test Resting vs. Meditating done in 493.1866068840027
+2021-02-17 16:14:27,125:INFO:Saving to ../data/DCORR_dmap_mapalign_replication-csv_svd-align_normed_01-09
+2021-02-25 16:33:28,262:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-25 16:33:28,262:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 16:35:01,170:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 92.69317626953125
+2021-02-25 16:35:01,171:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_normed_02-25
+2021-02-25 16:35:03,702:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-25 16:35:03,702:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 16:41:37,743:INFO:Test 3-sample ([[3], [4], [5]]) done in 393.8201570510864
+2021-02-25 16:41:37,744:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_normed_02-25
+2021-02-25 16:41:40,313:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-25 16:41:40,313:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 16:46:15,184:INFO:Test 3-sample ([[0], [1], [2]]) done in 274.6559159755707
+2021-02-25 16:46:15,186:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_normed_02-25
+2021-02-25 16:46:18,065:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-25 16:46:18,065:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 16:50:08,514:INFO:Test Experts Resting vs. Experts Compassion done in 230.19674611091614
+2021-02-25 16:53:09,791:INFO:Test Experts Resting vs. Experts Open Monitoring done in 181.2765257358551
+2021-02-25 16:56:12,510:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 182.71762824058533
+2021-02-25 16:59:55,075:INFO:Test Experts Resting vs. Experts Meditating done in 222.56454396247864
+2021-02-25 17:04:21,970:INFO:Test Novices Resting vs. Novices Compassion done in 266.8940587043762
+2021-02-25 17:08:47,140:INFO:Test Novices Resting vs. Novices Open Monitoring done in 265.1683819293976
+2021-02-25 17:13:09,114:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 261.97438049316406
+2021-02-25 17:18:37,755:INFO:Test Novices Resting vs. Novices Meditating done in 328.64021468162537
+2021-02-25 17:23:08,229:INFO:Test Experts Resting vs. Novices Resting done in 270.4734296798706
+2021-02-25 17:28:15,568:INFO:Test Experts Compassion vs. Novices Compassion done in 307.3382158279419
+2021-02-25 17:32:46,153:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 270.5838966369629
+2021-02-25 17:39:06,141:INFO:Test Experts Meditating vs. Novices Meditating done in 379.9876194000244
+2021-02-25 17:47:24,965:INFO:Test Experts All vs. Novices All done in 498.82390999794006
+2021-02-25 17:51:56,010:INFO:Test Experts Resting vs. Novices Compassion done in 271.0436794757843
+2021-02-25 17:56:26,508:INFO:Test Experts Resting vs. Novices Open Monitoring done in 270.49795842170715
+2021-02-25 18:00:56,948:INFO:Test Experts Compassion vs. Novices Resting done in 270.4389715194702
+2021-02-25 18:05:27,747:INFO:Test Experts Compassion vs. Novices Open Monitoring done in 270.79882407188416
+2021-02-25 18:09:57,433:INFO:Test Experts Open Monitoring vs. Novices Resting done in 269.6851439476013
+2021-02-25 18:14:27,292:INFO:Test Experts Open Monitoring vs. Novices Compassion done in 269.8582761287689
+2021-02-25 18:20:47,766:INFO:Test Resting vs. Compassion done in 380.4731299877167
+2021-02-25 18:27:08,786:INFO:Test Resting vs. Open Monitoring done in 381.0197811126709
+2021-02-25 18:33:29,015:INFO:Test Compassion vs. Open Monitoring done in 380.2281279563904
+2021-02-25 18:41:46,901:INFO:Test Resting vs. Meditating done in 497.8851475715637
+2021-02-25 18:41:46,902:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_normed_02-25
+2021-02-25 18:41:50,562:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-25 18:41:50,563:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 18:43:24,392:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 93.61152172088623
+2021-02-25 18:43:24,393:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_02-25
+2021-02-25 18:43:26,974:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-25 18:43:26,974:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 18:50:00,136:INFO:Test 3-sample ([[3], [4], [5]]) done in 392.9379758834839
+2021-02-25 18:50:00,137:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_02-25
+2021-02-25 18:50:02,669:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-25 18:50:02,669:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 18:54:37,379:INFO:Test 3-sample ([[0], [1], [2]]) done in 274.49279499053955
+2021-02-25 18:54:37,380:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_02-25
+2021-02-25 18:54:39,915:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-25 18:54:39,915:INFO:Loading data from directory: /mnt/ssd3/ronan/data/grouppca_raw_02-25
+2021-02-25 18:58:26,330:INFO:Test Experts Resting vs. Experts Compassion done in 226.19386768341064
+2021-02-25 19:01:25,557:INFO:Test Experts Resting vs. Experts Open Monitoring done in 179.22597694396973
+2021-02-25 19:04:24,625:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 179.06775379180908
+2021-02-25 19:08:04,038:INFO:Test Experts Resting vs. Experts Meditating done in 219.41196036338806
+2021-02-25 19:12:26,006:INFO:Test Novices Resting vs. Novices Compassion done in 261.96685791015625
+2021-02-25 19:16:46,982:INFO:Test Novices Resting vs. Novices Open Monitoring done in 260.97598028182983
+2021-02-25 19:21:07,914:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 260.9312574863434
+2021-02-25 19:26:36,230:INFO:Test Novices Resting vs. Novices Meditating done in 328.314658164978
+2021-02-25 19:31:06,223:INFO:Test Experts Resting vs. Novices Resting done in 269.99319767951965
+2021-02-25 19:35:36,352:INFO:Test Experts Compassion vs. Novices Compassion done in 270.1278555393219
+2021-02-25 19:40:04,960:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 268.6078939437866
+2021-02-25 19:46:21,439:INFO:Test Experts Meditating vs. Novices Meditating done in 376.4777088165283
+2021-02-25 19:54:33,881:INFO:Test Experts All vs. Novices All done in 492.44215869903564
+2021-02-25 19:59:04,741:INFO:Test Experts Resting vs. Novices Compassion done in 270.8590726852417
+2021-02-25 20:03:33,686:INFO:Test Experts Resting vs. Novices Open Monitoring done in 268.94496750831604
+2021-02-25 20:08:39,081:INFO:Test Experts Compassion vs. Novices Resting done in 305.3941547870636
+2021-02-25 20:13:09,778:INFO:Test Experts Compassion vs. Novices Open Monitoring done in 270.6956830024719
+2021-02-25 20:17:38,664:INFO:Test Experts Open Monitoring vs. Novices Resting done in 268.88584208488464
+2021-02-25 20:22:08,959:INFO:Test Experts Open Monitoring vs. Novices Compassion done in 270.29448437690735
+2021-02-25 20:28:27,179:INFO:Test Resting vs. Compassion done in 378.2189817428589
+2021-02-25 20:34:45,394:INFO:Test Resting vs. Open Monitoring done in 378.21395993232727
+2021-02-25 20:41:05,295:INFO:Test Compassion vs. Open Monitoring done in 379.90109872817993
+2021-02-25 20:50:20,576:INFO:Test Resting vs. Meditating done in 555.2801666259766
+2021-02-25 20:50:20,577:INFO:Saving to ../data/DCORR_grouppca_grouppca_raw_02-25
+2021-02-26 11:39:43,109:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-26 11:39:43,110:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 11:42:05,779:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 142.41521048545837
+2021-02-26 11:42:05,780:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_normed_02-26
+2021-02-26 11:42:08,406:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-26 11:42:08,406:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 11:49:51,462:INFO:Test 3-sample ([[3], [4], [5]]) done in 462.7919726371765
+2021-02-26 11:49:51,463:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_normed_02-26
+2021-02-26 11:49:53,995:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-26 11:49:53,995:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 11:55:53,514:INFO:Test 3-sample ([[0], [1], [2]]) done in 359.2620093822479
+2021-02-26 11:55:53,516:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_normed_02-26
+2021-02-26 11:55:56,130:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-26 11:55:56,130:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 11:59:56,564:INFO:Test Experts Resting vs. Experts Compassion done in 240.15887665748596
+2021-02-26 12:05:49,848:INFO:Test Experts Resting vs. Experts Open Monitoring done in 353.2828550338745
+2021-02-26 12:10:58,772:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 308.9237310886383
+2021-02-26 12:14:32,605:INFO:Test Experts Resting vs. Experts Meditating done in 213.8315954208374
+2021-02-26 12:18:51,193:INFO:Test Novices Resting vs. Novices Compassion done in 258.58784580230713
+2021-02-26 12:23:08,265:INFO:Test Novices Resting vs. Novices Open Monitoring done in 257.0709443092346
+2021-02-26 12:27:25,091:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 256.82570147514343
+2021-02-26 12:32:50,498:INFO:Test Novices Resting vs. Novices Meditating done in 325.4058504104614
+2021-02-26 12:37:17,223:INFO:Test Experts Resting vs. Novices Resting done in 266.724045753479
+2021-02-26 12:41:45,486:INFO:Test Experts Compassion vs. Novices Compassion done in 268.261736869812
+2021-02-26 12:46:12,412:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 266.92577481269836
+2021-02-26 12:52:27,235:INFO:Test Experts Meditating vs. Novices Meditating done in 374.82294631004333
+2021-02-26 13:00:39,524:INFO:Test Experts All vs. Novices All done in 492.28827261924744
+2021-02-26 13:05:05,732:INFO:Test Experts Resting vs. Novices Compassion done in 266.2065098285675
+2021-02-26 13:09:31,990:INFO:Test Experts Resting vs. Novices Open Monitoring done in 266.2581434249878
+2021-02-26 13:13:58,189:INFO:Test Experts Compassion vs. Novices Resting done in 266.1985538005829
+2021-02-26 13:18:24,428:INFO:Test Experts Compassion vs. Novices Open Monitoring done in 266.2381684780121
+2021-02-26 13:22:50,024:INFO:Test Experts Open Monitoring vs. Novices Resting done in 265.5950605869293
+2021-02-26 13:27:16,701:INFO:Test Experts Open Monitoring vs. Novices Compassion done in 266.6771388053894
+2021-02-26 13:33:33,101:INFO:Test Resting vs. Compassion done in 376.39921975135803
+2021-02-26 13:39:47,677:INFO:Test Resting vs. Open Monitoring done in 374.57436513900757
+2021-02-26 13:46:04,214:INFO:Test Compassion vs. Open Monitoring done in 376.53729009628296
+2021-02-26 13:54:15,684:INFO:Test Resting vs. Meditating done in 491.4694399833679
+2021-02-26 13:54:15,685:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_normed_02-26
+2021-02-26 13:54:19,983:INFO:NEW RUN: DCORR, 1000 permutations, simulated=False, k_sample=6, start_grad 0
+2021-02-26 13:54:19,983:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 13:55:55,347:INFO:Test 6-sample ([[0], [1], [2], [3], [4], [5]]) done in 95.07741856575012
+2021-02-26 13:55:55,348:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 13:55:57,825:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3N, start_grad 0
+2021-02-26 13:55:57,825:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 14:02:35,787:INFO:Test 3-sample ([[3], [4], [5]]) done in 397.6842534542084
+2021-02-26 14:02:35,788:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 14:02:38,371:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=3E, start_grad 0
+2021-02-26 14:02:38,371:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 14:07:15,990:INFO:Test 3-sample ([[0], [1], [2]]) done in 277.33893942832947
+2021-02-26 14:07:15,991:INFO:Saving to ../data/DCORR_gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 14:07:18,520:INFO:NEW RUN: DCORR, 10000 permutations, simulated=False, k_sample=None, start_grad 0
+2021-02-26 14:07:18,520:INFO:Loading data from directory: /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26
+2021-02-26 14:11:03,441:INFO:Test Experts Resting vs. Experts Compassion done in 224.641526222229
+2021-02-26 14:14:02,641:INFO:Test Experts Resting vs. Experts Open Monitoring done in 179.1990931034088
+2021-02-26 14:17:01,372:INFO:Test Experts Open Monitoring vs. Experts Compassion done in 178.7299449443817
+2021-02-26 14:20:42,137:INFO:Test Experts Resting vs. Experts Meditating done in 220.76428031921387
+2021-02-26 14:25:03,243:INFO:Test Novices Resting vs. Novices Compassion done in 261.1056294441223
+2021-02-26 14:29:24,048:INFO:Test Novices Resting vs. Novices Open Monitoring done in 260.803852558136
+2021-02-26 14:33:44,666:INFO:Test Novices Open Monitoring vs. Novices Compassion done in 260.6178505420685
+2021-02-26 14:39:10,815:INFO:Test Novices Resting vs. Novices Meditating done in 326.1472599506378
+2021-02-26 14:43:39,015:INFO:Test Experts Resting vs. Novices Resting done in 268.19974541664124
+2021-02-26 14:48:09,489:INFO:Test Experts Compassion vs. Novices Compassion done in 270.4732048511505
+2021-02-26 14:53:13,541:INFO:Test Experts Open Monitoring vs. Novices Open Monitoring done in 304.0515661239624
+2021-02-26 14:59:33,378:INFO:Test Experts Meditating vs. Novices Meditating done in 379.83616304397583

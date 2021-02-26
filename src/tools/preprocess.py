@@ -1,6 +1,7 @@
 import numpy as np
 from collections import defaultdict
 
+
 def procrustes(source, target, return_transform=False):
     u, s, v = np.linalg.svd(target.T.dot(source), full_matrices=False)
     xfm = v.T.dot(u.T)
@@ -9,7 +10,8 @@ def procrustes(source, target, return_transform=False):
     else:
         return source.dot(xfm)
 
-def align(sources, target, firstpass=False, aux_mats=None, debug=False):
+
+def align(sources, target, firstpass=False, aux_mats=None):
     """
     Aligns source matrices to a target using SVD. Assuming centered source matrix P and target matrix Q,
     we wish to find matrix R to minimize \sum_{i=1}^n ||Q - RP||^2 which ammounts to maximize the quantity
@@ -43,9 +45,21 @@ def align(sources, target, firstpass=False, aux_mats=None, debug=False):
     else:
         return realign
 
-def iterate_align(components, labels, subjs, thresh=0.001, max_iter=10, norm=False, mean_align=False, reference_align=True, debug=False, fnorm=False):
+
+def iterate_align(
+    components,
+    labels,
+    subjs,
+    thresh=0.001,
+    max_iter=10,
+    norm=False,
+    mean_align=False,
+    reference_align=True,
+    debug=False,
+    fnorm=False,
+):
     if norm:
-        embeddings = components /  np.linalg.norm(components, axis=1, keepdims=True)
+        embeddings = components / np.linalg.norm(components, axis=1, keepdims=True)
     elif fnorm:
         embeddings = components / np.linalg.norm(components, axis=(1, 2), keepdims=True)
     else:
@@ -66,30 +80,46 @@ def iterate_align(components, labels, subjs, thresh=0.001, max_iter=10, norm=Fal
             embs, ls = list(zip(*embs_ls))
             subj_ids.append(subj)
             subj_labels.append(ls)
-            embs, obj = _iterate_align(embs, thresh, max_iter, reference_align=reference_align)
+            embs, obj = _iterate_align(
+                embs, thresh, max_iter, reference_align=reference_align
+            )
             objs.append(obj)
             subj_mats.append(embs)
             subj_means.append(np.mean(embs, axis=0))
         objs = np.hstack(objs)
 
-        aligned_means, embeddings, obj = _iterate_align(subj_means, thresh, max_iter, aux_mats=subj_mats, reference_align=reference_align, debug=debug)
+        aligned_means, embeddings, obj = _iterate_align(
+            subj_means,
+            thresh,
+            max_iter,
+            aux_mats=subj_mats,
+            reference_align=reference_align,
+            debug=debug,
+        )
         objs = np.vstack((objs, obj))
         embeddings = np.vstack(embeddings)
         labels = np.vstack(subj_labels)
-        subjs = np.hstack([[id]*3 for id in subj_ids])
+        subjs = np.hstack([[id] * 3 for id in subj_ids])
     else:
-        embeddings, objs = _iterate_align(embeddings, thresh, max_iter, reference_align=reference_align, debug=debug)
+        embeddings, objs = _iterate_align(
+            embeddings, thresh, max_iter, reference_align=reference_align, debug=debug
+        )
 
     if debug:
         return embeddings, labels, subjs, objs
 
     return embeddings, labels, subjs
 
-def _iterate_align(embeddings, thresh, max_iter, aux_mats=None, reference_align=True, debug=False):
+
+def _iterate_align(
+    embeddings, thresh, max_iter, aux_mats=None, reference_align=True, debug=False
+):
     objs = []
     n = embeddings[0].shape[1]
     if reference_align and aux_mats is not None:
-        embeddings, aux_mats = align(embeddings[1:], embeddings[0], firstpass=True, aux_mats=aux_mats)
+        embeddings, aux_mats = align(
+            embeddings[1:], embeddings[0], firstpass=True, aux_mats=aux_mats
+        )
     elif reference_align:
         embeddings = align(embeddings[1:], embeddings[0], firstpass=True)
     prior_embed = None
@@ -97,16 +127,19 @@ def _iterate_align(embeddings, thresh, max_iter, aux_mats=None, reference_align=
         mean = np.mean(embeddings, axis=0).squeeze()
         if aux_mats is not None:
             embeddings, aux_mats = align(
-                embeddings, np.asarray(mean),
-                firstpass = False, aux_mats=aux_mats)
-            objs.append([np.linalg.norm(mean - embed) / n for embed in np.vstack(aux_mats)])
+                embeddings, np.asarray(mean), firstpass=False, aux_mats=aux_mats
+            )
+            objs.append(
+                [np.linalg.norm(mean - embed) / n for embed in np.vstack(aux_mats)]
+            )
         else:
-            embeddings = align(
-                embeddings, np.asarray(mean),
-                firstpass=False, debug=True)
+            embeddings = align(embeddings, np.asarray(mean), firstpass=False)
             objs.append([np.linalg.norm(mean - embed) / n for embed in embeddings])
         embeddings = np.asarray(embeddings)
-        if prior_embed is not None and np.linalg.norm(embeddings - prior_embed) < thresh:
+        if (
+            prior_embed is not None
+            and np.linalg.norm(embeddings - prior_embed) < thresh
+        ):
             break
         prior_embed = embeddings
 

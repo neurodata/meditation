@@ -31,6 +31,8 @@ def embed_all(
     # Make directory to save to
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+    if isinstance(save_dir, str):
+        save_dir = Path(save_dir)
 
     # Get filenames for each task, novice vs. experienced
     tasks = ['restingstate', 'openmonitoring', 'compassion']
@@ -62,12 +64,13 @@ def embed_all(
 
     # Save latents
     logging.info(f'Saving reduce correlations to {save_dir}')
-    for info, latent, proj_mat in zip(infos, latents, gcca.projection_mats_):
+    for info, latent, proj_mat, svals in zip(infos, latents, gcca.projection_mats_, gcca._Sall):
         level, subj, task = info
         save_path = save_dir / f'{level}_sub-{subj}_ses-1_task-{task}_gcca.h5'
         h5f = h5py.File(save_path, 'w')
         h5f.create_dataset('latent', data=latent)
         h5f.create_dataset('projection', data=proj_mat)
+        h5f.create_dataset('svals', data=svals)
         h5f.close()
 
 if __name__ == '__main__':

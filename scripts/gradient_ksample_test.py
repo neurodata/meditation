@@ -489,7 +489,7 @@ if __name__ == '__main__':
     parser.add_argument("--multiway", help="", action="store_true")
     parser.add_argument("--sim-dist", help="distribution", type=str, default=None)
     parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
-    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase', 'svd', 'mase_dmap', 'joint'], default="gcca")
+    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase', 'svd', 'mase_dmap', 'joint', 'grouppca'], default="gcca")
     parser.add_argument("--align", help="", action="store_true", default=False)
     parser.add_argument("--norm", help="", action="store_true", default=False)
     parser.add_argument("--start-grad", help="Starting index of the first 3 gradients", type=int, default=0)
