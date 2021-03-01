@@ -73,7 +73,6 @@ def group_svd(Xs: np.ndarray, scaled=False) -> np.ndarray:
     for i in range(n):
         idx_start = idx_end
         idx_end = idx_start + d
-        # VVi = VV[idx_start:idx_end, :]
         VVi = normalize(VV[idx_start:idx_end, :], "l2", axis=0)
 
         # Compute the canonical projections, unnormalized
@@ -98,13 +97,14 @@ if __name__ == "__main__":
     parser.add_argument("--fnorm", action='store_true', default=False)
     parser.add_argument("--mean-align", action='store_true', default=False)
     parser.add_argument("--group-svd", action='store_true', default=False)
+    parser.add_argument("--scaled", action='store_true', default=False)
 
     args = parser.parse_args()
 
     components, labels, subjs = load_data(args.source, args.data, args.exclude_ids)
     if not args.debug:
         if args.group_svd:
-            components = group_svd(components)
+            components = group_svd(components, scaled=args.scaled)
         else:
             components, labels, subjs = iterate_align(components, labels, subjs, args.thresh, args.max_iter, args.norm, args.mean_align, args.debug, args.fnorm)
         save_data(args.save, args.data, components, labels, subjs)

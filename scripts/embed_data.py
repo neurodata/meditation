@@ -5,7 +5,7 @@ from numba import jit
 from graspy.embed import MultipleASE
 from mvlearn.embed import GCCA
 from mvlearn.embed.utils import select_dimension
-from mvlearn.decomposition import GroupPCA
+from mvlearn.decomposition import GroupPCA, GroupICA
 from scipy.sparse.linalg import eigsh
 from scipy.sparse.linalg import svds
 import numpy as np
@@ -125,6 +125,8 @@ def embed_all(
         results_dict, infos = _joint_embedding(paths, ftype)
     elif method_name == 'grouppca':
         results_dict, infos = _embed_grouppca(paths, ftype)
+    elif method_name == 'groupica':
+        results_dict, infos = _embed_groupica(paths, ftype)
     else:
         raise ValueError(f'Invalid method input: {method_name}')
     
@@ -185,7 +187,7 @@ def _embed_mase(paths, ftype, data):
 
 
 def _embed_gcca(paths, data, ftype):
-    method = GCCA(n_elbows=2, center=(data=='raw'), max_rank=True)
+    method = GCCA(n_components=5, center=(data=='raw'), max_rank=False)
     infos = []
     results_dict = defaultdict(list)
 
@@ -344,8 +346,13 @@ def _joint_embedding(paths, ftype):
     
     return results_dict, infos
 
-
 def _embed_grouppca(paths, ftype, n_components=5):
+    return _embed_group_wrapper(paths, ftype, n_components, GroupPCA)
+
+def _embed_groupica(paths, ftype, n_components=5):
+    return _embed_group_wrapper(paths, ftype, n_components, GroupICA)
+
+def _embed_group_wrapper(paths, ftype, n_components, model, prewhiten=True):
     infos = []
     results_dict = {}
     print(f'Fit transform: {datetime.now().strftime("%H:%M:%S")}')
@@ -375,8 +382,8 @@ def _embed_grouppca(paths, ftype, n_components=5):
             Xs.append(X)
             del X
 
-    gpca = GroupPCA(n_components=n_components, n_individual_components=elbows, prewhiten=True)
-    Xs = gpca.fit_transform(Xs)
+    embeddor = model(n_components=n_components, n_individual_components=elbows, prewhiten=prewhiten)
+    Xs = embeddor.fit_transform(Xs)
         
     results_dict['rank'] = [n_components]*len(Xs)
     results_dict['elbows'] = elbows
@@ -441,7 +448,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Mandatory
-    parser.add_argument('--method', type=str, help="", choices=['gcca', 'mase', 'svd', 'dmap', 'joint', 'grouppca'])
+    parser.add_argument('--method', type=str, help="", choices=['gcca', 'mase', 'svd', 'dmap', 'joint', 'grouppca', 'groupica'])
     # Optional
     parser.add_argument('--ftype', type=str, choices=['csv', 'mgz'], default='csv')
     parser.add_argument('--data', type=str, default='dmap', choices=['dmap', 'raw', 'aff'])

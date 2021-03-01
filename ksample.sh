@@ -283,22 +283,36 @@ cd ./scripts
 # grouppca, magnitudes
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_02-25 --test DCORR --data grouppca --label raw_02-25 --n-perms 1000 --k-sample 6
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_02-25 --test DCORR --data grouppca --label raw_02-25 --n-perms 10000 --k-sample 3N
-# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_02-25 --test DCORR --data grouppca --label aw_02-25 --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_02-25 --test DCORR --data grouppca --label raw_02-25 --n-perms 10000 --k-sample 3E
 # python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_02-25 --test DCORR --data grouppca --label raw_02-25 --n-perms 10000
 # python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_02-25/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_02-25/DCORR_grouppca_raw_02-25.pdf
 
-# gcca ZG2-max, normed
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_normed_02-26 --n-perms 1000 --k-sample 6 --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_normed_02-26 --n-perms 10000 --k-sample 3N --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_normed_02-26 --n-perms 10000 --k-sample 3E --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_normed_02-26 --n-perms 10000 --norm
-python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ZG2-max_unnormed_normed_02-26/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ZG2-max_unnormed_normed_02-26/DCORR_gcca_raw_ZG2-max_unnormed_02-26.pdf
+# gcca n_components=5, normed
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_normed_02-27 --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_normed_02-27 --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_normed_02-27 --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_normed_02-27 --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ncomp-5_scaled_normed_02-27/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ncomp-5_scaled_normed_02-27/DCORR_gcca_raw_ncomp-5_scaled_normed_02-27.pdf
 
-# gcca ZG2-max
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_02-26 --n-perms 1000 --k-sample 6
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_02-26 --n-perms 10000 --k-sample 3N
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_02-26 --n-perms 10000 --k-sample 3E
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ZG2-max_unnormed_02-26 --test DCORR --data gcca --label raw_ZG2-max_unnormed_02-26 --n-perms 10000
-python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ZG2-max_unnormed_02-26/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ZG2-max_unnormed_02-26/DCORR_gcca_raw_ZG2-max_unnormed_02-26.pdf
+# gcca n_components=5
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_02-27 --n-perms 1000 --k-sample 6
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_02-27 --n-perms 10000 --k-sample 3N
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_02-27 --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/gcca_raw_ncomp-5_scaled_02-27 --test DCORR --data gcca --label raw_ncomp-5_scaled_02-27 --n-perms 10000
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ncomp-5_scaled_02-27/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ncomp-5_scaled_02-27/DCORR_gcca_raw_ncomp-5_scaled_02-27.pdf
+
+# grouppca, prewhitened and normed
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 1000 --k-sample 6 --norm
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --k-sample 3N --norm
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --k-sample 3E --norm
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --norm
+python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_normed_02-26/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_normed_02-26/DCORR_grouppca_raw_prewhitened_normed_02-26.pdf
+
+# grouppca, prewhitened
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 1000 --k-sample 6
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000 --k-sample 3N
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000 --k-sample 3E
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000
+python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_02-26/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_02-26/DCORR_grouppca_raw_prewhitened_02-26.pdf
 
 cd ../
