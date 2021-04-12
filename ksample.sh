@@ -302,17 +302,25 @@ cd ./scripts
 # python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_gcca_raw_ncomp-5_scaled_02-27/ --save /home/rflperry/meditation/data/DCORR_gcca_raw_ncomp-5_scaled_02-27/DCORR_gcca_raw_ncomp-5_scaled_02-27.pdf
 
 # grouppca, prewhitened and normed
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 1000 --k-sample 6 --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --k-sample 3N --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --k-sample 3E --norm
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --norm
-python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_normed_02-26/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_normed_02-26/DCORR_grouppca_raw_prewhitened_normed_02-26.pdf
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 1000 --k-sample 6 --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --k-sample 3N --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --k-sample 3E --norm
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_normed_02-26 --n-perms 10000 --norm
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_normed_02-26/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_normed_02-26/DCORR_grouppca_raw_prewhitened_normed_02-26.pdf
 
 # grouppca, prewhitened
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 1000 --k-sample 6
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000 --k-sample 3N
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000 --k-sample 3E
-python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000
-python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_02-26/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_02-26/DCORR_grouppca_raw_prewhitened_02-26.pdf
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 1000 --k-sample 6
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000 --k-sample 3N
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000 --k-sample 3E
+# python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/grouppca_raw_prewhitened_02-26   --test DCORR --data grouppca --label raw_prewhitened_02-26 --n-perms 10000
+# python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_02-26/ --save /home/rflperry/meditation/data/DCORR_grouppca_raw_prewhitened_02-26/DCORR_grouppca_raw_prewhitened_02-26.pdf
+
+# template aligned
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/template_align --test DCORR --data dmap2 --label template_align_normed --n-perms 1000 --k-sample 6 --exclude-ids 073 --norm
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/template_align --test DCORR --data dmap2 --label template_align_normed --n-perms 10000 --k-sample 3N --exclude-ids 073 --norm
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/template_align --test DCORR --data dmap2 --label template_align_normed --n-perms 10000 --k-sample 3E --exclude-ids 073 --norm
+python3 ./gradient_ksample_test.py --source /mnt/ssd3/ronan/data/template_align --test DCORR --data dmap2 --label template_align_normed --n-perms 10000 --exclude-ids 073 --norm
+python3 ./make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap2_template_align_normed/ --save /home/rflperry/meditation/data/DCORR_dmap2_template_align_normed/DCORR_dmap2_template_align_normed.pdf
+python make_pvalue_heatmap.py --source /home/rflperry/meditation/data/DCORR_dmap2_template_align_normed/ --save /home/rflperry/meditation/data/DCORR_dmap2_template_align_normed/magnitudes_dmap2_template_align_normed.pdf --magnitudes
 
 cd ../

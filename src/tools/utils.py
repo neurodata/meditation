@@ -7,6 +7,7 @@ import h5py
 import pandas as pd
 from collections import defaultdict
 from pathlib import Path
+import pickle
 
 def decimate_ptr(X, nbins=1000):
     '''
@@ -62,6 +63,12 @@ def get_files(path,
         query = f'^{level}_embedding_dense{flag}'
         query += f'\.sub-{subject}'
         query += f'\.{task}\.{filetype}'
+    elif source == 'dmap2':
+        query = f'^embedding_dense{flag}'
+        query += f'\.sub-{subject}'
+        query += f'\.{task}\.{filetype}'
+        with open('/home/rflperry/meditation/data/external/subj_trait_dict.pkl', 'rb') as fp:
+            subj2trait = pickle.load(fp)
     else: #if source == 'gcca' or source == 'dmap':
         query = f'^{level}_sub-'
         query += f'{subject}_ses-1_'
@@ -69,6 +76,8 @@ def get_files(path,
     for f in os.listdir(path):
         match = re.search(query, f)
         if match:
+            if source == 'dmap2' and level != subj2trait[match.groups()[0]]:
+                continue
             files.append((f, match.groups()))
     
     return files
@@ -153,7 +162,7 @@ def get_latents(data_dir, n_components=None, flag='_gcca', ids=False, ftype='h5'
             n_load = len(paths)
             subjs = []
 
-            for path,subj in paths[:n_load]:
+            for path, subj in paths[:n_load]:
                 if ftype == 'h5':
                     h5f = h5py.File(data_dir / path,'r')
                     if n_components is None:

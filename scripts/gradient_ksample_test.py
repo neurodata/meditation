@@ -23,7 +23,6 @@ from src.tools import get_files, get_latents, align, iterate_align
 
 from rpy2.robjects import Formula, numpy2ri
 from rpy2.robjects.packages import importr
-from hyppo.tools.common import perm_test
 
 ################ DEFINITIONS #########################
 
@@ -232,6 +231,7 @@ def discrim_test(
             "null_dist": dcorr.null_dist
         }
     elif TEST == 'Manova':
+        from hyppo.tools.common import perm_test
         _, perm_blocks = np.unique(permute_groups, return_inverse=True)
         manova = Manova()
         stat, pvalue, null_dist = perm_test(
@@ -300,7 +300,7 @@ def gcca_pvals(
         )
         results_dict[grads] = stat_dict
 
-    return(name, results_dict)
+    return (name, results_dict)
 
 def simulate_data(subjs, d=18715, dist=None):
     subj2vec = dict()
@@ -391,11 +391,13 @@ def main(
     # else:
     #     raise ValueError(f'{data} invalid data key')
     source_dir = Path(SOURCE)
-    flag = '_' + data
-    ftype = 'h5'
+    flag = '_' + data if data != 'dmap2' else '_emb'
+    ftype = 'h5' if data != 'dmap2' else 'npy'
     print(f'Loading data from directory: {source_dir}')
     logging.info(f'Loading data from directory: {source_dir}')
-    groups, labels, subjs = get_latents(source_dir, n_components=3, flag=flag, ids=True, ftype=ftype, subjects_exclude=exclude_ids, start_grad=start_grad)
+    groups, labels, subjs = get_latents(
+        source_dir, n_components=3, flag=flag, ids=True, ftype=ftype,
+        subjects_exclude=exclude_ids, start_grad=start_grad, source=data)
 
     # check proper exclusion
     if exclude_ids is not None and len(set(exclude_ids).intersection(np.concatenate(subjs))) > 0:
@@ -489,7 +491,7 @@ if __name__ == '__main__':
     parser.add_argument("--multiway", help="", action="store_true")
     parser.add_argument("--sim-dist", help="distribution", type=str, default=None)
     parser.add_argument("-x", "--exclude-ids", help="list of subject IDs", nargs='*', type=str)
-    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase', 'svd', 'mase_dmap', 'joint', 'grouppca'], default="gcca")
+    parser.add_argument("-d", "--data", help="list servers, storage, or both (default: %(default)s)", choices=['gcca', 'dmap', 'mase', 'svd', 'mase_dmap', 'joint', 'grouppca', 'dmap2'], default="gcca")
     parser.add_argument("--align", help="", action="store_true", default=False)
     parser.add_argument("--norm", help="", action="store_true", default=False)
     parser.add_argument("--start-grad", help="Starting index of the first 3 gradients", type=int, default=0)

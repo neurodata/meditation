@@ -61,7 +61,7 @@ label_dict = {
     'all':'all '
 }
 
-def make_heatmap(source_dir, save_path):
+def make_heatmap(source_dir, save_path, magnitudes=False):
     # The 2nd file has more permutations, but no ksample runs
     # if tag is not None:
     #     tag = f'_{tag}'
@@ -70,7 +70,10 @@ def make_heatmap(source_dir, save_path):
     # pattern = f'DCORR_{method}_2-sample{tag}_pvalues_' + r'{}.csv'
     # files = glob.glob('../data/' + '2sample_tests/' + pattern.format('*'))
     # num = sorted(set([int(re.split(r'.*_(\d+)\.csv', f)[1]) for f in files]))[-1]
-    files = glob.glob(str(Path(source_dir) / '2-*.csv'))
+    if magnitudes:
+        files = glob.glob(str(Path(source_dir) / 'magnitudes_2-*.csv'))
+    else:
+        files = glob.glob(str(Path(source_dir) / '2-*.csv'))
     pvalues = pd.read_csv(
         files[0],
         # Path('../data/') / '2sample_tests' / pattern.format(num),
@@ -98,32 +101,39 @@ def make_heatmap(source_dir, save_path):
     #     pd.read_csv(Path('../data/') / 'ksample_tests' / path.format(n), index_col=0).values 
     #     for n, path in zip(nums, k_sample_paths)
     # ])
-    k_sample_paths = ['6-*.csv', '3E-*.csv', '3N-*.csv']
-    files = [glob.glob(str(Path(source_dir) / path))[0] for path in k_sample_paths]
-    kpvals = np.vstack([pd.read_csv(f, index_col=0).values for f in files])
+    if not magnitudes:
+        k_sample_paths = ['6-*.csv', '3E-*.csv', '3N-*.csv']
+        files = [glob.glob(str(Path(source_dir) / path))[0] for path in k_sample_paths]
+        kpvals = np.vstack([pd.read_csv(f, index_col=0).values for f in files])
 
-    # Scale
-    kpvals = np.asarray(kpvals) * 7
-    kpvals[1:,:] = kpvals[1:,:] * 2
-    df = pd.DataFrame(kpvals, columns = pvalues.columns)
-    df.index = [
-        '6-sample All',
-        '3-sample EXP States',
-        '3-sample NOV States'
-    ]
-    df[df > 1] = 1
+        # Scale
+        kpvals = np.asarray(kpvals) * 7
+        kpvals[1:,:] = kpvals[1:,:] * 2
+        df = pd.DataFrame(kpvals, columns = pvalues.columns)
+        df.index = [
+            '6-sample All',
+            '3-sample EXP States',
+            '3-sample NOV States'
+        ]
+        df[df > 1] = 1
+        pvalues = pd.concat([df, pvalues])
 
-
-    pvalues = pd.concat([df, pvalues])
     d = pvalues.values
-    d[3:,:] *= np.multiply(*d[3:,:].shape)
-    d[d > 1] = 1
 
-    i_new = np.hstack((pvalues.index[:3], [pvalues.index[15]], pvalues.index[3:15], pvalues.index[16:]))
-    d_new = np.vstack((d[:3], d[15], d[3:15], d[16:]))
+    if not magnitudes:
+        d[3:,:] *= np.multiply(*d[3:,:].shape)
+        d[d > 1] = 1
+        i_new = np.hstack((pvalues.index[:3], [pvalues.index[15]], pvalues.index[3:15], pvalues.index[16:]))
+        d_new = np.vstack((d[:3], d[15], d[3:15], d[16:]))
 
-    pvalues = pd.DataFrame(data=d_new, columns=pvalues.columns)
-    pvalues.index = i_new
+        pvalues = pd.DataFrame(data=d_new, columns=pvalues.columns)
+        pvalues.index = i_new
+    else:
+        d *= np.multiply(*d.shape)
+        d[d > 1] = 1
+        # i_new = np.hstack((pvalues.index[15], pvalues.index[3:15], pvalues.index[16:]))
+        # d_new = np.vstack((d[:3], d[15], d[3:15], d[16:]))
+
 
     mask = pvalues.copy()
     alpha = 0.05
@@ -133,7 +143,10 @@ def make_heatmap(source_dir, save_path):
         default=mask
     )
 
-    f, ax = plt.subplots(1, figsize=(14,9))
+    if magnitudes:
+        f, ax = plt.subplots(1, figsize=(8,6))
+    else:
+        f, ax = plt.subplots(1, figsize=(14,9))
     ax = sns.heatmap(
         pvalues.transform('log10'),
         ax=ax,
@@ -177,10 +190,11 @@ if __name__ == "__main__":
     # parser.add_argument("--tag", help="source directory with files", type=str, default=None)
     parser.add_argument("--source", help="source directory with files", type=str, default=None)
     parser.add_argument("-t", "--save", help="target directory to save files", type=str, required=True)
+    parser.add_argument("--magnitudes", action="store_true", default=False)
     # parser.add_argument("--method", help="method used", type=str, required=True)
 
     args = parser.parse_args()
     # make_heatmap(args.method, args.tag, args.save)
-    make_heatmap(args.source, args.save)
+    make_heatmap(args.source, args.save, args.magnitudes)
 
     
